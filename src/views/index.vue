@@ -1,0 +1,228 @@
+<template>
+	<div>
+		<article class="wrapper">
+			<nav class="nav">
+				<nav-container v-on:showMenuOverlay="showMenuExec" v-show="!show_menu_bol">
+					<span slot="navbody">
+						<section class="body" v-if="!NickName">
+							<div class="account">
+								<div class="greetings">
+									<span>心情惬意，来杯咖啡吧 ☕</span>
+								</div>
+								<div class="account-entry">
+									<a href="javascript:;" class="sign-in button" @click="pageRedir(2)">
+										<span>登录</span>
+									</a>
+									<a href="javascript:;" class="register button" @click="pageRedir(4)">
+										<span>注册</span>
+									</a>
+								</div>
+							</div>
+						</section>
+						<section class="body" v-if="NickName">
+							<div class="account">
+								<a href="javascript:;" class="logo logo-onlogin" @click="pageRedir(0)" v-if="mbMedia">
+									<img src="@/assets/images/logo.svg" alt="星巴克">
+								</a>
+								<div class="greetings onlogin" :class="{'withlogo': mbMedia}">
+									<span>{{loginGreetings[random]}}</span>
+								</div>
+								<div class="account-info clearfix">
+									<!-- 此处需使用v-show,使用v-if会导致进度条无法渲染 -->
+									<div class="user-stars clearfix" @click="pageRedir(2)" v-show="!loading">
+										<div class="star-level">
+											<span>
+												<strong>{{StarsNum}}</strong>/{{StarsOfNextLevNeed}}
+											</span>
+											<div class="gauge">
+												<div class="gauge-fill"></div>
+											</div>
+										</div>
+										<div class="star-icon">
+											<img src="@/assets/icons/icon-star-white.svg" v-if="StarLev == 'White'">
+											<img src="@/assets/icons/icon-star-green.svg" v-if="StarLev == 'Green'">
+											<img src="@/assets/icons/icon-star-gold.svg" v-if="StarLev == 'Gold'">
+										</div>
+									</div>
+									<div class="user-rewards" @click="pageRedir(7)" v-show="!loading">
+										<img src="@/assets/icons/icon-gift.svg"><span>{{MyRewardsNum}}</span>
+									</div>
+								</div>
+								<div class="loading-svg center" v-if="loading">
+									<img src="@/assets/loading-svg/loading-bubbles.svg"/>
+								</div>
+							</div>
+						</section>
+					</span>
+				</nav-container>
+				<nav-overlay v-on:closeMenuOverlay="closeMenuExec" v-show="show_menu_bol">
+				</nav-overlay>
+				<nav-mobile v-on:showMenuOverlay="showMenuExec"></nav-mobile>
+			</nav>
+			<section class="content" v-if="lgMedia || !show_menu_bol">
+				<div class="tag-ad">广告</div>
+				<ad-slider></ad-slider>
+				<promotion></promotion>
+				<program></program>
+				<tmall></tmall>
+				<coffeehouse></coffeehouse>
+			</section>
+		</article>
+	</div>
+</template>
+
+<script>
+
+	import './../assets/css/bootstrap.min.css'
+	import './../assets/css/swiper.min.css'
+	import './../assets/css/init.css'
+	import './../assets/css/styles.css'
+	import NavContainer from '@/components/navContainer'
+	import NavOverlay from '@/components/NavOverlay'
+	import NavMobile from '@/components/navMobile'
+	import AdSlider from '@/components/adSlider'
+	import Promotion from '@/components/promotion'
+	import Program from '@/components/program'
+	import Tmall from '@/components/tmall'
+	import Coffeehouse from '@/components/coffeehouse'
+	import axios from 'axios'
+
+	export default {
+		name: 'index',
+		metaInfo: {
+			title: '星巴克 | 用每一杯咖啡传递星巴克独特的咖啡体验',
+			meta: [
+				{
+					name: 'keywords',
+					content: '星巴克, 咖啡'
+				},
+				{
+					name: 'description',
+					content: '欢迎访问星巴克中国官网。'
+				}
+			]
+		},
+		data(){
+			return {
+				show_menu_bol: false,
+				lgMedia: window.matchMedia('(min-width: 1025px)').matches,
+				mbMedia: window.matchMedia('(max-width: 640px)').matches,
+				loginGreetings: [
+					'如果生活给了你柠檬🍋，不妨换杯咖啡试试',
+					'人生得意须尽欢，莫使☕️空对月',
+					'今天的心情是茶🍵还是咖啡☕呢?',
+					'咖啡带给你好心情 ❤️',
+					'咖啡会让你脑洞大开哟 ☕'
+				],
+				random: Math.floor(Math.random()*5),
+				StarLev: '',
+				StarsNum: '',
+				StarsOfNextLevNeed: '',
+				MyRewardsNum: '',
+				loading: false
+			}
+		},
+		computed: {
+			NickName(){
+				return this.$store.state.NickName;
+			}
+		},
+		mounted(){
+			const _self = this;
+			window.matchMedia('(min-width: 1025px)').addListener(()=>{
+				_self.lgMedia = window.matchMedia('(min-width: 1025px)').matches;
+			});
+			window.matchMedia('(max-width: 640px)').addListener(()=>{
+				_self.mbMedia = window.matchMedia('(max-width: 640px)').matches;
+			});
+
+			this.checkLogin();
+		},
+		components: {
+			NavContainer: NavContainer,
+			NavOverlay: NavOverlay,
+			NavMobile: NavMobile,
+			AdSlider: AdSlider,
+			Promotion: Promotion,
+			Program: Program,
+			Tmall: Tmall,
+			Coffeehouse: Coffeehouse
+		},
+		methods: {
+			showMenuExec(){
+				this.show_menu_bol = true;
+			},
+			closeMenuExec(){
+				this.show_menu_bol = false;
+			},
+            pageRedir(item){
+				this.$store.commit('pageRedir', item);
+			},
+			checkLogin(){
+				axios.post("users/checkLogin").then((res)=>{
+					let data = res.data;
+					if(data.status == '0'){
+						let res = data.result;
+						this.$store.commit('updateUserInfo', res.NickName);
+						//如果当前为登录状态，则进一步获取用户信息
+						this.accountInfoDisp();
+					}else{
+						this.$store.commit('updateUserInfo', '');
+					}
+				});
+			},
+			accountInfoDisp(){
+				this.loading = true;
+				axios.post("users/accountInfo").then((res)=>{
+					let data = res.data;
+					if(data.status == '0'){
+						let res = data.result;
+						/*
+							正常来讲，此处还应该先进行星级，礼品券的过期时间及是否可用等信息进行校验；
+							此外如果width值达到100%也应进行相关星级礼品券等信息的修改工作；
+							最后进行前端渲染。
+						*/
+						this.StarLev = res.MemberShip.StarLevel;
+						this.StarsNum = res.MemberShip.StarsNumber;
+						this.StarsOfNextLevNeed = res.MemberShip.StarsOfNextLevNeed;
+						
+						let MyRewards = res.MyRewards,
+							AvlRewd = [];
+
+						for(let i = 0; i < MyRewards.length; i++){
+							if(MyRewards[i].State === 'AVL'){
+								AvlRewd.push(MyRewards[i]);
+							}
+						}
+
+						this.MyRewardsNum = AvlRewd.length;
+
+
+						let width = (this.StarsNum/this.StarsOfNextLevNeed)*100 + '%';
+						let bgColor = '';
+
+						switch(this.StarLev){
+							case 'White':
+								bgColor = '#4F4F4F';
+								break;
+							case 'Green':
+								bgColor = '#00A862';
+								break;
+							case 'Gold':
+								bgColor = '#C3A75C';
+								break;
+						}
+
+						$('.gauge-fill').css({
+							'width': width,
+							'background': bgColor
+						});
+
+						this.loading = false;
+					}
+				});
+			}
+		}
+	}
+
+</script>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_svc</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" opacity="0.560000002" stroke-linejoin="round">
+        <g id="ic_svc" stroke="#000000">
+            <g id="Group" transform="translate(5.000000, 10.000000)">
+                <path d="M23.075,15.2533333 L2.925,15.2533333 C1.95,15.2533333 0.975,14.4588889 0.975,13.3466667 L0.975,2.54222222 C0.975,1.58888889 1.7875,0.635555556 2.925,0.635555556 L23.075,0.635555556 C24.05,0.635555556 25.025,1.43 25.025,2.54222222 L25.025,13.5055556 C24.8625,14.4588889 24.05,15.2533333 23.075,15.2533333 L23.075,15.2533333 Z" id="Shape"></path>
+                <path d="M14.4444444,0.635555556 L14.4444444,15.2533333" id="Shape"></path>
+                <ellipse id="Oval" cx="20.0958333" cy="5.59" rx="2.7625" ry="2.70111111"></ellipse>
+                <path d="M4.0625,7.94444444 L11.5441772,7.94444444" id="Shape"></path>
+                <path d="M4.11887939,10.8333333 L8.34387939,10.8333333" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

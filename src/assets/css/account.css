@@ -1,0 +1,2600 @@
+/* 登录页面样式 */
+.content .account-welcome {
+	position: relative;
+	top: -24px;
+	width: 100%;
+}
+
+.content .account-welcome a {
+	display: inline-block;
+	overflow: hidden;
+	width: 100%;
+}
+
+.content .account-welcome a img {
+	width: 100%;
+}
+
+.account-login-actions {
+	position: relative;
+	top: -24px;
+	padding-top: 2px;
+}
+
+.account-login-actions .form-login,
+.account-login-actions .qrcode-login {
+	background-image: linear-gradient(-180deg, #FCFCFC 0%, #FFF 100%);
+	padding: 24px 0;
+	position: relative;
+}
+
+.account-login-actions .form-login .login-switcher,
+.account-login-actions .qrcode-login .login-switcher {
+	position: absolute;
+	right: 0;
+	top: 2px;
+	width: 100px;
+	height: 100px;
+	z-index: 2;
+    cursor: pointer;
+}
+
+.account-login-actions .form-login .login-switcher p,
+.account-login-actions .qrcode-login .login-switcher p {
+	margin: 4px 0 24px;
+	padding-right: 12px;
+	font-size: 12px;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.72);
+	line-height: 160%;
+	text-align: right;
+	letter-spacing: 0.4px;
+	white-space: nowrap;
+}
+
+.account-login-actions .form-login .login-switcher.switch-to-code {
+	background: url('/static/images/account-join/qrcode-login-tip.png') no-repeat;
+	background-size: contain;
+}
+
+.account-login-actions .qrcode-login .login-switcher.switch-to-form {
+	background: url('/static/images/account-join/email-login-tip.png') no-repeat;
+	background-size: contain;
+}
+
+.account-login-actions .form-login .login-filed,
+.account-login-actions .qrcode-login .login-filed {
+	position: relative;
+	max-width: 420px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.account-login-actions .form-login .login-filed .login-form-username,
+.account-login-actions .form-login .login-filed .login-form-password,
+.register-filed-card .register-form-username,
+.register-filed-card .register-form-password {
+	position: relative;
+	height: 60px;
+	padding: 0 12px;
+}
+
+.account-login-actions .form-login .login-filed input[type=text],
+.account-login-actions .form-login .login-filed input[type=password],
+.register-filed-card .register-form-username input[type=text],
+.register-filed-card .register-form-password input[type=password] {
+	position: relative;
+	top: 30px;
+	width: 100%;
+	padding-bottom: 3px;
+	border: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+	background-color: rgba(255, 255, 255, 0);
+	font-size: 1.7rem;
+	font-weight: 300;
+	color: rgba(0, 0, 0, 0.67);
+	transition: all 0.2s ease;
+}
+
+.account-login-actions .form-login .login-filed input:hover,
+.register-filed-card input:hover {
+	border-bottom: 1px solid #00A862;
+}
+
+.account-login-actions .form-login .login-filed input:focus,
+.register-filed-card input:focus {
+	border-bottom: 1px solid #00A862;
+}
+
+.account-login-actions .form-login .login-filed .form-label,
+.register-filed-card .form-label {
+	position: relative;
+	top: 0;
+	font-size: 16px;
+	font-weight: 400;
+	color: #000;
+	opacity: 0.32;
+	letter-spacing: 0.4px;
+	text-align: left;
+    cursor: text;
+	z-index: 1;
+}
+
+.account-login-actions .form-login .login-filed .toggle-password {
+	position: absolute;
+	right: 18px;
+	bottom: 7px;
+	width:24px;
+	height: 24px;
+	z-index: 9;
+}
+
+.account-login-actions .form-login .login-filed .toggle-password.show-password {
+	background: url('~@/assets/icons/icon-show-password.svg') no-repeat;
+	background-size: contain;
+}
+
+.account-login-actions .form-login .login-filed .toggle-password.hide-password {
+	background: url('~@/assets/icons/icon-hide-password.svg') no-repeat;
+	background-size: contain;
+}
+
+.account-login-actions .form-login .login-filed .login-checkbox {
+	display: inline-block;
+	position: absolute;
+	left: 12px;
+	margin-top: 24px;
+	text-align: left;
+}
+
+.account-login-actions .form-login .login-filed .login-checkbox input {
+	position: relative;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.account-login-actions .form-login .login-filed .login-checkbox input::before {
+	float: left;
+	content: '';
+	width: 30px;
+	height: 30px;
+	border: 1px solid #00A862;
+	border-radius: 8px;
+	margin: -6px 8px 0 0;
+	background-color: rgba(255, 255, 255, 1);
+	opacity: 1;
+	cursor: pointer;
+	position: relative;
+	z-index: 9;
+}
+
+.account-login-actions .form-login .login-filed .login-checkbox input::after {
+	float: left;
+	content: '';
+	width: 30px;
+	height: 30px;
+	border: 1px solid #00A862;
+	border-radius: 8px;
+	margin: -6px 8px 0 0;
+	background-image: url('~@/assets/icons/icon-checked.svg');
+	background-size: contain;
+	background-color: #00A862;
+	opacity: 1;
+	cursor: pointer;
+	position: relative;
+	z-index: 9;
+}
+
+.account-login-actions .form-login .login-filed .login-checkbox label {
+	margin-left: 24px;
+	font-size: 1.4rem;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.56);
+	position: relative;
+	top: 4px;
+	cursor: pointer;
+}
+
+.account-login-actions .form-login .login-filed .forget-password {
+	display: inline-block;
+	position: absolute;
+	right: 12px;
+	margin-top: 27px;
+	text-align: left;
+}
+
+.account-login-actions .form-login .login-filed .forget-password a {
+	font-size: 1.6rem;
+	font-weight: 360;
+	color: #00A862;
+	opacity: 0.76;
+	line-height: 160%;
+	letter-spacing: 0.4px;
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+
+.account-login-actions .form-login .login-filed .forget-password a:hover {
+	color: #00A862;
+	opacity: 0.87;
+	text-decoration: none;
+}
+
+.account-login-actions .form-login .login-filed .login-action {
+	float: right;
+	margin:  164px 10px 12px 0;
+	padding: 12px 24px;
+	border-radius: 48px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.38);
+	opacity: 0.76;
+	transition: all 0.2s ease;
+}
+
+.account-login-actions .form-login .login-filed .login-action a {
+	font-weight: 400;
+	color: #00A862;
+	text-decoration: none;
+}
+
+.account-login-actions .form-login .login-filed .login-action:hover {
+	color: #00A862;
+	opacity: 0.87;
+	text-decoration: none;
+}
+
+.account-login-actions .qrcode-login .login-filed .qrcode-tips {
+	padding: 0 24px;
+	text-align: center;
+	font-size: 1.6rem;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.87);
+	letter-spacing: 0.4px;
+	line-height: 160%;
+}
+
+a.emphas {
+	color: #00A862;
+	opacity: 0.76;
+	text-decoration: none;
+	transition: all 0.15s ease;
+}
+
+a.emphas:hover {
+	color: #00A862;
+	opacity: 0.87;
+	text-decoration: none;
+}
+
+.qrcode-area.flexbox,
+.register-filed-app.flexbox {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.account-login-actions .qrcode-login .login-filed .qrcode-area {
+	margin-top: 95px;
+	margin-bottom: 74px;
+	padding: 0 24px;
+}
+
+.account-login-actions .qrcode-login .login-filed .qrcode-area .qrcode {
+	position: relative;
+	max-width: 235px;
+	padding: 6px;
+	margin-right: 40px;
+	border: 8px solid #CCC;
+}
+
+.account-login-actions .qrcode-login .login-filed .qrcode-area .qrcode img {
+	display: block;
+	max-width: 100%;
+}
+
+.account-login-actions .qrcode-login .login-filed .qrcode-area .scanner {
+	width: 157px;
+}
+
+.account-login-actions .qrcode-login .login-filed .qrcode-area .scanner img {
+	max-width: 100%;
+}
+
+.account-join {
+	position: relative;
+	top: -24px;
+	background: url('/static/images/account-join/account-join-bg.png') no-repeat;
+	background-size: cover;
+	margin-bottom: -48px;
+}
+
+.account-join .wrapper {
+	max-width: 720px;
+	margin: 0 auto;
+	padding: 40px 12px 70px;
+}
+
+.account-join .wrapper h2 {
+	font-size: 2.2rem;
+	font-weight: 400;
+	color: #fff;
+	line-height: 140%;
+	margin-bottom: 18px;
+}
+
+.account-join .wrapper p {
+	font-size: 1.6rem;
+	font-weight: 400;
+	color: #D8D8D8;
+	letter-spacing: 0.4px;
+	margin-bottom: 24px;
+}
+
+.account-join .wrapper a {
+	border: 1px solid #C2A661;
+	color: #C2A661;
+	opacity: 0.96;
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+
+.account-join .wrapper a:hover {
+	border: 1px solid #C2A661;
+	color: #C2A661;
+	opacity: 1;
+	text-decoration: none;
+}
+
+.login-filed .loading-svg {
+	position: absolute;
+	top: 210px;
+	width: 100%;
+}
+
+.login-filed .error-tip {
+	position: absolute;
+	top: 200px;
+	left: 10%;
+	width: 80%;
+	padding: 16px 0;
+	border-radius: 1px;
+	/*background: rgba(0, 0, 0, .06);*/
+	text-align: center;
+	font-size: 1.4rem;
+	color: #F40;
+}
+
+.login-filed .error-tip span {
+	display: inline-block;
+	width: 100%;
+}
+
+.form-area input::-webkit-input-placeholder {
+	font-size: 1.6rem;
+	font-weight: 300;
+	color: rgba(0, 0, 0, 0.32);
+	letter-spacing: 0.4px;
+	opacity: 0;
+}
+.form-area input::-ms-input-placeholder {
+	font-size: 1.6rem;
+	font-weight: 300;
+	color: rgba(0, 0, 0, 0.32);
+	letter-spacing: 0.4px;
+	opacity: 0;
+}
+.form-area input::-moz-placeholder {
+	font-size: 1.6rem;
+	font-weight: 300;
+	color: rgba(0, 0, 0, 0.32);
+	letter-spacing: 0.4px;
+	opacity: 0;
+}
+.form-area input:-moz-placeholder {
+	font-size: 1.6rem;
+	font-weight: 300;
+	color: rgba(0, 0, 0, 0.32);
+	letter-spacing: 0.4px;
+	opacity: 0;
+}
+
+/* 注册页面样式，部分重叠样式存在于登录页样式中 */
+.register-actions .register-tab {
+	position: relative;
+	top: -24px;
+	text-align: center;
+	padding: 50px 0 60px;
+	cursor: pointer;
+}
+
+.register-actions .register-tab .register-tab-group {
+	display: inline-block;
+}
+
+.register-actions .register-tab .register-tab-app,
+.register-actions .register-tab .register-tab-card {
+	float: left;
+	padding: 4px 20px;
+	margin: 0 auto;
+	font-size: 14px;
+	font-weight: 400;
+	color: #00A862;
+	border: 1px solid #00A862;
+	transition: all 0.2s ease;
+}
+
+.register-actions .register-tab .register-tab-app {
+	border-radius: 30px 0 0 30px;
+}
+
+.register-actions .register-tab .register-tab-card {
+	/*position: relative;*/
+	/*left: 0px;*/
+	border-radius: 0 30px 30px 0;
+}
+
+.register-tab-active {
+	background-color: #00A862;
+	color: #FFF !important;
+}
+
+.register-actions .register-filed-app,
+.register-actions .register-filed-card {
+	position: relative;
+	top: -24px;
+}
+
+.register-actions .register-filed-app {
+	margin: 36px 0 60px;
+}
+
+.register-actions .register-filed-app .register-app-desc {
+	max-width: 480px;
+	margin-right: 24px;
+}
+
+.register-actions .register-filed-app .register-app-desc h2 {
+	font-size: 2.2rem;
+	font-weight: 400;
+	color: #000;
+	line-height: 140%;
+	margin-bottom: 18px;
+}
+
+.register-actions .register-filed-app .register-app-desc p {
+	font-size: 1.6rem;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.87);
+	line-height: 160%;
+	letter-spacing: 0.4px;
+	margin-bottom: 24px;
+}
+
+.register-actions .register-filed-app .register-app-image {
+	width: 193px;
+}
+
+.register-actions .register-filed-app .register-app-image img {
+	max-width: 100%;
+}
+
+.register-actions .register-filed-card {
+	padding: 24px 0;
+}
+
+.register-actions .register-filed-card .wrapper {
+	max-width: 480px;
+	padding: 0 24px;
+	margin: 0 auto;
+}
+
+.register-filed-card .register-form-username,
+.register-filed-card .register-form-password {
+	margin-bottom: 12px;
+}
+
+.register-actions .register-filed-card .wrapper .more,
+.register-actions .register-filed-card .wrapper .register-notice,
+.register-actions .register-filed-card .wrapper .register-btn {
+	position: relative;
+	left: 3%;
+	width: 94%;
+}
+
+.register-actions .register-filed-card .wrapper .more {
+	margin: 16px 0;
+	font-size: 1.4rem;
+}
+
+.register-actions .register-filed-card .wrapper .register-notice {
+	margin-top: 36px;
+	font-size: 1.6rem;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.56);
+	line-height: 160%;
+	letter-spacing: 0.4px;
+}
+
+.register-actions .register-filed-card .wrapper .register-btn {
+	padding-top: 24px;
+	text-align: right;
+}
+
+.register-actions .register-filed-card .wrapper .register-btn button {
+	border: 1px solid #00A862;
+	border-radius: 48px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.38);
+	margin-bottom: 4px;
+	padding: 12px 24px;
+	font-size: 1.6rem;
+	font-weight: 700;
+	color: #00A862;
+	line-height: 160%;
+	opacity: 0.87;
+	transition: all .2s ease;
+	outline: none;
+}
+
+.register-actions .register-filed-card .wrapper .register-btn button:hover {
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.46);
+	opacity: 0.90;
+}
+
+.register-actions .register-filed-card .wrapper .register-btn button[disabled] {
+	background: #F7F7F7;
+	border-color: #F7F7F7;
+	color: rgba(0, 0, 0, 0.38);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.38);
+	cursor: not-allowed;
+}
+
+.register-actions .register-filed-card .wrapper .register-btn button[disabled]:hover {
+	background: #F7F7F7;
+	border-color: #F7F7F7;
+	color: rgba(0, 0, 0, 0.38);
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.38);
+}
+
+/* 关于星享俱乐部页面样式 */
+.intro-sbux-rewards-top,
+.new-sbux-rewards,
+.member-upgrade,
+.member-gift,
+.member-package,
+.member-star-acquire,
+.member-join,
+.member-faq,
+.libra-msr-footer,
+.bg-dark,
+.bg-grey,
+.bg-light-grey {
+	position: relative;
+	top: -24px;
+	font-family: "Gothma-book";
+}
+
+.new-sbux-rewards .wrapper,
+.member-upgrade .wrapper,
+.member-gift .wrapper,
+.member-package .wrapper,
+.member-star-acquire .wrapper,
+.member-join .wrapper,
+.member-faq .wrapper,
+.libra-msr-footer .wrapper {
+	padding: 0 24px;
+}
+
+.new-sbux-rewards,
+.member-gift,
+.member-package,
+.member-star-acquire,
+.member-join,
+.member-faq {
+	padding: 48px 0 16px;
+}
+.member-upgrade {
+	padding: 30px 0 16px;
+}
+
+.bg-dark {
+	background-color: #252525;
+}
+
+.bg-grey {
+	background-color: #F0EFED;
+}
+
+.bg-light-grey {
+	background-color: #F7F6F4;
+}
+
+.bg-white {
+	background-color: #FFF;
+}
+
+.bg-silver {
+	background-color: #3A3A3A;
+}
+
+.bg-green {
+	background-color: #00A862;
+}
+
+.bg-light-green {
+	background-color: rgba(1, 143, 84, 0.2);
+}
+
+.bg-gold {
+	background-color: #C3A75C;
+}
+
+.tier-bg-silver {
+	background: #252525;
+}
+
+.tier-bg-green {
+	background: #018F54;
+}
+
+.tier-bg-gold {
+	background: #9D8C54;
+}
+
+.badge-bg-white {
+	background: #FFF;
+}
+
+.badge-bg-green {
+	background: rgba(1, 143, 84, 0.2);
+}
+
+.badge-bg-gold {
+	background: #C3A75C;
+}
+
+.badge-bg-grey {
+	background: #616161;
+}
+
+.white {
+	color: #FFF;
+}
+
+.black {
+	color: rgba(0, 0, 0, 0.87);
+}
+
+.silver {
+	color: #999;
+}
+
+.green {
+	color: #00A862;
+}
+
+.gold {
+	color: #C2A661;
+}
+
+.bg-dark>img,
+.bg-grey>img,
+.bg-light-grey>img {
+	max-width: 100%;
+}
+
+.rewards-title {
+	width: 640px;
+	margin: auto;
+	margin-bottom: 24px;
+}
+
+.rewards-title img {
+	width: 100%;
+}
+
+.wrapper .rewards-content {
+	width: 100%;
+	text-align: center;
+}
+
+.wrapper .rewards-content .item .item-image {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.wrapper .rewards-tips {
+	width: 100%;
+	margin-top: 36px;
+	text-align: center;
+	font-size: 12px;
+	line-height: 140%;
+}
+
+.wrapper .rewards-tips p>a {
+	color: #00A862;
+	opacity: .89;
+	text-decoration: none;
+	transition: all .2s ease;
+} 
+
+.wrapper .rewards-tips p>a:hover {
+	color: #00A862;
+	text-decoration: none;
+	opacity: 1;
+}
+
+.wrapper .rewards-content .item .item-content {
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+.wrapper .rewards-content .item .item-content ul>li {
+	position: relative;
+	padding-left: 14px;
+	margin-bottom: 10px;
+	font-size: 16px;
+	font-weight: 400;
+	color: #000;
+	line-height: 140%;
+	text-align: left;
+}
+
+.wrapper .rewards-content .item .item-content ul>li:before {
+	position: absolute;
+	left: 0;
+	top: 7px;
+	content: '';
+	width: 7px;
+	height: 7px;
+	border-radius: 10px;
+}
+
+.wrapper .rewards-content .item:nth-child(1) li:before {
+	background-color: #999;
+}
+
+.wrapper .rewards-content .item:nth-child(2) li:before {
+	background-color: #00A862;
+}
+
+.wrapper .rewards-content .item:nth-child(3) li:before {
+	background-color: #C2A661;
+}
+
+.intro-sbux-rewards-top .intro-poster-tablet,
+.intro-sbux-rewards-top .intro-poster-mobile {
+	width: 100%;
+	overflow: hidden;
+	margin-bottom: -6px;
+}
+
+.intro-sbux-rewards-top .intro-poster-tablet img,
+.intro-sbux-rewards-top .intro-poster-mobile img {
+	width: 100%;
+}
+
+.new-sbux-rewards .wrapper .rewards-content .item {
+	float: left;
+	width: 25%;
+	padding: 0 12px;
+	box-sizing: border-box;
+}
+
+.new-sbux-rewards .wrapper .rewards-content .item .item-image img {
+	width: 120px;
+	max-width: 100%;
+}
+
+.new-sbux-rewards .wrapper .rewards-content .item .item-content h2 {
+	font-size: 18px;
+	font-weight: 400;
+	color: #FFF;
+	line-height: 140%;
+	text-align: center;
+	margin: 0;
+}
+
+.new-sbux-rewards .wrapper .rewards-content .item .item-content p {
+	font-size: 12px;
+	font-weight: 400;
+	color: #FFF;
+	line-height: 140%;
+	letter-spacing: 0.4px;
+	text-align: center;
+	margin: 6px 12px;
+}
+
+.member-upgrade .wrapper .rewards-content .item {
+	float: left;
+	width: 33.33%;
+	padding: 0 12px;
+	box-sizing: border-box;
+}
+
+.member-upgrade .wrapper .rewards-content .item .item-image img {
+	width: 154px;
+	max-width: 100%;
+}
+
+.member-upgrade .wrapper .rewards-content .item .item-content p {
+	font-size: 16px;
+	font-weight: 400;
+	color: #000;
+	line-height: 140%;
+	letter-spacing: 0.4px;
+	text-align: center;
+	margin: 6px 12px;
+}
+
+.member-gift .wrapper .rewards-content .item {
+	float: left;
+	width: 33.33%;
+	padding: 0 12px;
+	box-sizing: border-box;
+}
+
+.member-gift .wrapper .rewards-content .item .item-image img {
+	width: 140px;
+	max-width: 100%;
+}
+
+.member-gift .wrapper .rewards-content .item .item-image span {
+	display: block;
+	width: 24px;
+	height: 2px;
+	margin: 20px auto 20px;
+}
+
+.member-gift .wrapper .rewards-content .item:nth-child(1) span {
+	background-color: #999;
+}
+
+.member-gift .wrapper .rewards-content .item:nth-child(2) span {
+	background-color: #00A862;
+}
+
+.member-gift .wrapper .rewards-content .item:nth-child(3) span {
+	background-color: #C2A661;
+}
+
+.member-gift .wrapper .rewards-content .item .item-content ul {
+	padding-left: 20px;
+	margin: 0 auto;
+	max-width: 190px;
+}
+
+.member-gift .wrapper .rewards-tips {
+	margin-top: 0px;
+}
+
+.member-package .wrapper .rewards-content {
+	display: table;
+}
+
+.member-package .wrapper .rewards-content .item {
+	display: table-cell;
+	width: 33.33%;
+	vertical-align: middle;
+	padding: 0 20px;
+	box-sizing: border-box;
+}
+
+.member-package .wrapper .rewards-content .item:nth-child(1) img {
+	width: 80%;
+	max-width: 265px;
+}
+
+.member-package .wrapper .rewards-content .item:nth-child(2) img {
+	max-width: 100%;
+}
+
+.member-package .wrapper .rewards-content .item ul li.title {
+	margin-bottom: 24px;
+}
+
+.member-package .wrapper .rewards-content .title h3 {
+	line-height: 140%;
+}
+
+.member-package .wrapper .rewards-content .title:before {
+	opacity: 0;
+}
+
+.member-package .wrapper .rewards-content .item .item-content p {
+	padding-left: 14px;
+	margin: 32px 0;
+	font-size: 12px;
+	font-weight: 400;
+	color: #000;
+	line-height: 140%;
+	letter-spacing: 0.4px;
+	text-align: left;
+}
+
+.member-package .wrapper .rewards-tips {
+	margin-top: 0px;
+}
+
+.member-star-acquire .wrapper .rewards-content {
+	display: table;
+	max-width: 100%;
+	margin-top: 30px;
+}
+
+.member-star-acquire .wrapper .rewards-content .item {
+	display: table-cell;
+}
+
+.member-star-acquire .wrapper .rewards-content .item:nth-child(1) {
+	width: 66.66%;
+	padding-right: 5%;
+	border-right: 1px solid #C2A661;
+}
+
+.member-star-acquire .wrapper .rewards-content .item:nth-child(2) {
+	width: 33.33%;
+	padding-left: 5%;
+}
+
+.member-star-acquire .wrapper .rewards-content .item h2{
+	font-size: 22px;
+	font-weight: 400;
+	color: #FFF;
+	line-height: 140%;
+	text-align: center;
+	margin-bottom: 16px;
+}
+
+.member-star-acquire .wrapper .rewards-content .item .item-content {
+	display: table;
+}
+
+.member-star-acquire .wrapper .rewards-content .item .item-content .padded {
+	display: table-cell;
+	padding: 0 10px;
+}
+
+.member-star-acquire .rewards-content .item:nth-child(1) .padded {
+	width: 33.33%
+}
+
+.member-star-acquire .rewards-content .item:nth-child(2) .padded {
+	width: 50%;
+}
+
+.member-star-acquire .rewards-content .item .item-content .padded img {
+	max-width: 180px;
+	width: 100%;
+}
+
+.member-star-acquire .rewards-content .item .item-content .padded p {
+	display: inline-block;
+	width: 100%;
+	margin: 16px 0 24px;
+	font-size: 16px;
+	color: #FFF;
+	font-weight: 400;
+	line-height: 140%;
+	text-align: center;
+}
+
+.member-join .wrapper .rewards-content {
+	display: table;
+	max-width: 100%;
+	margin-top: 30px;
+}
+
+.member-join .wrapper .rewards-content .item {
+	display: table-cell;
+	width: 50%;
+}
+
+.member-join .wrapper .rewards-content .item:nth-child(1) {
+	border-right: 1px solid rgba(0, 0, 0, 0.56);
+}
+
+.member-join .wrapper .rewards-content .item h2{
+	font-size: 22px;
+	font-weight: 400;
+	color: #000;
+	line-height: 140%;
+	letter-spacing: 0.4px;
+	text-align: center;
+	margin-bottom: 18px;
+}
+
+.member-join .wrapper .rewards-content .item p {
+	max-width: 350px;
+	margin: 0 auto 24px;
+	font-size: 16px;
+	font-weight: 400;
+	color: #000;
+	line-height: 140%;
+	letter-spacing: 0.4px;
+	text-align: center;
+}
+
+.member-join .wrapper .rewards-content .item>a.button {
+	padding: 6px 18px;
+	margin-bottom: 6px;
+	text-decoration: none;
+}
+
+.member-join .wrapper .rewards-content .item>a:hover {
+	color: #00A862;
+	text-decoration: none;
+}
+
+.member-faq .wrapper {
+	padding: 0;
+}
+
+.member-faq .wrapper .rewards-content {
+	width: 100%;
+	padding: 18px 20px;
+	text-align: left;
+}
+
+.member-faq .wrapper .rewards-content:nth-child(odd) {
+	background-color: #EFEEEC;
+}
+
+.member-faq .wrapper .rewards-content .item {
+	padding: 0 24px;
+}
+
+.member-faq .wrapper .rewards-content .item a.header {
+	display: inline-block;
+	width: 100%;
+}
+
+.member-faq .wrapper .rewards-content .item a.header img {
+	display: inline-block;
+	width: 54px;
+	height: auto;
+	vertical-align: middle;
+}
+
+.member-faq .wrapper .rewards-content .item a.header h2 {
+	display: inline-block;
+	margin-left: 40px;
+	font-size: 20px;
+	font-weight: 400;
+	vertical-align: middle;
+	color: #000;
+}
+
+.member-faq .wrapper .rewards-content .item a.header:before {
+	float: right;
+	width: 24px;
+	height: 24px;
+	padding: 40px 0;
+	content: '';
+	background: url('~@/assets/icons/icon-chevron-down.svg') no-repeat center center;
+	transition-duration: .2s;
+	transition-property: transform;
+}
+
+.member-faq .wrapper .rewards-content .item a.showArticle:before {
+	transform: rotate(-180deg);
+	transition-duration: .2s;
+	transition-property: transform;
+}
+
+.member-faq .wrapper .rewards-content .item .body {
+	padding-right: 24px;
+	overflow: hidden;
+	cursor: pointer;
+	display: none;
+}
+
+.member-faq .wrapper .rewards-content .item .container {
+	width: 100%;
+	padding: 24px 0 0;
+}
+
+.member-faq .wrapper .rewards-content .item .container p {
+	margin: 0 0 24px;
+	font-size: 16px;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.87);
+	line-height: 160%;
+	letter-spacing: 0.4px;
+}
+
+.member-faq .wrapper .rewards-content .item .container p.padding-2em {
+	padding-left: 2em;
+}
+
+.member-faq .wrapper .rewards-content .item .container p b{
+	font-weight: 700;
+	color: rgba(0, 0, 0, 0.87);
+}
+
+.member-faq .wrapper .rewards-content .item .container p a {
+	color: #00A862;
+	opacity: 0.89;
+	text-decoration: none;
+	transition: all .2s ease;
+}
+
+.member-faq .wrapper .rewards-content .item .container p a:hover {
+	color: #00A862;
+	opacity: 1;
+	text-decoration: none;
+}
+
+.libra-msr-footer {
+	background: url('/static/images/sbux-rewards/footer.png') no-repeat 0 0 #0E0E0E;
+	background-size: cover;
+	margin-top: 0px;
+	margin-bottom: -48px;
+}
+
+.libra-msr-footer .wrapper .footer-desc {
+	width: 100%;
+	max-width: 640px;
+	padding-top: 48px;
+	padding-bottom: 60px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.libra-msr-footer .wrapper .footer-desc a {
+	color: #FFF;
+	opacity: 1;
+	text-decoration: none;
+}
+
+
+.libra-msr-footer .wrapper .footer-desc a:hover {
+	color: #FFF;
+	opacity: 1;
+	text-decoration: none;
+}
+
+.libra-msr-footer .wrapper .footer-desc p {
+	display: inline-block;
+	width: 100%;
+	margin: 0 auto 8px;
+	font-size: 14px;
+	font-weight: 400;
+	color: #FFF;
+	line-height: 160%;
+	letter-spacing: 0.4px;
+}
+
+.libra-msr-footer .wrapper .footer-desc p b {
+	font-size: 12px;
+	line-height: 160%;
+	font-weight: 700;
+}
+
+.libra-msr-footer .wrapper .footer-desc .container {
+	display: block;
+	width: 100%;
+}
+
+.libra-msr-footer .wrapper .footer-desc .container .legal .license a {
+	font-size: 14px;
+	font-weight: 400;
+	color: #FFF;
+	line-height: 160%;
+}
+
+/*
+	登录后账户信息页面的样式
+*/
+
+.account-summary-login {
+	min-width: 320px;
+	background-color: #F8F8F8;
+	font-family: "Gothma-book";
+}
+
+.account-summary-login .wrapper {
+	width: 100%;
+	max-width: 768px;
+	margin: 0 auto;
+	padding: 0 24px;
+}
+
+.account-info-login,
+.account-svc-login,
+.account-myrewards-login,
+.account-activity-login {
+	width: 100%;
+	margin-bottom: 24px;
+	border-radius: 2px;
+	box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+.account-summary-login section:nth-child(4) {
+	margin-bottom: 16px;
+}
+
+.account-info-login header,
+.account-svc-login header,
+.account-myrewards-login header,
+.account-activity-login header {
+	width: 100%;
+	padding: 18px 24px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.account-info-login header:nth-child(1) {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.account-info-login header h2,
+.account-svc-login header h2,
+.account-myrewards-login header h2,
+.account-activity-login header h2 {
+	float: left;
+	display: inline-block;
+	font-size: 2.2rem;
+	font-weight: 400;
+	line-height: 140%;
+}
+
+.account-info-login header img,
+.account-svc-login header img,
+.account-myrewards-login header img,
+.account-activity-login header img {
+	float: right;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin: 3px 0;
+}
+
+.account-info-login header strong,
+.account-svc-login header strong,
+.account-myrewards-login header strong,
+.account-activity-login header strong {
+	float: right;
+	display: inline-block;
+	margin-right: 3px;
+	font-size: 2.2rem;
+	font-weight: 400;
+	font-family: "Gothma-bold";
+	line-height: 140%;
+}
+
+.account-info-login .body,
+.account-svc-login .body,
+.account-myrewards-login .body,
+.account-activity-login .body {
+	width: 100%;
+	padding: 18px 24px;
+}
+
+.account-info-login footer,
+.account-svc-login footer,
+.account-myrewards-login footer,
+.account-activity-login footer {
+	position: relative;
+	width: 100%;
+	padding: 18px 24px;
+	border-top: 1px solid rgba(0, 0, 0, 0.12);
+	background: #FFF;
+	z-index: 2;
+}
+
+.account-info-login footer span,
+.account-svc-login footer span,
+.account-myrewards-login footer span,
+.account-activity-login footer span {
+	position: relative;
+	left: calc(100% - 110px);
+	display: inline-block;
+	width: 110px;
+	text-align: right;
+	font-size: 1.6rem;
+	font-weight: 400;
+	color: #00A862;
+	line-height: 160%;
+	letter-spacing: 0.4px;
+	cursor: pointer;
+	transition: all .2s ease;
+}
+
+.account-info-login footer span:hover,
+.account-svc-login footer span:hover,
+.account-myrewards-login footer span:hover,
+.account-activity-login footer span:hover {
+	color: #00A862;
+	opacity: .89;
+}
+
+.account-info-login .body {
+	position: relative;
+	min-height: 496px;
+	background-position: 80% center;
+	background-repeat: no-repeat;
+}
+
+.account-info-login .body.star-bg-welcome {
+	background-image: url(~@/assets/icons/star-bg-welcome.svg);
+}
+
+.account-info-login .body.star-bg-green {
+	background-image: url(~@/assets/icons/star-bg-green.svg);
+}
+
+.account-info-login .body.star-bg-gold {
+	background-image: url(~@/assets/icons/star-bg-gold.svg);
+}
+
+.account-info-login .body .user-info {
+	padding: 0 24px;
+}
+
+.account-info-login .tier-progress {
+	position: relative;
+	width: calc(100% - 40px);
+	height: 120px;
+	margin: 0 auto;
+}
+
+.account-info-login .tier-progress .star-count {
+	position: absolute;
+	width: 110px;
+	background: #FFF;
+	border-radius: 3px;
+	text-align: center;
+	color: rgba(0, 0, 0, 0.87);
+	font-size: 1.6rem;
+	font-weight: 400;
+	font-family: "Gothma-book";
+	line-height: 160%;
+}
+
+.account-info-login .tier-progress .star-count span {
+	margin-left: 1px;
+	vertical-align: 2px;
+}
+
+.account-info-login .tier-progress .star-count span::after {
+	content: '';
+	position: absolute;
+	bottom: -7px;
+	left: calc(50% - 7px);
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-top: 7px solid #FFF;
+	border-bottom-color: #FFF;
+}
+
+.account-info-login .tier-progress .tier-bg {
+	position: relative;
+	top: 40px;
+	width: 100%;
+	height: 14px;
+	overflow: hidden;
+}
+
+.account-info-login .tier-progress .tier-bg .fill {
+	position: absolute;
+	top: 4px;
+	height: 6px;
+	border-radius: 12px;
+}
+
+.account-info-login .tier-progress .tier-bg .fill-white {
+	left: 0;
+	background: #ECEAE8;
+}
+
+.account-info-login .tier-progress .tier-bg .fill-green {
+	left: 25%;
+	background: #00A862;
+}
+
+.account-info-login .tier-progress .tier-bg .fill-gold {
+	left: 0;
+	background: #C3A75C;
+}
+
+.account-info-login .tier-progress .tier-tag {
+	position: absolute;
+	top: 36px;
+	width: 22px;
+	height: 22px;
+	border-radius: 50%;
+	background: #FFF;
+	color: #FFF;
+}
+
+.account-info-login .tier-progress .tier-tag::before {
+	content: '';
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+}
+
+.account-info-login .tier-progress .tier-tag.white-tag {
+	left: -11px;
+	background: #B5B5B5;
+}
+
+.account-info-login .tier-progress .tier-tag.white-tag::before {
+	background: #FFF;
+}
+
+.account-info-login .tier-progress .tier-tag.green-tag {
+	left: calc(25% - 11px);
+}
+
+.account-info-login .tier-progress .tier-tag.green-tag::before {
+	background: #00A862;
+}
+
+.account-info-login .tier-progress .tier-tag.gold-tag {
+	right: -11px;
+}
+
+.account-info-login .tier-progress .tier-tag.gold-tag::before {
+	background: #C3A75C;
+}
+
+.account-info-login .tier-progress .tier-tag.gold-tag-for-keep {
+	left: -11px;
+}
+
+.account-info-login .tier-progress .tier-tag.gold-tag-for-keep::before {
+	background: #C3A75C;
+}
+
+.account-info-login .tier-progress .tier-tag.keep-tag {
+	right: -11px;
+}
+
+.account-info-login .tier-progress .tier-tag.keep-tag::before {
+	background: #C3A75C;
+}
+
+.account-info-login .tier-progress .tier-tag>span {
+	position: absolute;
+	top: 36px;
+	left: -10px;
+	width: 40px;
+	nowrap: nowrap;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 400;
+	font-family: "Gothma-book";
+	white-space: 0.4px;
+	line-height: 160%;
+}
+
+.account-info-login .star-lev,
+.account-info-login .privileges .privileges-title {
+	font-size: 1.7rem;
+	line-height: 1.67;
+}
+
+.account-info-login .privileges {
+	margin-top: 16px;
+}
+
+.account-info-login .privileges .privileges-items .sBadge-member .items {
+	position: relative;
+	float: left;
+	width: 72px;
+	margin-right: 20px;
+	text-align: center;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+.account-info-login .privileges .privileges-items .sBadge-member .items .sBadge {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 8px;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+}
+
+.account-info-login .privileges .privileges-items .sBadge-member .items .lock {
+	position: absolute;
+	right: 12px;
+	bottom: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.34);
+}
+
+.account-info-login .privileges .privileges-items .sBadge-member .items span {
+	font-size: 12px;
+}
+
+.account-info-login .privileges .privileges-items .sBadge-member.sBadge-green {
+	position: relative;
+	margin: 15px 0;
+}
+
+.account-info-login .privileges .privileges-items .sBadge-member.sBadge-gold {
+	position: relative;
+	margin: 15px 0;
+}
+
+.account-info-login .corner {
+	position: absolute;
+	right: 24px;
+	bottom: 18px;
+}
+
+.account-info-login .corner span {
+	display: block;
+	text-align: right;
+	font-size: 14px;
+	font-weight: 300;
+	font-family: "Gothma-book";
+	line-height: 180%;
+	letter-spacing: 0.4px;
+}
+
+.account-info-login .corner span>strong {
+	font-weight: 700;
+	font-family: "Gothma-medium";
+}
+
+.account-svc-login .body {
+	position: relative;
+	width: 100%;
+	padding: 18px 0;
+	margin-bottom: -17px;
+	overflow: hidden;
+	overflow-x: auto;
+	z-index: 1;
+}
+
+.account-svc-login .body .scroll {
+	min-width: 100%;
+	white-space: nowrap;
+}
+
+.account-svc-login .body .scroll .card-item {
+	/*inline-block实现左右拖动效果比float更佳！配合white-space使用*/
+	display: inline-block;
+	max-width: 288px;
+	margin: 0 24px;
+	white-space: normal;
+	transition: all .2s ease;
+} 
+
+.account-svc-login .body .scroll .card-item:hover {
+	transform:translate(0, -10px);
+	-webkit-transform:translate(0, -10px);
+	-moz-transform:translate(0, -10px);
+	-o-transform:translate(0, -10px);
+	-ms-transform:translate(0, -10px);
+}
+
+.account-svc-login .body .scroll .card-item .balance {
+	display: inline-block;
+	width: 100%;
+	text-align: left;
+	font-size: 1.6rem;
+	font-weight: bold;
+	line-height: 26px;
+	white-space: nowrap;
+}
+
+.account-svc-login .body .scroll .card-item img {
+	min-width: 240px;
+	min-height: 150px;
+	max-width: 288px;
+	max-height: 181px;
+	width: 100%;
+	border-radius: 12px;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2), -2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.account-svc-login .body .scroll .card-item .card_id {
+	display: inline-block;
+	width: 100%;
+	margin-top: 12px;
+	margin-bottom: 17px;
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.38);
+	line-height: 160%;
+}
+
+.account-svc-login .demo-wrapper {
+	box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+	border-radius: 2px;
+}
+
+.account-svc-login .demo-wrapper .card-demo {
+	float: left;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	padding: 32px 0;
+	background: #F5F5F5;
+}
+
+.account-svc-login .demo-wrapper .card-demo img{
+	width: 262px;
+	height: 165px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+}
+
+.account-svc-login .demo-wrapper .desc-demo {
+	float: left;
+	width: 50%;
+	padding: 20px 18px 10px;
+}
+
+.account-svc-login .demo-wrapper .desc-demo .title {
+	margin-bottom: 6px;
+}
+
+.account-svc-login .demo-wrapper .desc-demo .title img {
+	position: relative;
+	top: -4px;
+	width: 24px;
+	height: 24px;
+}
+
+.account-svc-login .demo-wrapper .desc-demo .title span {
+	font-size: 1.6rem;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.87);
+	line-height: 160%;
+}
+
+.account-svc-login .demo-wrapper .desc-demo h2,
+.account-svc-login .demo-wrapper .desc-demo h4 {
+	margin-bottom: 18px;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.87);
+	line-height: 140%;
+}
+
+.account-svc-login .demo-wrapper .desc-demo h2 {
+	font-size: 2.2rem;
+}
+
+.account-svc-login .demo-wrapper .desc-demo h4 {
+	font-size: 1.6rem;
+	margin-bottom: 38px;
+}
+
+.account-svc-login .demo-wrapper .desc-demo .card-btn {
+	margin-bottom: 8px;
+}
+
+.account-svc-login .demo-wrapper .desc-demo .card-btn .button {
+	float: right;
+}
+
+.account-svc-login .demo-wrapper .desc-demo .card-btn .button:nth-child(2) {
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.account-svc-login .demo-wrapper .desc-demo .card-btn .button:nth-child(1) {
+	background: #00A862;
+	color: #FFF;
+}
+
+.account-myrewards-login .body,
+.account-activity-login .body {
+	padding: 0;
+}
+
+.account-myrewards-login .body ul.list,
+.account-activity-login .body ul.list {
+}
+
+.account-myrewards-login .body ul.list li,
+.account-activity-login .body ul.list li {
+	position: relative;
+	padding: 12px 24px 12px 60px;
+	border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.account-myrewards-login .body ul.list li:nth-child(1),
+.account-activity-login .body ul.list li:nth-child(1) {
+	border-top: none;
+}
+
+.account-myrewards-login .body ul.list li img,
+.account-activity-login .body ul.list li img {
+	position: absolute;;
+	left: 24px;
+	top: 12px;
+	width: 30px;
+	height: 30px;
+}
+
+.account-myrewards-login .body ul.list li h4,
+.account-activity-login .body ul.list li h4 {
+	position: relative;
+	margin: 0 0 6px;
+	font-size: 1.6rem;
+	font-weight: 400;
+	color: rgb(0, 0, 0);
+	line-height: 140%;
+	letter-spacing: 0.4px;
+}
+
+.account-myrewards-login .body ul.list li p,
+.account-activity-login .body ul.list li p {
+	font-size: 1.2rem;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.76);
+	line-height: 160%;
+	letter-spacing: 0.4px;
+}
+
+.account-activity-login .body ul.list li h4 span:nth-child(2) {
+	position: absolute;
+	right: 0;
+}
+
+ 
+/*     
+	消费记录页面      
+*/
+
+.record-tab-consume,
+.record-tab-star {
+	padding: 3px 36px !important;
+}
+
+.consume-record .recored-tab {
+	padding: 24px 0 0;
+}
+
+.consume-record .tips {
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.56);
+	line-height: 160%;
+	letter-spacing: 0.4px;
+}
+
+.consume-record .tips.top {
+	position: relative;
+	top: -16px;
+}
+
+.consume-record .tips.bottom {
+	margin-top: 16px;
+}
+
+.consume-record .tips.bottom span {
+	color: #00A862;
+}
+
+.consume-record .card {
+	padding: 18px;
+	background: #FFF;
+	border-radius: 2px;
+	box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+}
+
+.consume-record .card.gain {
+	margin-bottom: 24px;
+}
+
+.consume-record .card table {
+	width: 100%;
+	vertical-align: middle;
+	text-align: left;
+}
+
+.consume-record .card table tr>td {
+	display: table-cell;
+	padding: 12px;
+	line-height: 24px;
+	font-size: 16px;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0,87);
+}
+
+.consume-record .card table.star-gain thead tr>td,
+.consume-record .card table.star-minus thead tr>td {
+	font-size: 2.2rem;
+}
+
+.consume-record .card table thead tr>td {
+	white-space: nowrap;
+	border-bottom: 4px solid rgb(224, 224, 224);
+}
+
+.consume-record .card table thead tr>td.toggle-btn {
+	cursor: pointer;
+}
+
+.consume-record .card table thead tr>td.toggle-btn img {
+	width: 24px;
+	height: 24px;
+	transition-duration: .2s;
+	transition-property: transform;
+}
+
+.consume-record .card table thead tr>td.toggle-btn.showStarRec img {
+	transform: rotate(-180deg);
+	transition-duration: .2s;
+	transition-property: transform;
+}
+
+.consume-record .card table thead tr>td:nth-child(2) {
+	padding-right: 0;
+	text-align: right;
+}
+
+.consume-record .card.consume table thead tr>td {
+	text-align: left;
+}
+
+.consume-record .card table tbody tr {
+	border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.consume-record .card table tbody tr:nth-child(1) {
+	border-top: none;
+}
+
+.consume-record .card table tbody tr>td {
+	height: 96px;
+}
+
+.consume-record .card.consume table tbody tr>td:nth-child(1) {
+	width: 54px;
+}
+
+.consume-record .card table tbody tr>td:nth-child(1) img {
+	width: 28px;
+	height: 28px;
+	margin-right: -12px;
+}
+
+.consume-record .card table tbody tr>td:nth-child(2) {
+	max-width: 264px;
+	font-size: 13px;
+}
+
+.consume-record .card.consume table tbody tr>td:nth-child(2) {
+	max-width: 190px;
+	font-size: 16px;
+}
+
+.consume-record .card table tbody tr>td:nth-child(2) h4{
+	font-size: 1.6rem;
+	font-weight: 400;
+	font-family: "Gothma-bold";
+}
+
+.consume-record .card table tbody tr>td:nth-child(3) {
+	font-size: 2.2rem;
+	font-family: "Gothma-bold";
+}
+
+.consume-record .card.consume table tbody tr>td:nth-child(3) {
+	font-size: 1.6rem;
+	font-family: "Gothma-book";
+}
+
+.consume-record .card table tbody tr>td:nth-child(3) img {
+	width: 12px;
+	height: 12px;
+}
+
+.consume-record .card table tbody tr>td:nth-child(4) {
+	width: 54px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.consume-record .card table tbody tr>td:nth-child(4) img {
+	width: 22px;
+	height: 22px;
+	margin-top: 6px;
+}
+
+.consume-record .card.consume table tbody tr>td:nth-child(4) {
+	text-align: left;
+	font-size: 2.2rem;
+	font-family: "Gothma-bold";
+}
+
+.consume-record .card.consume table tbody tr>td:nth-child(5) {
+	text-align: center;
+}
+
+.consume-record .card table tbody tr>td[colspan="5"] {
+	text-align: center;
+}
+
+.consume-record .card table tbody tr>td.font-smaller {
+	font-size: 2.0rem;
+}
+
+/*    
+	星享好礼页面     
+*/
+
+.rewards-record .card {
+	margin-top: 24px;
+}
+
+.rewards-record .card:nth-child(1) {
+	margin-top: 0;
+}
+
+.rewards-record .card table.rewards-list thead tr td:nth-child(1) {
+	padding-left: 0;
+	text-align: left;
+}
+
+.rewards-record .card table.rewards-list thead tr td:nth-child(2) {
+	width: 24px;
+	height: 24px;
+	text-align: right;
+}
+
+.rewards-record .card table.rewards-list tbody td{
+	/*border:1px solid black;*/
+	height: 74px;
+}
+
+.rewards-record .card table.rewards-list tbody td:nth-child(1) {
+	max-width: 48px;
+	padding: 12px;
+	padding-right: 0;
+	text-align: left;
+}
+
+.rewards-record .card table.rewards-list tbody td:nth-child(1) img {
+	width: 30px;
+	max-width: 100%;
+	margin:-3px -3px 0;
+}
+
+.rewards-record .card table.rewards-list tbody td:nth-child(2) {
+	padding-left: 0;
+}
+
+.rewards-record .card table.rewards-list tbody td:nth-child(2) h4 {
+	font-size: 1.6rem;
+	font-weight: 400;
+	font-family: "Gothma-book";
+	line-height: 140%;
+}
+
+.rewards-record .card table.rewards-list tbody td:nth-child(2) p {
+	font-size: 1.3rem;
+	color: rgba(0, 0, 0, 0.56);
+	font-family: "Gothma-book";
+}
+
+.rewards-record .card table.rewards-list tbody td:nth-child(3) {
+	text-align: right;
+	padding-right: 0;
+}
+
+.rewards-record .card table.rewards-list tbody td:nth-child(3) img {
+	width: 22px;
+	height: 22px;
+	margin: 0 13px;
+}
+
+.star-type {
+	display: block;
+	width: 150px;
+	margin-bottom: 10px;
+	padding: 4px 0;
+	padding-right: 24px;
+	border: none;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+	border-radius: 0;
+	outline: none;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	font-size: 16px;
+	font-weight: 700;
+	color: rgba(0, 0, 0, 0.87);
+	cursor: pointer;
+	transition-property: border;
+	transition-duration: .2s;background: 
+	url('~@/assets/icons/icon-chevron-down.svg') no-repeat right center;
+}
+
+.star-type:hover {
+	border-bottom: 1px solid #00A862;
+}
+
+/*
+	管理我的账户
+*/
+
+.profile,
+.profile .wrapper {
+	padding: 0 !important;
+}
+
+.profile .wrapper ul>li {
+	position: relative;
+	padding: 36px 96px 36px 34px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+	transition-duration: .2s;
+	transition-property: background;
+}
+
+.profile .wrapper ul>li:hover {
+	background: #EAEAEA;
+}
+
+.profile .wrapper ul>li .text {
+	text-align: left;
+}
+
+.profile .wrapper ul>li .text span {
+	display: block;
+	width: 100%;
+	text-align: left;
+	line-height: 140%;
+	font-weight: 400;
+	letter-spacing: 0.4px;
+}
+
+.profile .wrapper ul>li .text span.title {
+	margin-bottom: 6px;
+	font-size: 1.8rem;
+	color: rgba(0, 0, 0, 0.87);
+}
+
+.profile .wrapper ul>li .text span.desc {
+	font-size: 1.4rem;
+	color: rgba(0, 0, 0, 0.38);
+}
+
+.profile .wrapper ul>li .icon {
+	position: absolute;
+	top: 50%;
+	right: 24px;
+	margin-top: -18px;
+	width: 36px;
+	height: 36px;
+}
+
+/*
+	管理星礼卡页面样式
+*/
+
+.profile-svc .wrapper {
+	max-width: 768px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.profile-svc .wrapper ul>li {
+	float: left;
+	width: 50%;
+	padding: 16px;
+	
+}
+
+.profile-svc .wrapper ul>li:nth-child(2n+1) {
+	clear: left;
+}
+
+.profile-svc .wrapper ul>li .card-item {
+	width: 100%;
+	min-height: 270px;
+	padding: 12px 18px 18px;
+	background: #FFF;
+	border-radius: 2px;
+	box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.12);
+	overflow: hidden;
+}
+
+.profile-svc .wrapper ul>li .card-item header {
+	position: relative;
+}
+
+.profile-svc .wrapper ul>li .card-item header h2 {
+	display: inline-block;
+	font-size: 1.6rem;
+	font-family: "Gothma-bold";
+	line-height: 26px;
+	white-space: nowrap;
+}
+
+.profile-svc .wrapper ul>li .card-item header .btn-group {
+	position: absolute;
+	right: 0;
+	top: 2px;
+}
+
+.profile-svc .wrapper ul>li .card-item header button {
+	background: rgba(255, 255, 255, 0);
+	border: none;
+	outline: none;
+	font-size: 1.4rem;
+	color: rgba(0, 0, 0, 0.38);
+	font-weight: normal;
+	opacity: .76;
+	transition-duration: .2s;
+	transition-property: color, opacity;
+}
+
+.profile-svc .wrapper ul>li .card-item header button img {
+	width: 24px;
+	height: 24px;
+	margin-right: 1px;
+	filter: grayscale(100%);
+	opacity: 0.6;
+	transition-duration: .1s;
+	transition-property: filter, opacity;
+}
+
+.profile-svc .wrapper ul>li .card-item header button:hover {
+	color: #00A862;
+	opacity: 1;
+}
+
+.profile-svc .wrapper ul>li .card-item header button:hover img {
+	filter: grayscale(0%);
+	opacity: 1;
+}
+
+.profile-svc .wrapper ul>li .card-item header button.btn-l {
+	margin-right: 6px;
+}
+
+.profile-svc .wrapper ul>li .card-item .body .preview {
+	min-width: 240px;
+	min-height: 150px;
+	border-radius: 12px;
+	margin: 12px 5%;
+	overflow:hidden;
+}
+
+.profile-svc .wrapper ul>li .card-item .body .preview img {
+	max-width: 100%;
+	background: rgba(0, 0, 0, 0.02);
+}
+
+.profile-svc .wrapper ul>li .card-item .body .meta {
+	margin-top: 12px;
+	text-align: center;
+}
+
+.profile-svc .wrapper ul>li .card-item .body .meta span {
+	display: block;
+	font-size: 1.2rem;
+	font-weight: normal;
+	color: rgba(0, 0, 0, 0.38);
+	line-height: 160%;
+}
+
+
+@media (min-width: 1025px)
+{
+
+	.body .accountbtn {
+		position: relative;
+		top: -40px;
+	}
+
+}
+
+@media (max-width: 704px) and (min-width: 641px)
+{	
+
+	.account-svc-login .demo-wrapper .card-demo {
+		height: 254px;
+	}
+
+	.account-svc-login .demo-wrapper .desc-demo .title {
+		margin-bottom: 0px;
+	}
+
+	.account-svc-login .demo-wrapper .desc-demo h2 {
+		margin-bottom: 9px;
+	}
+
+	.account-svc-login .demo-wrapper .desc-demo h4 {
+		margin-bottom: 18px;
+	}
+
+	.account-svc-login .demo-wrapper .desc-demo .card-btn .button {
+		float: left;
+	}
+
+	.account-svc-login .demo-wrapper .desc-demo .card-btn .button:nth-child(1) {
+		margin-bottom: 10px;
+	}
+
+	.account-svc-login .demo-wrapper .desc-demo .card-btn .button:nth-child(2) {
+		margin-right: 0px;
+		margin-bottom: 0px;
+	}
+}
+
+@media (max-width: 640px)
+{
+	.account-login-actions .form-login .login-switcher,
+	.account-login-actions .qrcode-login .login-switcher {
+		display: none;
+	}
+
+	.register-actions .register-filed-app {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.register-actions .register-filed-app .register-app-desc {
+		margin-right: 0;
+		max-width: 100%;
+		padding: 0 24px;
+	}
+
+	.wrapper .rewards-tips {
+		margin-top: 36px;
+		margin-bottom: 12px;
+		font-size: 10px;
+	}
+
+	.rewards-title {
+		width: 100%;
+		height: auto;
+		text-align: center;
+	}
+
+	.rewards-title img {
+		width: auto;
+		max-width: 100%;
+		max-height: 70px;
+	}
+
+	.new-sbux-rewards .wrapper .rewards-content .item {
+		float: left;
+		width: 50%;
+		padding: 0 12px;
+		margin-bottom: 24px;
+		box-sizing: border-box;
+	}
+	
+	.new-sbux-rewards .wrapper .rewards-content .item:nth-child(3) {
+		clear: left;
+	}
+
+	.new-sbux-rewards .wrapper .rewards-content .item .item-content h2 {
+		font-size: 14px;
+	}
+
+	.new-sbux-rewards .wrapper .rewards-content .item .item-content p {
+		font-size: 10px;
+	}
+
+	.member-upgrade .wrapper .rewards-content .item {
+		display: table;
+		float: none;
+		width: 100%;
+		padding: 0 60px;
+		box-sizing: border-box;
+	}
+
+	.member-upgrade .wrapper .rewards-content .item .item-image,
+	.member-upgrade .wrapper .rewards-content .item .item-content {
+		display: table-cell;
+		text-align: left;
+		vertical-align: middle;
+		padding: 16px 0;
+	}
+
+	.member-upgrade .wrapper .rewards-content .item .item-image {
+		width: 74px;
+	}
+
+	.member-upgrade .wrapper .rewards-content .item .item-content p {
+		max-width: 260px;
+		margin: 0 auto;
+		text-align: left;
+		font-size: 13px;
+		font-weight: 400;
+	}
+
+	.member-gift .wrapper .rewards-content .item {
+		display: table;
+		float: none;
+		width: 100%;
+		padding: 0 60px;
+		box-sizing: border-box;
+	}
+
+	.member-gift .wrapper .rewards-content .item .item-image,
+	.member-gift .wrapper .rewards-content .item .item-content {
+		display: table-cell;
+		padding: 16px 0;
+		text-align: left;
+		vertical-align: middle;
+	}
+
+	.member-gift .wrapper .rewards-content .item .item-image {
+		width: 70px;
+	}
+
+	.member-gift .wrapper .rewards-content .item .item-image span {
+		display: none;
+	}
+
+
+	.member-gift .wrapper .rewards-content .item .item-content ul {
+		padding-left: 28px;
+		margin: 0 auto;
+		max-width: 300px;
+	}
+
+	.member-gift .wrapper .rewards-content .item .item-content ul>li {
+		font-size: 13px;
+		font-weight: 400;
+		margin-bottom: 6px;
+	}
+
+	.member-gift .wrapper .rewards-content .item .item-content ul>li:before {
+		top: 6px;
+		width: 5px;
+		height: 5px;
+	}
+
+	.member-gift .wrapper .rewards-tips {
+		margin-top: 16px;
+	}
+
+	.member-package .wrapper .rewards-content {
+		display: block;
+	}
+
+	.member-package .wrapper .rewards-content .item {
+		display: block;
+		width: 100%;
+		padding: 0 20px;
+		margin-bottom: 24px;
+		vertical-align: middle;
+		box-sizing: border-box;
+	}
+
+	.member-package .wrapper .rewards-content .item:nth-child(1) img {
+		width: 80%;
+		max-width: 210px;
+	}
+
+	.member-package .wrapper .rewards-content .item:nth-child(2) img {
+		width: 100%;
+		max-width: 280px;
+	}
+
+	.member-package .wrapper .rewards-content .item ul li.title {
+		font-size: 16px;
+		margin-bottom: 12px;
+	}
+
+	.member-package .wrapper .rewards-content .item ul>li {
+		font-size: 13px;
+		font-weight: 400;
+		padding-left: 10px;
+	}
+
+	.member-package .wrapper .rewards-content .item ul>li:before {
+		top: 6px;
+		width: 5px;
+		height: 5px;
+	}
+
+
+	.member-package .wrapper .rewards-content .item .item-content p {
+		padding-left: 10px;
+		font-size: 10px;
+		font-weight: 400;
+	}
+
+	.member-star-acquire .wrapper .rewards-content {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		margin-top: 30px;
+	}
+
+	.member-star-acquire .wrapper .rewards-content .item {
+		display: block;
+		width: 100% !important;
+		padding: 0 !important;
+	}
+
+	.member-star-acquire .wrapper .rewards-content .item:nth-child(1) {
+		border-right: none;
+		margin-bottom: 40px;
+	}
+
+	.member-star-acquire .wrapper .rewards-content .item:nth-child(1):after,
+	.member-join .wrapper .rewards-content .item:nth-child(1):after {
+		content: '';
+		display: block;
+		width: 80%;
+		height: 1px;
+		margin: 0 auto;
+		background-color: #C2A661;
+	}
+
+	.member-star-acquire .wrapper .rewards-content .item h2{
+		font-size: 16px;
+		font-weight: 400;
+		margin-bottom: 24px;
+	}
+
+	.member-star-acquire .rewards-content .item .item-content .padded img {
+		width: 72px;
+		margin: 0 auto;
+	}
+
+	.member-star-acquire .rewards-content .item .item-content .padded p {
+		display: inline-block;
+		width: 100%;
+		margin: 12px 0 24px;
+		font-size: 13px;
+		font-weight: 400;
+	}
+
+	.member-join .wrapper .rewards-content {
+		display: block;
+		width: 100%;
+		margin-top: 30px;
+	}
+
+	.member-join .wrapper .rewards-content .item {
+		display: block;
+		width: 100%;
+	}
+
+	.member-join .wrapper .rewards-content .item:nth-child(1) {
+		border-right: none;
+		margin-bottom: 48px;
+	}
+
+	.member-join .wrapper .rewards-content .item:nth-child(1):after {
+		position: relative;
+		top: 24px;
+		background-color: rgba(0, 0, 0, 0.56);
+	}
+
+	.member-join .wrapper .rewards-content .item h2{
+		font-size: 16px;
+		font-weight: 400;
+		margin-bottom: 12px;
+	}
+
+	.member-join .wrapper .rewards-content .item p {
+		font-size: 13px;
+		font-weight: 400;
+	}
+
+	.member-faq .wrapper .rewards-content .item a.header img {
+		width: 30px;
+	}
+
+	.member-faq .wrapper .rewards-content .item a.header h2 {
+		margin-left: 16px;
+		font-size: 16px;
+	}
+
+	.member-faq .wrapper .rewards-content .item a.header:before {
+		padding: 22px 0;
+	}
+
+	.member-faq .wrapper .rewards-content .item .body {
+		padding-right: 24px;
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+	.member-faq .wrapper .rewards-content .item .container {
+		width: 100%;
+		padding: 24px 0 0;
+	}
+
+	.member-faq .wrapper .rewards-content .item .container p {
+		font-size: 14px;
+	}
+
+	.libra-msr-footer {
+		margin-bottom: 8px;
+	}
+
+	.libra-msr-footer .wrapper .footer-desc p {
+		font-size: 12px;
+	}
+
+	.libra-msr-footer .wrapper .footer-desc p b {
+		font-size: 12px;
+		font-weight: 400;
+	}
+
+	.account-svc-login .body .scroll .card-item {
+		max-width: 240px;
+		margin: 0 16px;
+	} 
+
+	.account-svc-login .demo-wrapper .card-demo,
+	.account-svc-login .demo-wrapper .desc-demo {
+		float: none;
+		width: 100%;
+	}
+
+	.account-svc-login .demo-wrapper .desc-demo .card-btn .button {
+		float: left;
+	}
+
+	.account-svc-login .demo-wrapper .desc-demo .card-btn .button:nth-child(1) {
+		margin-bottom: 12px;
+	}
+
+	.profile-svc .wrapper ul>li {
+		float: none;
+		width: 100%;
+	}
+}
+
+@media (max-width: 512px)
+{
+	.account-info-login .body {
+		min-height: 664px;
+	}
+
+	.account-info-login .user-info {
+		padding: 0 !important;
+	}
+
+	.account-info-login .privileges .privileges-items .sBadge-member .items {
+		position: relative;
+		float: left;
+		width: 72px;
+		margin-right: 24px;
+		margin-bottom: 12px;
+		text-align: center;
+		white-space: nowrap;
+		cursor: pointer;
+	}
+
+	.account-info-login .corner {
+		position: absolute;
+		left: 24px;
+		bottom: 18px;
+	}
+
+	.account-info-login .corner span {
+		display: block;
+		text-align: left;
+		font-size: 14px;
+		font-weight: 300;
+		font-family: "Gothma-book";
+		line-height: 180%;
+		letter-spacing: 0.4px;
+	}
+}

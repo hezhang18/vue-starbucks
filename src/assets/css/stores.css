@@ -1,0 +1,260 @@
+/*
+ *地图控件样式
+ */
+#sAMap {
+	height: 100vh;
+	/*	
+		设置地图图层位于导航菜单下，但会导致地图无法缩放，通过设置导航菜单的z-index属性解决。
+		z-index: -1;
+	*/
+}
+
+.amap-ui-control-zoom {
+	width: 35px !important;
+}
+
+.my-font-style .amap-simple-marker-label {
+	font-size: 12px;
+	font-weight: 700;
+	padding-top: 2px;
+}
+
+/*
+ *门店组件样式
+ */
+.storesList {
+	max-width: 100%;
+	padding: 0 24px;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.position {
+	margin-top: 24px;
+	font-size: 1.4rem;
+	cursor: pointer;
+}
+
+.position .locator-green img {
+	width:14px;
+	height: 18px;
+	margin-right: 6px;
+}
+
+.position .locator-arrow img {
+	width: 10px;
+	height: 8px;
+	margin-left: 6px;
+}
+
+.search {
+	width: 100%;
+	margin: 6px 0;
+	padding: 4px 0;
+	font-size: 1.7rem;
+	font-weight: 300;
+	color: rgba(0, 0, 0, 0.67);
+	line-height: 160%;
+	letter-spacing: 0.4px;
+}
+
+.search .storeSearch {
+	display: inline-block;
+	float: left;
+	width: 80%;
+	padding-bottom: 4px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+	transition: all 0.2s ease;
+}
+
+.search .storeSearch:hover {
+	border-bottom: 1px solid #00A862;
+}
+
+.search .storeSearch input {
+	float: left;
+	width: calc(100% - 24px);
+	border: 0;
+}
+
+input:focus {
+	outline: none;
+}
+
+input::-webkit-input-placeholder {
+	font-size: 1.6rem;
+	color: rgba(0, 0, 0, 0.48);
+}
+
+input::-ms-input-placeholder {
+	font-size: 1.6rem;
+	color: rgba(0, 0, 0, 0.48);
+}
+
+input::-moz-placeholder {
+	font-size: 1.6rem;
+	color: rgba(0, 0, 0, 0.48);
+}
+
+input:-moz-placeholder {
+	font-size: 1.6rem;
+	color: rgba(0, 0, 0, 0.48);
+}
+
+.search .storeSearch img {
+	float: right;
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+}
+
+.search .storeSelect {
+	display: inline-block;
+	float: right;
+	font-weight: 400;
+	opacity: 0.9;
+	cursor: pointer;
+}
+
+.nearbyStores {
+	position: relative;
+	padding: 16px 60px;
+	margin: 0 -24px;
+	font-size: 1.5rem;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.nearbyStores:hover {
+	background-color: #F2F2F2;
+}
+
+.storeLabel {
+	position: absolute;
+	left: 24px;
+	top: calc(50% - 12px);
+	width: 24px;
+}
+
+.storeLabel span {
+	position: absolute;
+	top: 4px;
+	width: 100%;
+	font-size: 1.2rem;
+	font-weight: 700;
+	color: #fff;
+	text-align: center;
+}
+
+.storeLabel img {
+	width: 100%;
+}
+
+.storeInfo {
+	letter-spacing: 0.4px;
+	line-height: 160%;
+}
+
+.storeInfo .storeName {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-bottom: 8px;
+}
+
+.storeInfo .storeAdd {
+	max-width: 312px;
+	font-size: 1.4rem;
+	color: rgba(0, 0, 0, 0.56);
+	font-weight: normal;
+	overflow: hidden;
+}
+
+.storeInfo .storeDis {
+	font-size: 1.4rem;
+	font-weight: normal;
+}
+
+.moreInfo {
+	position: absolute;
+	right: 24px;
+	top: calc(50% - 11px);
+}
+
+.storesList .noStore {
+	width: 100%;
+	height: 120px;
+	font-size: 1.6rem;
+	line-height: 120px;
+	text-align: center;
+}
+
+.storeClicked {
+	background-color: #E3E3E3;
+}
+
+.storeClicked:hover {
+	background-color: #E3E3E3;
+}
+
+@media (max-width: 1024px)
+{
+
+    .nav .body .storesList {
+    	padding: 0 16px;
+    }
+
+    .nav .body .position {
+    	margin-top: 0;
+    }
+
+    .nav .body .storeSearch {
+    	width: 93%;
+    }
+
+    .nav .body .nearbyStoresList {
+    	position: absolute;
+    	left: 0;
+    	top: 489px;
+    	width: 100%;
+    	height: calc(100vh - 489px);
+    	padding: 0 16px;
+    	overflow: hidden;
+    	overflow-y: auto;
+    }
+
+    .nav .body .nearbyStoresList .nearbyStores {
+    	border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    #sAMap {
+		max-height: 330px;
+	}
+
+}
+
+@media (max-width: 640px)
+{
+
+    .position {
+		padding-top: 16px;
+		font-size: 1.2rem;
+	}
+
+	.nav .body .storeSearch {
+    	width: 86%;
+    	white-space: nowrap;
+    }
+
+    .nav .body .nearbyStoresList {
+    	position: absolute;
+    	left: 0;
+    	top: 434px;
+    	width: 100%;
+    	height: calc(100vh - 490px);
+    }
+
+    #sAMap {
+		max-height: 340px;
+	}
+
+}

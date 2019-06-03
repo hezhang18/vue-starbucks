@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Bounds</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-2">
+            <rect id="Bounds" x="0" y="0" width="28" height="28"></rect>
+            <path d="M23.5649218,10.6177615 C23.8410291,10.82919 23.9989541,11.1433688 24,11.4792832 L24,22.8835785 C24,23.4961283 23.4718402,24 22.8234064,24 L17.529258,24 C16.8808241,24 16.3526643,23.4961283 16.3526643,22.8835785 L16.3526643,15.6653699 L11.6473357,15.6653699 L11.6473357,22.8835785 C11.6473357,23.4961283 11.1191759,24 10.470742,24 L5.17659363,24 C4.52815981,24 4,23.4961283 4,22.8835785 L4,11.4792832 C4,11.1433688 4.15792501,10.82919 4.43507818,10.6167735 L12.3302829,4.55648179 C13.2977043,3.81450607 14.7012498,3.81450607 15.6686712,4.55648179 L23.5649218,10.6177615 Z" id="Shape" fill="#00A862" fill-rule="nonzero"></path>
+        </g>
+    </g>
+</svg>

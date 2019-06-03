@@ -1,0 +1,126 @@
+<template>
+	<div>
+		<div class="card gain" v-show="ExpensesRecord.length != 0 && !loading">
+			<table class="star-gain">
+				<thead>
+					<tr>
+						<td colspan="4">获取星星</td>
+						<td class="toggle-btn" @click="toggleIcon(0)" :class="{'showStarRec': showStarRec[0]}">
+							<img src="@/assets/icons/icon-chevron-down.svg">
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="no-data-msg" v-if="ExpensesRecord.length == 0 && !loading">
+						<td colspan="5">您目前没有任何的获取星星记录，到邻近的星巴克消费吧。</td>
+					</tr>
+					<tr v-for="(item, index) in ExpensesRecord" v-show="ExpensesRecord.length != 0">
+						<td>
+							<img src="@/assets/icons/icon-rewards.svg">
+						</td>
+						<td colspan="2">
+							<h4>门店消费</h4>
+							{{item.ConsumeDate.replace(/\//g, "-")}}
+						</td>
+						<td class="font-smaller">
+							+{{item.StarsGain.toFixed(1)}}
+							<img src="@/assets/icons/icon-star-gold.svg">
+						</td>
+						<td @click="showRecordDetail(item)">
+							<img src="@/assets/icons/icon-info-green.svg">
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="card minus"  v-show="ExpensesRecord.length != 0 && !loading">
+			<table class="star-minus">
+				<thead>
+					<tr>
+						<td colspan="4">扣减星星</td>
+						<td class="toggle-btn" @click="toggleIcon(1)" :class="{'showStarRec': showStarRec[1]}">
+							<img src="@/assets/icons/icon-chevron-down.svg">
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="no-data-msg">
+						<td colspan="5">您目前没有扣减星星记录，继续保持吧。</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<masker-layer v-if="show" :detailOfItem="detailOfItem" v-on:close="closeRecordDetail"></masker-layer>
+		<div class="loading-svg center" v-if="loading" style="padding: 12px 0;">
+			<img src="@/assets/loading-svg/loading-bubbles.svg" style="margin:0;" />
+		</div>
+	</div>
+</template>
+
+<script>
+	import MaskerLayer from '@/components/MaskerLayerConsume'
+	import axios from 'axios'
+
+	export default {
+		data(){
+			return {
+				ExpensesRecord: '',
+				loading: false,
+				showStarRec: {
+					0: true,
+					1: true
+				},
+				show: false,
+				detailOfItem: ''
+			}
+		},
+		mounted(){
+			this.toggleArticle_JQListener();
+			this.checkLogin();
+		},
+		components: {
+			MaskerLayer: MaskerLayer
+		},
+		methods: {
+			toggleArticle_JQListener(){
+				$('td.toggle-btn').click(function(){
+					$(this).parent().parent().next().slideToggle(200);
+				});
+			},
+			toggleIcon(index){
+				this.showStarRec[index] = !this.showStarRec[index];
+			},
+			checkLogin(){
+				axios.post("users/checkLogin").then((res)=>{
+					let data = res.data;
+					if(data.status == '0'){
+						let res = data.result;
+						this.$store.commit('updateUserInfo', res.NickName);
+						//如果当前为登录状态，则进一步获取用户信息
+						this.getAccountInfo();
+					}else{
+						this.$store.commit('updateUserInfo', '');
+					}
+				});
+			},
+			getAccountInfo(){
+				this.loading = true;
+				axios.post("users/accountInfo").then((res)=>{
+					let data = res.data;
+					if(data.status == '0'){
+						let res = data.result;
+						this.ExpensesRecord = res.ExpensesRecord;
+						this.loading = false;
+					}
+				});
+			},
+			showRecordDetail(item){
+				this.detailOfItem = item;
+				this.show = true;
+			},
+			closeRecordDetail(){
+				this.show = false;
+			}
+		}
+	}
+</script>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_address</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" opacity="0.600000024" stroke-linejoin="round">
+        <g id="ic_address" stroke="#000000">
+            <g id="Icons/Location" transform="translate(8.000000, 5.000000)">
+                <g id="Layer_1" transform="translate(0.684211, 0.456140)">
+                    <g id="Group">
+                        <path d="M17.4040351,9.03062865 C17.4040351,13.8609649 8.89473684,24.7817251 8.89473684,24.7817251 C8.89473684,24.7817251 0.385438596,13.8609649 0.385438596,9.03062865 C0.385438596,4.2002924 4.12122807,0.42002924 8.89473684,0.42002924 C13.6682456,0.42002924 17.4040351,4.2002924 17.4040351,9.03062865 L17.4040351,9.03062865 Z" id="Shape"></path>
+                        <ellipse id="Oval" cx="8.89473684" cy="9.66067251" rx="3.52824561" ry="3.57024854"></ellipse>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

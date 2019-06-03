@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>ic_msr</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" opacity="0.600000024" stroke-linejoin="round">
+        <g id="ic_msr" stroke="#000000">
+            <g id="Icons/Coffeebag" transform="translate(8.000000, 5.000000)">
+                <g id="Layer_1">
+                    <g id="Group">
+                        <circle id="Oval" cx="7.5" cy="7.5" r="2.5"></circle>
+                        <path d="M2.5,-9.34988848e-17 L17.5,-7.94679535e-16 L17.5,-8.8817842e-16 C18.6045695,-1.09108686e-15 19.5,0.8954305 19.5,2 L19.5,24 L19.5,24 C19.5,25.1045695 18.6045695,26 17.5,26 L2.5,26 L2.5,26 C1.3954305,26 0.5,25.1045695 0.5,24 L0.5,2 L0.5,2 C0.5,0.8954305 1.3954305,-2.41180773e-16 2.5,-4.4408921e-16 Z" id="Path"></path>
+                        <path d="M14.5,25.8823529 L14.5,0.882352941" id="Shape" transform="translate(14.500000, 13.382353) scale(1, -1) translate(-14.500000, -13.382353) "></path>
+                        <path d="M3.98235294,13.5 L10.9823529,13.5" id="Shape"></path>
+                        <path d="M3.98235294,16 L7.67478992,16" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
