@@ -3,9 +3,7 @@ let state = '';
 
 let linkedDB = (()=>{
 	// 连接本地数据库
-	// mongoose.connect('mongodb://Jeff:Jeff1994%40Shanghai@127.0.0.1:27017/vStarbucks', {useNewUrlParser: true});
-	//连接百度云数据库
-	mongoose.connect('mongodb://Jeff:Jeff1994%40Shanghai@106.12.27.152:27017/vStarbucks', {useNewUrlParser: true});
+	mongoose.connect('mongodb://Jeff:PassWord@127.0.0.1:27017/vStarbucks', {useNewUrlParser: true});
 
 	mongoose.connection.on("connected", ()=>{
 		console.log("MongoDB Connected Success!");
