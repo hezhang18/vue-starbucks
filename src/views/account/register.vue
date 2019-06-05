@@ -39,7 +39,7 @@
 					</a>
 				</section>
 				<section class="register-actions">
-					<section class="register-tab">
+					<section class="register-tab" v-if="!mbMedia">
 						<div class="register-tab-group clearfix">
 							<div class="register-tab-app" :class="{'register-tab-active': curActTab === 'app'}" @click="toggleActTab('app')">
 								<span>使用星巴克App注册</span>
@@ -89,6 +89,7 @@
 			return {
 				show_menu_bol: false,
 				lgMedia: window.matchMedia('(min-width: 1025px)').matches,
+				mbMedia: window.matchMedia('(max-width: 640px)').matches,
 				curActive: 'register',
 				username: '',
 				password: '',
@@ -100,6 +101,9 @@
 			const _self = this;
 			window.matchMedia('(min-width: 1025px)').addListener(()=>{
 				_self.lgMedia = window.matchMedia('(min-width: 1025px)').matches;
+			});
+			window.matchMedia('(max-width: 640px)').addListener(()=>{
+				_self.mbMedia = window.matchMedia('(max-width: 640px)').matches;
 			});
 		},
 		components: {

@@ -489,12 +489,13 @@ a.logout span {
 }
 
 .content .coffeehouse .scroll-wrapper {
-	width: 760px;
-	padding: 0 4px 0 16px;
+	max-width: 720px;
+	padding: 0;
 	margin: 0 auto;
 }
 
 .content .coffeehouse .scroll-wrapper .swiper-container {
+	margin-right: -16px;
 	overflow: visible;
 }
 
@@ -1053,7 +1054,19 @@ a.logout span {
 	.content .coffeehouse {
 		margin-bottom: 0;
 	}
-	/*mobile模式下coffeehouse样式需要继续优化*/
+
+	.content .coffeehouse .scroll-wrapper {
+		width: 100%;
+		padding: 0;
+		margin: 0 auto;
+	}
+
+	.content .coffeehouse .scroll-wrapper .swiper-container {
+		width: 100%;
+		margin-right: -16px;
+		overflow: visible;
+	}
+	
 }
 
 @media (max-width: 354px){

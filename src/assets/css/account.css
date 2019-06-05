@@ -797,7 +797,7 @@ a.emphas:hover {
 
 .new-sbux-rewards .wrapper .rewards-content .item .item-content p {
 	font-size: 12px;
-	font-weight: 400;
+	font-weight: 300;
 	color: #FFF;
 	line-height: 140%;
 	letter-spacing: 0.4px;
@@ -1159,7 +1159,7 @@ a.emphas:hover {
 	width: 100%;
 	margin: 0 auto 8px;
 	font-size: 14px;
-	font-weight: 400;
+	font-weight: 300;
 	color: #FFF;
 	line-height: 160%;
 	letter-spacing: 0.4px;
@@ -1178,7 +1178,7 @@ a.emphas:hover {
 
 .libra-msr-footer .wrapper .footer-desc .container .legal .license a {
 	font-size: 14px;
-	font-weight: 400;
+	font-weight: 300;
 	color: #FFF;
 	line-height: 160%;
 }
@@ -2255,6 +2255,10 @@ a.emphas:hover {
 		padding: 0 24px;
 	}
 
+	.account-join {
+		margin-bottom: -24px;
+	}
+
 	.wrapper .rewards-tips {
 		margin-top: 36px;
 		margin-bottom: 12px;
@@ -2398,7 +2402,7 @@ a.emphas:hover {
 
 	.member-package .wrapper .rewards-content .item ul>li {
 		font-size: 13px;
-		font-weight: 400;
+		font-weight: 300;
 		padding-left: 10px;
 	}
 

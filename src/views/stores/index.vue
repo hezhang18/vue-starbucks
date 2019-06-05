@@ -91,6 +91,7 @@
 			return {
 				show_menu_bol: false,
 				lgMedia: window.matchMedia('(min-width: 1025px)').matches,
+				mbMedia: window.matchMedia('(max-width: 640px)').matches,
 				map: null,
 				localPosition: '',
 				storesList: [],
@@ -106,6 +107,9 @@
 			const _self = this;
 			window.matchMedia('(min-width: 1025px)').addListener(()=>{
 				_self.lgMedia = window.matchMedia('(min-width: 1025px)').matches;
+			});
+			window.matchMedia('(max-width: 640px)').addListener(()=>{
+				_self.mbMedia = window.matchMedia('(max-width: 640px)').matches;
 			});
 			_self.initData();
 			_self.initMap();
@@ -146,6 +150,9 @@
 			        resizeEnable: true,
 			        zoom:16
 			 	});
+			 	if(this.mbMedia){
+					this.map.setZoom(13);
+				}
 
 				// 控件、地理定位、门店列表
 				_self.addZoomControl();

@@ -144,7 +144,7 @@
 					_self.errorTip = true;
 					setTimeout(()=>{
 						_self.errorTip = false;
-					}, 1200);
+					}, 2000);
 					return;
 				}
 
