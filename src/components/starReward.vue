@@ -4,7 +4,8 @@
 			<table class="star-gain">
 				<thead>
 					<tr>
-						<td colspan="4">获取星星</td>
+						<td colspan="4" v-if="!mbMedia">获取星星</td>
+						<td colspan="3" v-if="mbMedia">获取星星</td>
 						<td class="toggle-btn" @click="toggleIcon(0)" :class="{'showStarRec': showStarRec[0]}">
 							<img src="@/assets/icons/icon-chevron-down.svg">
 						</td>
@@ -15,7 +16,7 @@
 						<td colspan="5">您目前没有任何的获取星星记录，到邻近的星巴克消费吧。</td>
 					</tr>
 					<tr v-for="(item, index) in RewardStarRecord" v-show="RewardStarRecord.length != 0">
-						<td>
+						<td v-if="!mbMedia">
 							<img src="@/assets/icons/icon-rewards.svg">
 						</td>
 						<td colspan="2">
@@ -65,6 +66,7 @@
 	export default {
 		data(){
 			return {
+				mbMedia: window.matchMedia('(max-width: 640px)').matches,
 				StarLev: '',
 				RewardStarRecord: '',
 				loading: false,
@@ -75,6 +77,9 @@
 			}
 		},
 		mounted(){
+			window.matchMedia('(max-width: 640px)').addListener(()=>{
+				this.mbMedia = window.matchMedia('(max-width: 640px)').matches;
+			});
 			this.toggleArticle_JQListener();
 			this.checkLogin();
 		},

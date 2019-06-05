@@ -186,6 +186,34 @@
 			width: 100%;
 		}
 	}
+
+	@media (max-width: 640px)
+	{
+		.masker-layer{
+			left: 0;
+			width: 100%;
+		}
+
+		.masker-layer .dialog {
+			width: 90%;
+			height: 80%;
+			margin-bottom: 15%;
+			overflow: scroll;
+		}
+
+		.masker-layer .dialog .body {
+			padding: 0 16px;
+		}
+
+		.masker-layer .dialog header .text-desc h3 {
+			font-size: 1.6rem;
+		}
+
+		.masker-layer .dialog header .text-desc p {
+			font-size: 1.2rem;
+		}
+		
+	}
 </style>
 <script>
 	import axios from 'axios'

@@ -4,11 +4,11 @@
 			<table>
 				<thead>
 					<tr>
-						<td></td>
+						<td v-if="!mbMedia"></td>
 						<td>日期</td>	
 						<td>门店名称</td>
 						<td>金额</td>
-						<td>累计星星</td>
+						<td v-if="!mbMedia">累计星星</td>
 					</tr>
 				</thead>
 				<tbody>
@@ -16,7 +16,7 @@
 						<td colspan="5">您目前没有任何的消费记录，到邻近的星巴克消费吧。</td>
 					</tr>
 					<tr v-for="(item, index) in ExpensesRecord">
-						<td>
+						<td v-if="!mbMedia">
 							<img src="@/assets/icons/icon-coffee-and-phone.svg">
 						</td>
 						<td>
@@ -29,7 +29,7 @@
 						<td>
 							￥{{item.TotalPrice.toFixed(2)}}
 						</td>
-						<td @click="showRecordDetail(item)">
+						<td @click="showRecordDetail(item)" v-if="!mbMedia">
 							<img src="@/assets/icons/icon-info-green.svg">
 						</td>
 					</tr>
@@ -50,6 +50,7 @@
 	export default {
 		data(){
 			return {
+				mbMedia: window.matchMedia('(max-width: 640px)').matches,
 				ExpensesRecord: '',
 				loading: false,
 				show: false,
@@ -57,6 +58,9 @@
 			}
 		},
 		mounted(){
+			window.matchMedia('(max-width: 640px)').addListener(()=>{
+				this.mbMedia = window.matchMedia('(max-width: 640px)').matches;
+			});
 			this.checkLogin();
 		},
 		components: {

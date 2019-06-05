@@ -1196,7 +1196,7 @@ a.emphas:hover {
 .account-summary-login .wrapper {
 	width: 100%;
 	max-width: 768px;
-	margin: 0 auto;
+	margin: 0 auto 40px;
 	padding: 0 24px;
 }
 
@@ -1486,10 +1486,14 @@ a.emphas:hover {
 	position: relative;
 	float: left;
 	width: 72px;
-	margin-right: 20px;
+	margin-right: 24px;
 	text-align: center;
 	white-space: nowrap;
 	cursor: pointer;
+}
+
+.account-info-login .privileges .privileges-items .sBadge-member .items:nth-child(4n+4) {
+	margin-right: 0;
 }
 
 .account-info-login .privileges .privileges-items .sBadge-member .items .sBadge {
@@ -1721,7 +1725,8 @@ a.emphas:hover {
 .account-activity-login .body ul.list li img {
 	position: absolute;;
 	left: 24px;
-	top: 12px;
+	top: 50%;
+	margin-top: -15px;
 	width: 30px;
 	height: 30px;
 }
@@ -1969,7 +1974,6 @@ a.emphas:hover {
 
 .rewards-record .card table.rewards-list tbody td:nth-child(1) img {
 	width: 30px;
-	max-width: 100%;
 	margin:-3px -3px 0;
 }
 
@@ -2079,6 +2083,15 @@ a.emphas:hover {
 	margin-top: -18px;
 	width: 36px;
 	height: 36px;
+}
+
+.profile .wrapper ul>li .icon.arrow-grey {
+	position: absolute;
+	top: 50%;
+	right: 12px;
+	margin-top: -10px;
+	width: 20px;
+	height: 20px;
 }
 
 /*
@@ -2540,6 +2553,10 @@ a.emphas:hover {
 		font-weight: 400;
 	}
 
+	.account-summary-login .wrapper {
+		margin-bottom: 48px;
+	}
+
 	.account-svc-login .body .scroll .card-item {
 		max-width: 240px;
 		margin: 0 16px;
@@ -2563,6 +2580,59 @@ a.emphas:hover {
 		float: none;
 		width: 100%;
 	}
+
+	.consume-record .card table tr>td {
+		font-size: 1.2rem;
+	}
+
+	.consume-record .card.consume table tbody tr>td:nth-child(3) {
+		text-align: left;
+		font-size: 1.6rem;
+		font-family: "Gothma-bold";
+	}
+
+	.consume-record .card.gain table tbody tr>td:nth-child(1) {
+		font-size: 1.2rem;
+		font-weight: 400;
+	}
+
+	.consume-record .card.gain table tbody tr>td:nth-child(1) h4 {
+		font-size: 1.6rem;
+	}
+
+	.consume-record .card.gain table tbody tr>td:nth-child(1) {
+		font-weight: 400;
+	}
+
+	.consume-record .card.gain table tbody tr>td:nth-child(2) {
+		font-size: 2.0rem;
+		font-family: "Gothma-bold";
+	}
+
+	.consume-record .card.gain table tbody tr>td:nth-child(3) img {
+	    width: 22px;
+	    height: 22px;
+	    margin-top: 6px;
+	}
+
+	.rewards-record .card table.rewards-list tbody td:nth-child(1) img {
+	    width: 30px;
+	    margin: -3px 16px 0 -3px;
+	}
+
+	.profile .wrapper ul>li .icon {
+		position: absolute;
+		top: 50%;
+		right: 36px;
+		margin-top: -18px;
+		width: 36px;
+		height: 36px;
+	}
+
+	.profile .wrapper {
+		margin-bottom: 56px;
+	}
+
 }
 
 @media (max-width: 512px)
@@ -2579,11 +2649,14 @@ a.emphas:hover {
 		position: relative;
 		float: left;
 		width: 72px;
-		margin-right: 24px;
-		margin-bottom: 12px;
+		margin: 0 12% 12px;
 		text-align: center;
 		white-space: nowrap;
 		cursor: pointer;
+	}
+
+	.account-info-login .privileges .privileges-items .sBadge-member .items:nth-child(2n+3) {
+		clear: left;
 	}
 
 	.account-info-login .corner {
@@ -2601,4 +2674,33 @@ a.emphas:hover {
 		line-height: 180%;
 		letter-spacing: 0.4px;
 	}
+
+	.account-activity-login .body ul.list li h4 span {
+		display: inline-block;
+		max-width: 176px;
+	}
+
+	.account-activity-login .body ul.list li h4 span:nth-child(2) {
+		position: absolute;
+		right: -12px;
+	}
+	
 }
+
+@media(max-width: 372px) {
+
+	.account-info-login .privileges .privileges-items .sBadge-member .items {
+		margin: 0 20px 12px 20px;
+	}
+
+	.account-info-login .privileges .privileges-items .sBadge-member .items {
+		margin: 0 20px 12px 20px;
+	}
+
+	.account-activity-login .body ul.list li h4 span {
+		display: inline-block;
+		max-width: 120px;
+	}
+
+}
+

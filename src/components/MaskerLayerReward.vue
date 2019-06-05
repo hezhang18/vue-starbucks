@@ -117,11 +117,35 @@
 		line-height: 160%;
 		letter-spacing: 0.4px;
 	}
+	
 	@media (max-width: 1024px)
 	{
 		.masker-layer-rewd {
 			left: 0;
 			width: 100%;
+		}
+	}
+
+	@media (max-width: 640px)
+	{
+		.masker-layer-rewd {
+			left: 0;
+			width: 100%;
+		}
+
+		.masker-layer-rewd .dialog-rewd {
+			width: 90%;
+			height: 80%;
+			margin-bottom: 15%;
+			overflow: scroll;
+		}
+
+		.masker-layer-rewd .dialog-rewd header .text-desc h3 {
+			font-size: 1.6rem;
+		}
+
+		.masker-layer-rewd .dialog-rewd header .text-desc p {
+			font-size: 1.2rem;
 		}
 	}
 </style>

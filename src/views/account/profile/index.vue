@@ -55,6 +55,7 @@
 								<span class="desc">关联、删除、报失你的星享卡</span>
 							</div>
 							<img class="icon" src="@/assets/icons/ic_msr.svg">
+							<img class="icon arrow-grey" src="@/assets/icons/icon-right-arrow-gray.svg" v-if="mbMedia">
 						</li>
 						<li @click="pageRedir(13)">
 							<div class="text">
@@ -62,6 +63,7 @@
 								<span class="desc">绑定、删除、报失你的星礼卡，查看消费记录</span>
 							</div>
 							<img class="icon" src="@/assets/icons/ic_svc.svg">
+							<img class="icon arrow-grey" src="@/assets/icons/icon-right-arrow-gray.svg" v-if="mbMedia">
 						</li>
 						<li>
 							<div class="text">
@@ -69,6 +71,7 @@
 								<span class="desc">修改个人资料，查看账户周年日</span>
 							</div>
 							<img class="icon" src="@/assets/icons/ic_profile.svg">
+							<img class="icon arrow-grey" src="@/assets/icons/icon-right-arrow-gray.svg" v-if="mbMedia">
 						</li>
 						<li>
 							<div class="text">
@@ -76,6 +79,7 @@
 								<span class="desc">管理用户名，邮箱地址，手机号和密码</span>
 							</div>
 							<img class="icon" src="@/assets/icons/ic_security.svg">
+							<img class="icon arrow-grey" src="@/assets/icons/icon-right-arrow-gray.svg" v-if="mbMedia">
 						</li>
 						<li>
 							<div class="text">
@@ -83,6 +87,7 @@
 								<span class="desc">添加、修改、删除地址</span>
 							</div>
 							<img class="icon" src="@/assets/icons/ic_address.svg">
+							<img class="icon arrow-grey" src="@/assets/icons/icon-right-arrow-gray.svg" v-if="mbMedia">
 						</li>
 						<li>
 							<div class="text">
@@ -90,6 +95,7 @@
 								<span class="desc">更改通信语言和订阅方式，登出设备，注销星享卡账户</span>
 							</div>
 							<img class="icon" src="@/assets/icons/ic_setting.svg">
+							<img class="icon arrow-grey" src="@/assets/icons/icon-right-arrow-gray.svg" v-if="mbMedia">
 						</li>
 					</ul>
 				</div>
@@ -131,6 +137,7 @@
 			return {
 				show_menu_bol: false,
 				lgMedia: window.matchMedia('(min-width: 1025px)').matches,
+				mbMedia: window.matchMedia('(max-width: 640px)').matches,
 				curActive: 'profile',
 				welcome: [
 					'早上好!',
@@ -151,6 +158,9 @@
 			const _self = this;
 			window.matchMedia('(min-width: 1025px)').addListener(()=>{
 				_self.lgMedia = window.matchMedia('(min-width: 1025px)').matches;
+			});
+			window.matchMedia('(max-width: 640px)').addListener(()=>{
+				_self.mbMedia = window.matchMedia('(max-width: 640px)').matches;
 			});
 			this.checkLogin();
 		},
