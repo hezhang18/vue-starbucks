@@ -69,6 +69,8 @@
 	import NavContainer from '@/components/navContainer'
 	import NavOverlay from '@/components/NavOverlay'
 	import NavMobile from '@/components/navMobile'
+	import TokenTools from '@/utils/tokenTools'
+	import CookieTools from '@/utils/cookieTools'
 	import axios from 'axios'
 
 	export default {
@@ -120,32 +122,46 @@
 				this.$store.commit('pageRedir', item);
 			},
 			checkLogin(){
-				axios.post("users/checkLogin").then((res)=>{
-					let data = res.data;
-					if(data.status == '0'){
-						let res = data.result;
-						this.$store.commit('updateUserInfo', res.NickName);
+				let ReqToken = TokenTools.TokenSetting('sbux_token_cl');
+				
+				if(ReqToken){
+					axios.post("users/checkLogin",{
+						ReqToken: ReqToken
+					}).then((res)=>{
+						let data = res.data;
+						if(data.status == '0'){
+							let res = data.result;
+							this.$store.commit('updateUserInfo', res.NickName);
 
-						//如果当前为登录状态，则进一步获取用户信息
-						this.getAccountInfo();
-					}else{
-						this.$store.commit('updateUserInfo', '');
-					}
-				});
+							//如果当前为登录状态，则进一步获取用户信息
+							this.getAccountInfo();
+						}else{
+							this.$store.commit('updateUserInfo', '');
+						}
+						CookieTools.DelCookie('sbux_token_cl');
+					})
+				}
 			},
 			getAccountInfo(){
 				this.loading = true;
-				axios.post("users/accountInfo").then((res)=>{
-					let data = res.data;
-					if(data.status == '0'){
-						let res = data.result;
-						/* ***管理星礼卡部分*** */
-						this.SvcCard = res.SvcCard;
-						this.CardNum = res.SvcCard.length;
 
-						this.loading = false;
-					}
-				});
+				let ReqToken = TokenTools.TokenSetting('sbux_token_gai');
+				
+				if(ReqToken){
+					axios.post("users/accountInfo",{
+						ReqToken: ReqToken
+					}).then((res)=>{
+						let data = res.data;
+						if(data.status == '0'){
+							let res = data.result;
+							/* ***管理星礼卡部分*** */
+							this.SvcCard = res.SvcCard;
+							this.CardNum = res.SvcCard.length;
+							CookieTools.DelCookie('sbux_token_gai');
+							this.loading = false;
+						}
+					})
+				}
 			}
 		}
 	}

@@ -36,7 +36,7 @@
 			}
 		},
 		mounted(){
-			// this.checkLogin
+			
 		},
 		methods: {
             pageRedir(item){

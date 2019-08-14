@@ -3,6 +3,7 @@ require('./linkedDB');
 let express = require('express');
 let router = express.Router();
 let Users = require('../models/users');
+let CheckTools = require('../utils/checkTools');
 let AutoLogin_Global = false;
 
 router.post('/login', function(req, res, next) {
@@ -11,8 +12,41 @@ router.post('/login', function(req, res, next) {
         Password: req.body.Password
     }
     let AutoLogin = req.body.AutoLogin;
-    AutoLogin_Global = req.body.AutoLogin;
+	AutoLogin_Global = req.body.AutoLogin;
 
+	//Web安全，用户输入检查
+	let UserNameCheckRes = CheckTools.UserNameRegExp.test(param.UserName),
+		PasswordCheckRes = CheckTools.PasswordRegExp.test(param.Password);
+	if(!UserNameCheckRes || !PasswordCheckRes){
+		res.json({
+			status: 1,
+			msg: 'Invalid user name or password!'
+		});
+		return ;
+	}
+
+	//Web安全，同源检测
+	let domainCheckRes = CheckTools.AllowDomainCheck(req.headers.origin, req.headers.referer);
+	if(!domainCheckRes){
+		res.json({
+			status: 1,
+			msg: 'origin response, cross domain illegal request!'
+		});
+		return ;
+	}
+
+	//Web安全，CSRF Token验证
+	// let bodyToken = req.body.ReqToken,
+	// 	cookieToken = req.cookies.sbux_token_lg;
+	
+	// if(bodyToken === undefined || cookieToken === undefined || bodyToken !== cookieToken){
+	// 	res.json({
+	// 		status: 1,
+	// 		msg: 'token response, cross domain illegal request!'
+	// 	});
+	// 	return ;
+	// }
+	
     Users.findOne(param, function(err, doc){
         if(err){
 			res.json({
@@ -43,10 +77,33 @@ router.post('/login', function(req, res, next) {
 });
 
 router.post('/logout', function(req, res, next){
+	//Web安全，同源检测
+	let domainCheckRes = CheckTools.AllowDomainCheck(req.headers.origin, req.headers.referer);
+	if(!domainCheckRes){
+		res.json({
+			status: 1,
+			msg: 'origin response, cross domain illegal request!'
+		});
+		return ;
+	}
+
+	//Web安全，CSRF Token验证
+	let bodyToken = req.body.ReqToken,
+		cookieToken = req.cookies.sbux_token_lo;
+	
+	if(bodyToken === undefined || cookieToken === undefined || bodyToken !== cookieToken){
+		res.json({
+			status: 1,
+			msg: 'token response, cross domain illegal request!'
+		});
+		return ;
+	}
+
 	res.cookie("UserID", "", {
 		path: "/",
 		maxAge: -1
 	});
+
 	res.cookie("NickName", "", {
 		path: "/",
 		maxAge: -1
@@ -59,10 +116,31 @@ router.post('/logout', function(req, res, next){
 });
 
 router.post('/checkLogin', function(req, res, next){
+	//Web安全，同源检测
+	let domainCheckRes = CheckTools.AllowDomainCheck(req.headers.origin, req.headers.referer);
+	if(!domainCheckRes){
+		res.json({
+			status: 1,
+			msg: 'origin response, cross domain illegal request!'
+		});
+		return ;
+	}
+
+	//Web安全，CSRF Token验证
+	let bodyToken = req.body.ReqToken,
+		cookieToken = req.cookies.sbux_token_cl;
+	
+	if(bodyToken === undefined || cookieToken === undefined || bodyToken !== cookieToken){
+		res.json({
+			status: 1,
+			msg: 'token response, cross domain illegal request!'
+		});
+		return ;
+	}
+
 	if(req.cookies.UserID){
 		//用户活跃期间延长登录时间
 		updateCookie(res, req.cookies, AutoLogin_Global);
-
 		res.json({
 			status: 0,
 			msg: '',
@@ -83,7 +161,8 @@ function updateCookie(response, data, autoLogin){
 	if(autoLogin){
 		response.cookie("UserID", data.UserID, {
 			path: '/',
-			maxAge: 1000*60*60*24*3
+			maxAge: 1000*60*60*24*3,
+			httpOnly: true  //Web安全，防止xss后的cookie劫持
 		});
 		response.cookie("NickName", data.NickName, {
 			path: '/',
@@ -92,7 +171,8 @@ function updateCookie(response, data, autoLogin){
 	}else{
 		response.cookie("UserID", data.UserID, {
 			path: '/',
-			maxAge: 1000*60*60*3
+			maxAge: 1000*60*60*3,
+			httpOnly: true  //Web安全，防止xss后的cookie劫持
 		});
 		response.cookie("NickName", data.NickName, {
 			path: '/',
@@ -102,9 +182,31 @@ function updateCookie(response, data, autoLogin){
 }
 
 router.post('/accountInfo', function(req, res, next) {
-    let param = {
+	//Web安全，同源检测
+	let domainCheckRes = CheckTools.AllowDomainCheck(req.headers.origin, req.headers.referer);
+	if(!domainCheckRes){
+		res.json({
+			status: 1,
+			msg: 'origin response, cross domain illegal request!'
+		});
+		return ;
+	}
+
+	//Web安全，CSRF Token验证
+	let bodyToken = req.body.ReqToken,
+		cookieToken = req.cookies.sbux_token_gai;
+	
+	if(bodyToken === undefined || cookieToken === undefined || bodyToken !== cookieToken){
+		res.json({
+			status: 1,
+			msg: 'token response, cross domain illegal request!'
+		});
+		return ;
+	}
+	
+	let param = {
         UserID: req.cookies.UserID
-    }
+	}
 
     Users.findOne(param, function(err, doc){
         if(err){
@@ -136,6 +238,28 @@ router.post('/accountInfo', function(req, res, next) {
 });
 
 router.post('/checkExpireDate', function(req, res, next){
+	//Web安全，同源检测
+	let domainCheckRes = CheckTools.AllowDomainCheck(req.headers.origin, req.headers.referer);
+	if(!domainCheckRes){
+		res.json({
+			status: 1,
+			msg: 'origin response, cross domain illegal request!'
+		});
+		return ;
+	}
+
+	//Web安全，CSRF Token验证
+	let bodyToken = req.body.ReqToken,
+		cookieToken = req.cookies.sbux_token_ce;
+	
+	if(bodyToken === undefined || cookieToken === undefined || bodyToken !== cookieToken){
+		res.json({
+			status: 1,
+			msg: 'token response, cross domain illegal request!'
+		});
+		return ;
+	}
+	
 	let param = {
         UserID: req.cookies.UserID
     }
@@ -269,7 +393,7 @@ function updateExpireDate(MemberShipExpireDate, MyRewardsExpireDateArr, UserID){
 			updateExec();
 		}
 	}
-	console.log("complete")
+	
 	return 'complete';
 }
 

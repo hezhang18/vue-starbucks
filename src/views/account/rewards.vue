@@ -64,6 +64,8 @@
 	import NavOverlay from '@/components/NavOverlay'
 	import NavMobile from '@/components/navMobile'
 	import RewardsRecord from '@/components/rewardsRecord'
+	import TokenTools from '@/utils/tokenTools'
+	import CookieTools from '@/utils/cookieTools'
 	import axios from 'axios'
 
 	export default {
@@ -129,16 +131,23 @@
 				this.$store.commit('pageRedir', item);
 			},
 			checkLogin(){
-				axios.post("users/checkLogin").then((res)=>{
-					let data = res.data;
-					if(data.status == '0'){
-						let res = data.result;
-						this.$store.commit('updateUserInfo', res.NickName);
-						this.getHelloWord();
-					}else{
-						this.$store.commit('updateUserInfo', '');
-					}
-				});
+				let ReqToken = TokenTools.TokenSetting('sbux_token_cl');
+				
+				if(ReqToken){
+					axios.post("users/checkLogin",{
+						ReqToken: ReqToken
+					}).then((res)=>{
+						let data = res.data;
+						if(data.status == '0'){
+							let res = data.result;
+							this.$store.commit('updateUserInfo', res.NickName);
+							this.getHelloWord();
+						}else{
+							this.$store.commit('updateUserInfo', '');
+						}
+						CookieTools.DelCookie('sbux_token_cl');
+					})
+				}
 			},
 			getHelloWord(){
 				let time = new Date(),

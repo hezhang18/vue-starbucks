@@ -61,6 +61,8 @@
 </template>
 
 <script>
+	import TokenTools from '@/utils/tokenTools'
+	import CookieTools from '@/utils/cookieTools'
 	import axios from 'axios'
 
 	export default {
@@ -93,30 +95,45 @@
 				this.showStarRec[index] = !this.showStarRec[index];
 			},
 			checkLogin(){
-				axios.post("users/checkLogin").then((res)=>{
-					let data = res.data;
-					if(data.status == '0'){
-						let res = data.result;
-						this.$store.commit('updateUserInfo', res.NickName);
-						//如果当前为登录状态，则进一步获取用户信息
-						this.getAccountInfo();
-					}else{
-						this.$store.commit('updateUserInfo', '');
-					}
-				});
+				let ReqToken = TokenTools.TokenSetting('sbux_token_cl');
+				
+				if(ReqToken){
+					axios.post("users/checkLogin", {
+						ReqToken: ReqToken
+					}).then((res)=>{
+						let data = res.data;
+						if(data.status == '0'){
+							let res = data.result;
+							this.$store.commit('updateUserInfo', res.NickName);
+							//如果当前为登录状态，则进一步获取用户信息
+							this.getAccountInfo();
+						}else{
+							this.$store.commit('updateUserInfo', '');
+						}
+						CookieTools.DelCookie('sbux_token_cl');
+					})
+				}
 			},
 			getAccountInfo(){
 				this.loading = true;
-				axios.post("users/accountInfo").then((res)=>{
-					let data = res.data;
-					if(data.status == '0'){
-						let res = data.result;
-						this.StarLev = res.MemberShip.StarLevel;
-						// this.RewardStarRecord = res.RewardStarRecord;
-						// 好礼星星，数据库暂时没有相关数据
-						this.loading = false;
-					}
-				});
+
+				let ReqToken = TokenTools.TokenSetting('sbux_token_gai');
+				
+				if(ReqToken){
+					axios.post("users/accountInfo",{
+						ReqToken: ReqToken
+					}).then((res)=>{
+						let data = res.data;
+						if(data.status == '0'){
+							let res = data.result;
+							this.StarLev = res.MemberShip.StarLevel;
+							// this.RewardStarRecord = res.RewardStarRecord;
+							// 好礼星星，数据库暂时没有相关数据
+							this.loading = false;
+						}
+						CookieTools.DelCookie('sbux_token_gai');
+					})
+				}
 			}
 		}
 	}

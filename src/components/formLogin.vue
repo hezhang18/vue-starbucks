@@ -33,7 +33,10 @@
 <script>
 
 	import axios from 'axios'
-
+	import CheckTools from '@/utils/checkTools'
+	import TokenTools from '@/utils/tokenTools'
+	import CookieTools from '@/utils/cookieTools'
+	
 	export default {
 		data(){
 			return {
@@ -138,14 +141,15 @@
 				},100);
 			},
 			login(){
-				let _self = this;
-
-				if(!_self.username || !_self.password){
+				let _self = this,
+					UserNameCheckRes = CheckTools.UserNameRegExp.test(_self.username),
+					PasswordCheckRes = CheckTools.PasswordRegExp.test(_self.password);
+				if(!UserNameCheckRes || !PasswordCheckRes){
 					_self.errorTip = true;
 					setTimeout(()=>{
 						_self.errorTip = false;
 					}, 2000);
-					return;
+					return ;
 				}
 
 				_self.loading = true;
@@ -153,10 +157,9 @@
 				axios.post("/users/login", {
 					UserName: _self.username,
 					Password: _self.password,
-					AutoLogin: _self.autoLogin
+					AutoLogin: _self.autoLogin,
 				}).then((res)=>{
 					let data = res.data;
-					
 					if(data.status == '0'){
 						let res = data.result;
 						_self.$store.commit('updateUserInfo', res.NickName);

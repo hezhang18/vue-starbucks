@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import axios from 'axios'
+import TokenTools from '@/utils/tokenTools'
+import CookieTools from '@/utils/cookieTools'
 
 import Index from '@/views/index'
 import Stores from '@/views/stores/index'
@@ -129,34 +131,51 @@ const router = new Router({
       ]
     }
   ]
-})
+});
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(res => res.meta.requireAuth)) {
-    let UserID = getCookie('UserID');
-    if (UserID) {
-      next()
-    }else {
-      next({
-        path: '/account/login',
-        query: {redirect: to.fullPath}
+	if (to.matched.some(res => res.meta.requireAuth)) {
+    let loginState = false;
+    let ReqToken = TokenTools.TokenSetting('sbux_token_cl');
+				
+		if(ReqToken){
+      axios.post("users/checkLogin",{
+        ReqToken: ReqToken
+      }).then((res)=>{
+        let data = res.data;
+        if(data.status == '0'){
+          loginState = true;
+        }else{
+          loginState = false;
+        }
+        CookieTools.DelCookie('sbux_token_cl');
+      }).then(()=>{
+        if (loginState) {
+          next()
+        }else {
+          next({
+            path: '/account/login',
+            query: {redirect: to.fullPath}
+          })
+        }
       })
-    }
-  }else {
-    next()
-  }
+    }	
+	}else {
+		next()
+	}
 })
 
-function getCookie(cookieName) {
-  var strCookie = document.cookie;
-  var arrCookie = strCookie.split("; ");
-  for(var i = 0; i < arrCookie.length; i++){
-      var arr = arrCookie[i].split("=");
-      if(cookieName == arr[0]){
-          return arr[1];
-      }
-  }
-  return "";
-}
+// 使用HttpOnly后，JS无法获取cookie，所以下面的方案弃用
+// function getCookie(cookieName) {
+//   var strCookie = document.cookie;
+//   var arrCookie = strCookie.split("; ");
+//   for(var i = 0; i < arrCookie.length; i++){
+//       var arr = arrCookie[i].split("=");
+//       if(cookieName == arr[0]){
+//           return arr[1];
+//       }
+//   }
+//   return "";
+// }
 
 export default router

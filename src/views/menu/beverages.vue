@@ -46,7 +46,7 @@
 							<ul class="products" v-if="getCurMenuList(index)">
 								<li v-for="item in $store.curMenuList">
 									<a href="javascript:;">
-										<img :src="'/static/images/products/'+item.ProductImage" alt="">
+										<img :src="'/static/images/products/'+item.ProductImage">
 										<span>{{item.ProductName}}</span>
 									</a>
 								</li>

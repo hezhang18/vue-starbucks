@@ -304,6 +304,8 @@
 	import NavContainer from '@/components/navContainer'
 	import NavOverlay from '@/components/NavOverlay'
 	import NavMobile from '@/components/navMobile'
+	import TokenTools from '@/utils/tokenTools'
+	import CookieTools from '@/utils/cookieTools'
 	import axios from 'axios'
 
 	export default {
@@ -385,30 +387,44 @@
 				this.$store.commit('pageRedir', item);
 			},
 			checkLogin(){
-				axios.post("users/checkLogin").then((res)=>{
-					let data = res.data;
-					if(data.status == '0'){
-						let res = data.result;
-						this.$store.commit('updateUserInfo', res.NickName);
+				let ReqToken = TokenTools.TokenSetting('sbux_token_cl');
+				
+				if(ReqToken){
+					axios.post("users/checkLogin",{
+						ReqToken: ReqToken
+					}).then((res)=>{
+						let data = res.data;
+						if(data.status == '0'){
+							let res = data.result;
+							this.$store.commit('updateUserInfo', res.NickName);
 
-						this.getHelloWord();
-						this.checkExpire();
-						
-					}else{
-						this.$store.commit('updateUserInfo', '');
-					}
-				});
+							this.getHelloWord();
+							this.checkExpire();
+
+							CookieTools.DelCookie('sbux_token_cl');
+						}else{
+							this.$store.commit('updateUserInfo', '');
+						}
+					})
+				}
+				
 			},
 			checkExpire(){
 				this.loading = true;
-				axios.post("users/checkExpireDate").then((res)=>{
-					let data = res.data;
-					if(data.status == '0'){
-						let res = data.result,
-							state = res.state;
-						this.getAccountInfo();
-					}
-				})
+
+				let ReqToken = TokenTools.TokenSetting('sbux_token_ce');
+				
+				if(ReqToken){
+					axios.post("users/checkExpireDate", {
+						ReqToken: ReqToken
+					}).then((res)=>{
+						let data = res.data;
+						if(data.status == '0'){
+							CookieTools.DelCookie('sbux_token_ce');
+							this.getAccountInfo();
+						}
+					})
+				}
 			},
 			getHelloWord(){
 				let time = new Date(),
@@ -431,41 +447,49 @@
 			},
 			getAccountInfo(){
 				this.loading = true;
-				axios.post("users/accountInfo").then((res)=>{
-					let data = res.data;
-					if(data.status == '0'){
-						let res = data.result;
 
-						/* ***星级部分*** */
-						this.StarLev = res.MemberShip.StarLevel;
-						this.StarsNum = res.MemberShip.StarsNumber;
-						this.StarsOfNextLevNeed = res.MemberShip.StarsOfNextLevNeed;
-						this.ExpireDate = res.MemberShip.ExpireDate;
-						this.starLevRender();
+				let ReqToken = TokenTools.TokenSetting('sbux_token_gai');
+				
+				if(ReqToken){
+					axios.post("users/accountInfo", {
+						ReqToken: ReqToken
+					}).then((res)=>{
+						let data = res.data;
+						if(data.status == '0'){
+							let res = data.result;
 
-						/* ***管理星礼卡部分*** */
-						this.SvcCard = res.SvcCard;
-						this.CardNum = res.SvcCard.length;
+							/* ***星级部分*** */
+							this.StarLev = res.MemberShip.StarLevel;
+							this.StarsNum = res.MemberShip.StarsNumber;
+							this.StarsOfNextLevNeed = res.MemberShip.StarsOfNextLevNeed;
+							this.ExpireDate = res.MemberShip.ExpireDate;
+							this.starLevRender();
 
-						/* ***星享好礼部分*** */
-						let MyRewards = res.MyRewards,
-							AvlRewd = [];
+							/* ***管理星礼卡部分*** */
+							this.SvcCard = res.SvcCard;
+							this.CardNum = res.SvcCard.length;
 
-						for(let i = 0; i < MyRewards.length; i++){
-							if(MyRewards[i].State === 'AVL'){
-								AvlRewd.push(MyRewards[i]);
+							/* ***星享好礼部分*** */
+							let MyRewards = res.MyRewards,
+								AvlRewd = [];
+							for(let i = 0; i < MyRewards.length; i++){
+								if(MyRewards[i].State === 'AVL'){
+									AvlRewd.push(MyRewards[i]);
+								}
 							}
+							this.MyRewards = AvlRewd;
+							this.RewardsNum = AvlRewd.length;
+
+							/* ***消费记录部分*** */
+							this.ExpensesRecord = res.ExpensesRecord;
+
+							/* ***删除验证使用后的token*** */
+							CookieTools.DelCookie('sbux_token_gai');
+
+							this.loading = false;
 						}
-
-						this.MyRewards = AvlRewd;
-						this.RewardsNum = AvlRewd.length;
-
-						/* ***消费记录部分*** */
-						this.ExpensesRecord = res.ExpensesRecord;
-
-						this.loading = false;
-					}
-				});
+					})
+				}	
 			},
 			starLevRender(){
 				let whiteWD = '0%',

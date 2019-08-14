@@ -83,6 +83,8 @@
 
 <script>
 	import axios from 'axios'
+	import TokenTools from '@/utils/tokenTools'
+	import CookieTools from '@/utils/cookieTools'
 
 	export default {
 		data(){
@@ -100,15 +102,23 @@
 				this.$store.commit('pageRedir', item);
 			},
 			logout(){
-				axios.post("users/logout").then((res)=>{
-					let data = res.data;
-					if(data.status == '0'){
-						this.$store.commit('updateUserInfo', '');
-						this.$store.commit('pageRedir', 0);
-					}else{
-						console.log('登出失败');
-					}
-				});
+				let ReqToken = TokenTools.TokenSetting('sbux_token_lo');
+				
+				if(ReqToken){
+					axios.post("users/logout",{
+						ReqToken:ReqToken
+					}).then((res)=>{
+						let data = res.data;
+						if(data.status == '0'){
+							this.$store.commit('updateUserInfo', '');
+							this.$store.commit('pageRedir', 0);
+						}else{
+							console.log('登出失败');
+						}
+						CookieTools.DelCookie('sbux_token_lo');
+					})
+				}
+				
 			}
 		}
 	}

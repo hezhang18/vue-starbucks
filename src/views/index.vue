@@ -85,6 +85,8 @@
 	import Program from '@/components/program'
 	import Tmall from '@/components/tmall'
 	import Coffeehouse from '@/components/coffeehouse'
+	import TokenTools from '@/utils/tokenTools'
+	import CookieTools from '@/utils/cookieTools'
 	import axios from 'axios'
 
 	export default {
@@ -159,68 +161,84 @@
 				this.$store.commit('pageRedir', item);
 			},
 			checkLogin(){
-				axios.post("users/checkLogin").then((res)=>{
-					let data = res.data;
-					if(data.status == '0'){
-						let res = data.result;
-						this.$store.commit('updateUserInfo', res.NickName);
-						//如果当前为登录状态，则进一步获取用户信息
-						this.accountInfoDisp();
-					}else{
-						this.$store.commit('updateUserInfo', '');
-					}
-				});
+				let ReqToken = TokenTools.TokenSetting('sbux_token_cl');
+				
+				if(ReqToken){
+					axios.post("users/checkLogin",{
+						ReqToken: ReqToken
+					}).then((res)=>{
+						let data = res.data;
+						if(data.status == '0'){
+							let res = data.result;
+							this.$store.commit('updateUserInfo', res.NickName);
+							//如果当前为登录状态，则进一步获取用户信息
+							this.accountInfoDisp();
+						}else{
+							this.$store.commit('updateUserInfo', '');
+						}
+						CookieTools.DelCookie('sbux_token_cl');
+					})
+				}
 			},
 			accountInfoDisp(){
 				this.loading = true;
-				axios.post("users/accountInfo").then((res)=>{
-					let data = res.data;
-					if(data.status == '0'){
-						let res = data.result;
-						/*
-							正常来讲，此处还应该先进行星级，礼品券的过期时间及是否可用等信息进行校验；
-							此外如果width值达到100%也应进行相关星级礼品券等信息的修改工作；
-							最后进行前端渲染。
-						*/
-						this.StarLev = res.MemberShip.StarLevel;
-						this.StarsNum = res.MemberShip.StarsNumber;
-						this.StarsOfNextLevNeed = res.MemberShip.StarsOfNextLevNeed;
-						
-						let MyRewards = res.MyRewards,
-							AvlRewd = [];
 
-						for(let i = 0; i < MyRewards.length; i++){
-							if(MyRewards[i].State === 'AVL'){
-								AvlRewd.push(MyRewards[i]);
+				let ReqToken = TokenTools.TokenSetting('sbux_token_gai');
+				
+				if(ReqToken){
+					axios.post("users/accountInfo",{
+						ReqToken: ReqToken
+					}).then((res)=>{
+						let data = res.data;
+						if(data.status == '0'){
+							let res = data.result;
+							/*
+								正常来讲，此处还应该先进行星级，礼品券的过期时间及是否可用等信息进行校验；
+								此外如果width值达到100%也应进行相关星级礼品券等信息的修改工作；
+								最后进行前端渲染。
+							*/
+							this.StarLev = res.MemberShip.StarLevel;
+							this.StarsNum = res.MemberShip.StarsNumber;
+							this.StarsOfNextLevNeed = res.MemberShip.StarsOfNextLevNeed;
+							
+							let MyRewards = res.MyRewards,
+								AvlRewd = [];
+
+							for(let i = 0; i < MyRewards.length; i++){
+								if(MyRewards[i].State === 'AVL'){
+									AvlRewd.push(MyRewards[i]);
+								}
 							}
+
+							this.MyRewardsNum = AvlRewd.length;
+
+
+							let width = (this.StarsNum/this.StarsOfNextLevNeed)*100 + '%';
+							let bgColor = '';
+
+							switch(this.StarLev){
+								case 'White':
+									bgColor = '#4F4F4F';
+									break;
+								case 'Green':
+									bgColor = '#00A862';
+									break;
+								case 'Gold':
+									bgColor = '#C3A75C';
+									break;
+							}
+
+							$('.gauge-fill').css({
+								'width': width,
+								'background': bgColor
+							});
+
+							CookieTools.DelCookie('sbux_token_gai');
+
+							this.loading = false;
 						}
-
-						this.MyRewardsNum = AvlRewd.length;
-
-
-						let width = (this.StarsNum/this.StarsOfNextLevNeed)*100 + '%';
-						let bgColor = '';
-
-						switch(this.StarLev){
-							case 'White':
-								bgColor = '#4F4F4F';
-								break;
-							case 'Green':
-								bgColor = '#00A862';
-								break;
-							case 'Gold':
-								bgColor = '#C3A75C';
-								break;
-						}
-
-						$('.gauge-fill').css({
-							'width': width,
-							'background': bgColor
-						});
-
-						this.loading = false;
-					}
-				});
+					})
+				}
 			}
 		}
 	}

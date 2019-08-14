@@ -127,6 +127,8 @@
 
 <script>
 	import MaskerLayer from '@/components/MaskerLayerReward'
+	import TokenTools from '@/utils/tokenTools'
+	import CookieTools from '@/utils/cookieTools'
 	import axios from 'axios'
 
 	export default {
@@ -165,46 +167,62 @@
 					this.showStarRec[index] = !this.showStarRec[index];
 			},
 			checkLogin(){
-				axios.post("users/checkLogin").then((res)=>{
-					let data = res.data;
-					if(data.status == '0'){
-						let res = data.result;
-						this.$store.commit('updateUserInfo', res.NickName);
-						this.getAccountInfo();
-					}else{
-						this.$store.commit('updateUserInfo', '');
-					}
-				});
+				let ReqToken = TokenTools.TokenSetting('sbux_token_cl');
+				
+				if(ReqToken){
+					axios.post("users/checkLogin",{
+						ReqToken: ReqToken
+					}).then((res)=>{
+						let data = res.data;
+						if(data.status == '0'){
+							let res = data.result;
+							this.$store.commit('updateUserInfo', res.NickName);
+							this.getAccountInfo();
+						}else{
+							this.$store.commit('updateUserInfo', '');
+						}
+						CookieTools.DelCookie('sbux_token_cl');
+					})
+				}
+				
 			},
 			getAccountInfo(){
 				this.loading = true;
-				axios.post("users/accountInfo").then((res)=>{
-					let data = res.data;
-					if(data.status == '0'){
-						let res = data.result;
-						
-						let MyRewards = res.MyRewards,
-							AvlRewd = [],
-							UsedRewd = [],
-							ExpRewd = [];
 
-						for(let i = 0; i < MyRewards.length; i++){
-							if(MyRewards[i].State === 'AVL'){
-								AvlRewd.push(MyRewards[i]);
-							}else if(MyRewards[i].State === 'USED'){
-								UsedRewd.push(MyRewards[i]);
-							}else if(MyRewards[i].State === 'EXP'){
-								ExpRewd.push(MyRewards[i]);
+				let ReqToken = TokenTools.TokenSetting('sbux_token_gai');
+				
+				if(ReqToken){
+					axios.post("users/accountInfo", {
+						ReqToken: ReqToken
+					}).then((res)=>{
+						let data = res.data;
+						if(data.status == '0'){
+							let res = data.result;
+							
+							let MyRewards = res.MyRewards,
+								AvlRewd = [],
+								UsedRewd = [],
+								ExpRewd = [];
+
+							for(let i = 0; i < MyRewards.length; i++){
+								if(MyRewards[i].State === 'AVL'){
+									AvlRewd.push(MyRewards[i]);
+								}else if(MyRewards[i].State === 'USED'){
+									UsedRewd.push(MyRewards[i]);
+								}else if(MyRewards[i].State === 'EXP'){
+									ExpRewd.push(MyRewards[i]);
+								}
 							}
-						}
-						this.AvlRewd = AvlRewd;
-						this.UsedRewd = UsedRewd;
-						this.ExpRewd = ExpRewd;
-						this.UnAvlRewd = [];
+							this.AvlRewd = AvlRewd;
+							this.UsedRewd = UsedRewd;
+							this.ExpRewd = ExpRewd;
+							this.UnAvlRewd = [];
 
-						this.loading = false;
-					}
-				});
+							this.loading = false;
+						}
+						CookieTools.DelCookie('sbux_token_gai');
+					})
+				}
 			},
 			showRecordDetail(item){
 				this.detailOfItem = item;
