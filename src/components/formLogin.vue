@@ -63,7 +63,7 @@
 			setTimeout(()=>{
 				this.username = 'ZhangHe';
 				this.password = 'HelloWorld';
-			}, 1500);
+			}, 1200);
 		},
 		methods: {
 			init(){
@@ -153,11 +153,11 @@
 				}
 
 				_self.loading = true;
-
+				
 				axios.post("/users/login", {
 					UserName: _self.username,
 					Password: _self.password,
-					AutoLogin: _self.autoLogin,
+					AutoLogin: _self.autoLogin
 				}).then((res)=>{
 					let data = res.data;
 					if(data.status == '0'){

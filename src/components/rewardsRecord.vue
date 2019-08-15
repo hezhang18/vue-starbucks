@@ -151,7 +151,7 @@
 		},
 		mounted(){
 			this.toggleArticle_JQListener();
-			this.checkLogin();
+			this.getAccountInfo();
 		},
 		components: {
 			MaskerLayer: MaskerLayer
@@ -165,26 +165,6 @@
 			},
 			toggleIcon(index){
 					this.showStarRec[index] = !this.showStarRec[index];
-			},
-			checkLogin(){
-				let ReqToken = TokenTools.TokenSetting('sbux_token_cl');
-				
-				if(ReqToken){
-					axios.post("users/checkLogin",{
-						ReqToken: ReqToken
-					}).then((res)=>{
-						let data = res.data;
-						if(data.status == '0'){
-							let res = data.result;
-							this.$store.commit('updateUserInfo', res.NickName);
-							this.getAccountInfo();
-						}else{
-							this.$store.commit('updateUserInfo', '');
-						}
-						CookieTools.DelCookie('sbux_token_cl');
-					})
-				}
-				
 			},
 			getAccountInfo(){
 				this.loading = true;

@@ -63,32 +63,12 @@
 			window.matchMedia('(max-width: 640px)').addListener(()=>{
 				this.mbMedia = window.matchMedia('(max-width: 640px)').matches;
 			});
-			this.checkLogin();
+			this.getAccountInfo();
 		},
 		components: {
 			MaskerLayer: MaskerLayer
 		},
 		methods: {
-			checkLogin(){
-				let ReqToken = TokenTools.TokenSetting('sbux_token_cl');
-				
-				if(ReqToken){
-					axios.post("users/checkLogin", {
-						ReqToken: ReqToken
-					}).then((res)=>{
-						let data = res.data;
-						if(data.status == '0'){
-							let res = data.result;
-							this.$store.commit('updateUserInfo', res.NickName);
-							//如果当前为登录状态，则进一步获取用户信息
-							this.getAccountInfo();
-						}else{
-							this.$store.commit('updateUserInfo', '');
-						}
-						CookieTools.DelCookie('sbux_token_cl');
-					})
-				}
-			},
 			getAccountInfo(){
 				this.loading = true;
 

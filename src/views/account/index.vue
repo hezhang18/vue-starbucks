@@ -366,7 +366,8 @@
 			window.matchMedia('(max-width: 640px)').addListener(()=>{
 				_self.mbMedia = window.matchMedia('(max-width: 640px)').matches;
 			});
-			this.checkLogin();
+			this.getHelloWord();
+			this.checkExpire();
 		},
 		components: {
 			NavContainer: NavContainer,
@@ -386,29 +387,6 @@
 				}
 				this.$store.commit('pageRedir', item);
 			},
-			checkLogin(){
-				let ReqToken = TokenTools.TokenSetting('sbux_token_cl');
-				
-				if(ReqToken){
-					axios.post("users/checkLogin",{
-						ReqToken: ReqToken
-					}).then((res)=>{
-						let data = res.data;
-						if(data.status == '0'){
-							let res = data.result;
-							this.$store.commit('updateUserInfo', res.NickName);
-
-							this.getHelloWord();
-							this.checkExpire();
-
-							CookieTools.DelCookie('sbux_token_cl');
-						}else{
-							this.$store.commit('updateUserInfo', '');
-						}
-					})
-				}
-				
-			},
 			checkExpire(){
 				this.loading = true;
 
@@ -423,6 +401,7 @@
 							CookieTools.DelCookie('sbux_token_ce');
 							this.getAccountInfo();
 						}
+						CookieTools.DelCookie('sbux_token_ce');
 					})
 				}
 			},
@@ -444,6 +423,7 @@
 				}
 
 				this.hello = this.welcome[index];
+				this.$store.commit('updateUserInfo', CookieTools.GetCookie('NickName'));
 			},
 			getAccountInfo(){
 				this.loading = true;
