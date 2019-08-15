@@ -34,18 +34,6 @@ router.post('/login', function(req, res, next) {
 		});
 		return ;
 	}
-
-	//Web安全，CSRF Token验证
-	// let bodyToken = req.body.ReqToken,
-	// 	cookieToken = req.cookies.sbux_token_lg;
-	
-	// if(bodyToken === undefined || cookieToken === undefined || bodyToken !== cookieToken){
-	// 	res.json({
-	// 		status: 1,
-	// 		msg: 'token response, cross domain illegal request!'
-	// 	});
-	// 	return ;
-	// }
 	
     Users.findOne(param, function(err, doc){
         if(err){
@@ -156,30 +144,6 @@ router.post('/checkLogin', function(req, res, next){
 		})
 	}
 });
-
-function updateCookie(response, data, autoLogin){
-	if(autoLogin){
-		response.cookie("UserID", data.UserID, {
-			path: '/',
-			maxAge: 1000*60*60*24*3,
-			httpOnly: true  //Web安全，防止xss后的cookie劫持
-		});
-		response.cookie("NickName", data.NickName, {
-			path: '/',
-			maxAge: 1000*60*60*24*3
-		});
-	}else{
-		response.cookie("UserID", data.UserID, {
-			path: '/',
-			maxAge: 1000*60*60*3,
-			httpOnly: true  //Web安全，防止xss后的cookie劫持
-		});
-		response.cookie("NickName", data.NickName, {
-			path: '/',
-			maxAge: 1000*60*60*3
-		});
-	}
-}
 
 router.post('/accountInfo', function(req, res, next) {
 	//Web安全，同源检测
@@ -310,6 +274,31 @@ router.post('/checkExpireDate', function(req, res, next){
 		}
     });
 });
+
+
+
+
+function updateCookie(response, data, autoLogin){
+	if(autoLogin){
+		response.cookie("UserID", data.UserID, {
+			path: '/',
+			maxAge: 1000*60*60*24*3,
+			httpOnly: true  //Web安全，防止xss后的cookie劫持
+		});
+		response.cookie("NickName", data.NickName, {
+			path: '/',
+			maxAge: 1000*60*60*24*3
+		});
+	}else{
+		response.cookie("UserID", data.UserID, {
+			path: '/',
+			httpOnly: true  //Web安全，防止xss后的cookie劫持
+		});
+		response.cookie("NickName", data.NickName, {
+			path: '/',
+		});
+	}
+}
 
 function getMyRewardsExpireDate(data){
 	let MyRewards = data.MyRewards,
