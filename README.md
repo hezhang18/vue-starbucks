@@ -43,4 +43,4 @@ npm run dev
 
 ```
 
-If you want to preview this website online, you can visit [my personal website](http://hppzhang.com).
+If you want to preview this website online, you can visit [my personal website](http://www.hppzhang.com).
