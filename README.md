@@ -17,28 +17,34 @@
 ``` bash
 # start database
 
-## unauthorized mode
+# unauthorized mode
 sudo mongod
 
-## authorized mode (recommend)
+# authorized mode (recommend)
 sudo mongod --auth
 
-## notes: change the 'password' in linkedDB.js (mongodb://Jeff:password@127.0.0.1:27017/vStarbucks) to the password corresponding to the local database.
+# notes: if you start the database using authorization mode, we need change the 'password' in linkedDB.js (mongodb://Jeff:password@127.0.0.1:27017/vStarbucks) to the password corresponding to the local database.
 
+```
+
+``` bash
 # start back-end server
 
-## enter the server folder and install dependencies
+# enter the server folder and install dependencies
 npm install
 
-## start server
+# start server
 node bin/www
 
+```
+
+``` bash
 # start project at localhost:8080
 
-## enter the project folder and install dependencies
+# enter the project folder and install dependencies
 npm install
 
-## serve with hot reload at localhost:8080
+# serve with hot reload at localhost:8080
 npm run dev
 
 ```
