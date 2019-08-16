@@ -1,6 +1,6 @@
 # vue-starbucks
 
-> Reconstruction of Starbucks Project with Vue.js 
+Reconstruction of Starbucks Project with Vue.js 
 
 ## Project Document Introduction
 
