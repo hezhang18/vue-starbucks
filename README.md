@@ -1,21 +1,46 @@
-# starbucks_vue
+# vue-starbucks
 
 > Reconstruction of Starbucks Project with Vue.js 
 
-## Build Setup
+## Project Document Introduction
+
+> The folder named MongoData holds the data of users, products and store information needed by this website. Server folder holds back-end interface files. And the other folder and files are for the front-end.
+
+## Local Deployment
+
+> First, node development environment and node package manager (npm) need to be installed locally. For a better experience, Taobao mirror cnpm can be used instead of npm.
+
+> To deploy this website locally, you also need to deploy the MongoDB database in advance and create a database named vStarbucks, and then import the collections in MongoData into this database.
+
+> Next, you can browse the contents of this website locally by executing a few simple lines of commands.
 
 ``` bash
-# install dependencies
+# start database
+
+## unauthorized mode
+sudo mongod
+
+## authorized mode (recommend)
+sudo mongod --auth
+
+## notes: change the 'password' in linkedDB.js (mongodb://Jeff:password@127.0.0.1:27017/vStarbucks) to the password corresponding to the local database.
+
+# start back-end server
+
+## enter the server folder and install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+## start server
+node bin/www
+
+# start project at localhost:8080
+
+## enter the project folder and install dependencies
+npm install
+
+## serve with hot reload at localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+If you want to preview this website online, you can visit [my personal website](http://hppzhang.com).
