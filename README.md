@@ -2,7 +2,7 @@
 
 Reconstruction of Starbucks Project with Vue.js 
 
-## Project Document Introduction
+## Document Introduction
 
 > The folder named MongoData holds the data of users, products and store information needed by this website. Server folder holds back-end interface files. And the other folder and files are for the front-end.
 
