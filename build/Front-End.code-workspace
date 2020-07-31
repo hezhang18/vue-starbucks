@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "/Users/zhanghe/前端开发/前端面试材料/面试技术栈/练习/demo"
+		},
+		{
+			"path": "/Users/zhanghe/前端开发/前端面试材料/面试技术栈/精品项目/starbucks_v1.1.0_edit"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "demo"
+	}
+}

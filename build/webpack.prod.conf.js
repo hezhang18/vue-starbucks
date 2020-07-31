@@ -141,7 +141,7 @@ if (config.build.productionGzip) {
 if (config.build.bundleAnalyzerReport) {
   const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin({
-    analyzerMode: 'server',
+      analyzerMode: 'server',
       analyzerHost: '127.0.0.1',
       analyzerPort: 8989,
       reportFilename: 'report.html',
