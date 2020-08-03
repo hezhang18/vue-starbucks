@@ -376,6 +376,8 @@ function onListening() {
 
 ```
 
+> 此外还需要检查 /utils/checkTools.js 文件中的 AllowDomain 配置是否正确，否则会因跨域请求受限导致接口无法访问。
+
 * 上传至服务器
 
 ``` bash

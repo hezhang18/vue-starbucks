@@ -30,8 +30,8 @@ var CheckTools = {
 }
 
 var AllowDomain = {
-    Domain_1: 'http://www.hppzhang.com',
-    Domain_2: 'https://www.hppzhang.com',
+    Domain_1: 'http://www.hezhang18.cn',
+    Domain_2: 'https://www.hezhang18.cn',
     TestDomain_1: 'http://localhost:8080',
     TestDomain_2: 'http://127.0.0.1:8080',
     // TestDomain_3: 'http://localhost:5050',
