@@ -168,6 +168,7 @@ MongoDB 的安装可参考 [MongoDB 官方文档](https://docs.mongodb.com/manua
 # sudo systemctl start nginx
 # sudo systemctl stop nginx
 # sudo systemctl restart nginx
+# sudo systemctl reload nginx
 # sudo systemctl status nginx
 ```
 * 上传 SSL 证书
