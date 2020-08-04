@@ -3,6 +3,7 @@ require('./linkedDB');
 let express = require('express');
 let router = express.Router();
 let Users = require('../models/users');
+let PageView = require('../models/pageview');
 let CheckTools = require('../utils/checkTools');
 let AutoLogin_Global = false;
 
@@ -143,6 +144,7 @@ router.post('/checkLogin', function(req, res, next){
 			result: ''
 		})
 	}
+
 });
 
 router.post('/accountInfo', function(req, res, next) {
@@ -275,8 +277,86 @@ router.post('/checkExpireDate', function(req, res, next){
     });
 });
 
+router.post("/pageview", (req, res, next)=>{
+	//Web安全，同源检测
+	let domainCheckRes = CheckTools.AllowDomainCheck(req.headers.origin, req.headers.referer);
+	if(!domainCheckRes){
+		res.json({
+			status: 1,
+			msg: 'origin response, cross domain illegal request!'
+		});
+		return ;
+	}
+
+	//Web安全，CSRF Token验证
+	let bodyToken = req.body.ReqToken,
+		cookieToken = req.cookies.sbux_token_pv;
+	
+	if(bodyToken === undefined || cookieToken === undefined || bodyToken !== cookieToken){
+		res.json({
+			status: 1,
+			msg: 'token response, cross domain illegal request!'
+		});
+		return ;
+	}
+
+	let isNewPV = req.body.isNewPV;
+	if(isNewPV){
+		PageView.update({
+			UserType: 'Visitor'
+		}, {
+			$push: {
+				VisitorInfo: {
+					IP: getClientIp(req, 'nginx'),
+					Browser: req.body.browser,
+					Time: req.body.time,
+					Location: req.body.location
+				}
+			}
+		}, (err, doc)=>{
+			PageView.findOne({UserType: 'Visitor'}, (err, doc)=>{
+				let pageviews = doc.PageViews;
+				PageView.update({
+					UserType: 'Visitor'
+				}, {
+					PageViews: ++pageviews
+				}, (err, doc)=>{
+					if(doc) {
+						res.json({
+							status: 0,
+							msg: '',
+							result: {
+								PageViews: pageviews
+							}
+						})
+					}
+				})
+			})
+		})
+	}
+});
 
 
+
+function getClientIp(req, proxyType) {
+	let ip = req.connection.remoteAddress || req.socket.remoteAddress || (req.connection.socket ? req.connection.socket.remoteAddress : null);
+	// 如果使用了nginx代理
+	if (proxyType === 'nginx') {
+		// headers上的信息容易被伪造,但是我不care,自有办法过滤,例如'x-nginx-proxy'和'x-real-ip'我在nginx配置里做了一层拦截把他们设置成了'true'和真实ip,所以不用担心被伪造
+		// 如果没用代理的话,我直接通过req.connection.remoteAddress获取到的也是真实ip,所以我不care
+		ip = req.headers['x-real-ip'] || req.headers['x-forwarded-for'] || ip;
+	}
+	const ipArr = ip.split(',');
+	// 如果使用了nginx代理,如果没配置'x-real-ip'只配置了'x-forwarded-for'为$proxy_add_x_forwarded_for,如果客户端也设置了'x-forwarded-for'进行伪造ip
+	// 则req.headers['x-forwarded-for']的格式为ip1,ip2只有最后一个才是真实的ip
+	if (proxyType === 'nginx') {
+		ip = ipArr[ipArr.length - 1];
+	}
+	if (ip.indexOf('::ffff:') !== -1) {
+		ip = ip.substring(7);
+	}
+	return ip;
+}
 
 function updateCookie(response, data, autoLogin){
 	if(autoLogin){

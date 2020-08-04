@@ -87,7 +87,9 @@
 	import Coffeehouse from '@/components/coffeehouse'
 	import TokenTools from '@/utils/tokenTools'
 	import CookieTools from '@/utils/cookieTools'
+	import PageviewTools from '@/utils/pageviewTools'
 	import axios from 'axios'
+	import AMap from 'AMap'
 
 	export default {
 		name: 'index',
@@ -139,6 +141,8 @@
 			});
 
 			this.checkLogin();
+
+			this.pageview();
 		},
 		components: {
 			NavContainer: NavContainer,
@@ -239,6 +243,74 @@
 						}
 					})
 				}
+			},
+			pageview() {
+				// 获取访客信息
+				let time = PageviewTools.GetTime(),
+					browser = PageviewTools.GetBrowser(),
+					isNewPV = true,
+					ReqToken = TokenTools.TokenSetting('sbux_token_pv');
+				
+				// 获取访客位置
+				AMap.plugin([
+					'AMap.Geolocation',
+					'AMap.Geocoder'
+				], ()=>{
+					let geolocation = new AMap.Geolocation({
+						enableHighAccuracy: true,
+						timeout: 3000
+					});
+					let geocoder = new AMap.Geocoder();
+
+					geolocation.getCurrentPosition((status, result)=>{
+						// 首先获取当前地理位置，如果失败则获取当前城市信息
+						if(status == 'complete'){
+							let position = result.position,
+								lnglat = [position.lng, position.lat];
+							geocoder.getAddress(lnglat, (status, result)=>{
+								let location = PageviewTools.ReturnAddress(status, result);
+								// 所有访客数据准备完毕，上传至服务器
+								if(ReqToken){
+									PageviewTools.UploadData({
+										axios: axios,
+										router: "users/pageview",
+										params: {
+											time: time,
+											browser: browser,
+											location: location,
+											isNewPV: isNewPV,
+											ReqToken: ReqToken
+										},
+										token: "sbux_token_pv"
+									})
+								}
+							});
+						}else{
+							// 获取当前城市信息
+							geolocation.getCityInfo((status, result)=>{
+								let lnglat = result.center;
+								geocoder.getAddress(lnglat, (status, result)=>{
+									let location = PageviewTools.ReturnAddress(status, result);
+									// 所有访客数据准备完毕，上传至服务器
+									if(ReqToken){
+										PageviewTools.UploadData({
+											axios: axios,
+											router: "users/pageview",
+											params: {
+												time: time,
+												browser: browser,
+												location: location,
+												isNewPV: isNewPV,
+												ReqToken: ReqToken
+											},
+											token: "sbux_token_pv"
+										})
+									}
+								});
+							});
+						}
+					});
+				});
 			}
 		}
 	}
