@@ -1,1 +1,15 @@
-{"_id":{"$oid":"5f27e876674df8fd356421cd"},"UserType":"Visitor","PageViews":1,"VisitorInfo":[{"_id":{"$oid":"5f293056953c370fb16f27a9"},"IP":"127.0.0.1","Browser":"Safari","Time":"2020-08-04 17:54:30","Location":"中国上海市黄浦区南京西路229号"}]}
+{
+    "_id" : ObjectId("5f27e876674df8fd356421cd"),
+    "UserType" : "Visitor",
+    "PageViews" : 44,
+    "VisitorInfo" : [ 
+        {
+            "_id" : ObjectId("5f2a9238129b9b680ffde512"),
+            "Location" : "中国上海市黄浦区南京西路229号（南京东路街道）",
+            "Time" : "2020-08-05 19:04:18",
+            "Device" : "屏幕分辨率: 1440 * 900  浏览器视口: 1440 * 900",
+            "Browser" : "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_16_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36",
+            "IP" : "127.0.0.1"
+        }
+    ]
+}
