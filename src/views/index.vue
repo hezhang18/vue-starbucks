@@ -245,12 +245,22 @@
 				}
 			},
 			pageview() {
+				let storage = window.sessionStorage || null,
+					key = 'isNewPV';
+				
+				// 如果 storage 存在 isNewPV 值为 false，说明相关数据已经上传过，不再重复上传。
+				if(storage && storage.getItem(key) === 'false') {
+					return;
+				}
+
+				if(storage) { storage.setItem(key, true); }
+
 				// 获取访客信息
 				let time = PageviewTools.GetTime(),
+					device = PageviewTools.GetScreenInfo(window),
 					browser = PageviewTools.GetBrowser(),
-					isNewPV = true,
 					ReqToken = TokenTools.TokenSetting('sbux_token_pv');
-				
+
 				// 获取访客位置
 				AMap.plugin([
 					'AMap.Geolocation',
@@ -276,12 +286,15 @@
 										router: "users/pageview",
 										params: {
 											time: time,
-											browser: browser,
 											location: location,
-											isNewPV: isNewPV,
+											device: device,
+											browser: browser,
+											// isNewPV: isNewPV,
 											ReqToken: ReqToken
 										},
-										token: "sbux_token_pv"
+										token: "sbux_token_pv",
+										storage: storage,
+										key: key
 									})
 								}
 							});
@@ -298,12 +311,15 @@
 											router: "users/pageview",
 											params: {
 												time: time,
-												browser: browser,
+												device: device,
 												location: location,
-												isNewPV: isNewPV,
+												browser: browser,
+												// isNewPV: isNewPV,
 												ReqToken: ReqToken
 											},
-											token: "sbux_token_pv"
+											token: "sbux_token_pv",
+											storage: storage,
+											key: key
 										})
 									}
 								});

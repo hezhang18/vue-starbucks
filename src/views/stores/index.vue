@@ -70,6 +70,7 @@
 	import NavMobile from '@/components/navMobile'
 	import axios from 'axios'
 	import AMap from 'AMap'
+	import StoresTools from '@/utils/storesTools'
 
 	export default {
 		name: 'stores',
@@ -104,15 +105,14 @@
 			}
 		},
 		mounted(){
-			const _self = this;
 			window.matchMedia('(min-width: 1025px)').addListener(()=>{
-				_self.lgMedia = window.matchMedia('(min-width: 1025px)').matches;
+				this.lgMedia = window.matchMedia('(min-width: 1025px)').matches;
 			});
 			window.matchMedia('(max-width: 640px)').addListener(()=>{
-				_self.mbMedia = window.matchMedia('(max-width: 640px)').matches;
+				this.mbMedia = window.matchMedia('(max-width: 640px)').matches;
 			});
-			_self.initData();
-			_self.initMap();
+			this.initData();
+			this.initMap();
 		},
 		components: {
 			NavContainer: NavContainer,
@@ -143,10 +143,8 @@
                 this.getCityInfo();
 			},
 			initMap(){
-				let _self = this;
-
 				// 初始化地图
-				_self.map = new AMap.Map('sAMap', {
+				this.map = new AMap.Map('sAMap', {
 			        resizeEnable: true,
 			        zoom:16
 			 	});
@@ -155,18 +153,18 @@
 				}
 
 				// 控件、地理定位、门店列表
-				_self.addZoomControl();
-				_self.getLocalPosition();
+				this.addZoomControl();
+				this.getLocalPosition();
 
 				// 地图监听
-			    _self.map.on("moveend", function(){
+			    this.map.on("moveend", ()=>{
                     setTimeout(()=>{
-			      	    _self.showNearbyStores();
+			      	    this.showNearbyStores();
 			        }, 1500);
 			    });
-			     _self.map.on("zoomend", function(){
+			    this.map.on("zoomend", ()=>{
 			        setTimeout(()=>{
-				        _self.showNearbyStores();
+				        this.showNearbyStores();
 				    }, 1500);
 			    });
 			},
@@ -181,14 +179,13 @@
 				});
 			},
 			getLocalPosition(){
-				let _self = this;
 				AMap.plugin([
 					'AMap.Geolocation',
 					'AMap.Geocoder'
 				], ()=>{
 					let geolocation = new AMap.Geolocation({
 							enableHighAccuracy: true,
-				            timeout: 6000,
+							timeout: 3000,
 				            buttonPosition:'RB',
 				            buttonOffset: new AMap.Pixel(16, 136),
 				            panToLocation: true,
@@ -196,7 +193,7 @@
 						});
 					let geocoder = new AMap.Geocoder();
 
-					_self.map.addControl(geolocation);
+					this.map.addControl(geolocation);
 
 					geolocation.getCurrentPosition((status, result)=>{
 						// 首先获取当前地理位置，如果失败则获取当前城市信息
@@ -204,74 +201,60 @@
 			                let position = result.position,
 			                	lnglat = [position.lng, position.lat];
 					  		geocoder.getAddress(lnglat, (status, result)=>{
-					  			_self.localPosition = returnAddress(status, result);
+					  			this.localPosition = StoresTools.ReturnAddress(status, result);
 		        			});
 
-					  		_self.calcDistance(lnglat);
-					  		_self.showNearbyStores();
+					  		this.calcDistance(lnglat);
+					  		this.showNearbyStores();
 			            }else{
 			                geolocation.getCityInfo((status, result)=>{
 			                	let lnglat = result.center;
 						  		geocoder.getAddress(lnglat, (status, result)=>{
-			            			_self.localPosition = returnAddress(status, result);
+			            			this.localPosition = StoresTools.ReturnAddress(status, result);
 			        			});
 
-						  		_self.calcDistance(lnglat);
-						  		_self.showNearbyStores();
+						  		this.calcDistance(lnglat);
+						  		this.showNearbyStores();
 			                });
 			            }
 
-						if(_self.storesList && _self.storesList.length !== 0){
-							_self.loadingStores = false;
+						if(this.storesList && this.storesList.length !== 0){
+							this.loadingStores = false;
 						}
 					});
 				});
-
-				function returnAddress(status, result){
-					if (status === 'complete' && result.regeocode) {
-	        			let addressComponent = result.regeocode.addressComponent,
-	        				province = addressComponent.province,
-	        				city = addressComponent.city,
-	        				district = addressComponent.district;
-	        			return province + ' ' + city + ' ' + district;
-	    			}else{
-	    				return  '未知位置';
-	    			}
-				}
 			},
 			getCityInfo(){
 				// 获取门店城市信息
-				let _self = this;
 				axios.get("/cityinfo/items").then((res)=>{
 					let data = res.data;
 					if(data.status == '1'){
 						console.log("Data request failed!");
 						return ;
 					}
-					_self.cityInfo = data.result.data;
+					this.cityInfo = data.result.data;
 				});
 			},
 			getStoresList(){
-				let _self = this;
-				_self.loadingStores = true;
+				this.loadingStores = true;
 
 				axios.get("/storelocation/items").then((res)=>{
 					let data = res.data,
-						storage = _self.storage;
+						storage = this.storage;
 
 					if(data.status == '1'){
 						console.log("Data request failed!");
 						return ;
 					}
 
-					_self.storesList = data.result.data;
-					_self.getLocalPosition();
+					this.storesList = data.result.data;
+					this.getLocalPosition();
 
 					if(storage){
-						_self.setStorageItems({
+						this.setStorageItems({
 							storage: storage,
 							itemName: 'storesList',
-							data: _self.storesList
+							data: this.storesList
 						});
 					}
 				});
@@ -314,25 +297,24 @@
 					return ;
 				}
 
-				let _self = this,
-					len = _self.storesList.length;
+				let len = this.storesList.length;
 
 				for(let i = 0; i < len; i++){
 					try{
-						let lng = _self.storesList[i].Longitude,
-							lat = _self.storesList[i].Latitude,
+						let lng = this.storesList[i].Longitude,
+							lat = this.storesList[i].Latitude,
 							storeLngLat = [lng, lat],
 							dis = AMap.GeometryUtil.distance(localLngLat, storeLngLat);
-						_self.storesList[i].Distance = Math.round(dis);
+						this.storesList[i].Distance = Math.round(dis);
 
 					}
 					catch(err){
-						console.log('Error: ' + err, 'Item: ' + JSON.stringify(_self.storesList[i]));
+						console.log('Error: ' + err, 'Item: ' + JSON.stringify(this.storesList[i]));
 					}
 				}
 
 				// 按门店距离由近及远重新排序
-				_self.storesList.sort((a, b)=>{
+				this.storesList.sort((a, b)=>{
 					let aDis = a.Distance,
 						bDis = b.Distance;
 					if(aDis > bDis){
@@ -345,150 +327,59 @@
 				});
 			},
 			showNearbyStores(){
-				let _self = this,
-					stores = _self.storesList,
-					cityInfo = _self.cityInfo,
+				let stores = this.storesList,
+					cityInfo = this.cityInfo,
 					distance = '',
-					zoom = _self.map.getZoom();
+					zoom = this.map.getZoom();
 
 				if(zoom >= 13){
-					setLocations({
+					StoresTools.SetLocations({
 						stores: stores,
-						vData: _self,
+						vData: this,
 						distance: 0
 					});
 				}else if(zoom == 12){
-					setLocations({
+					StoresTools.SetLocations({
 						stores: stores,
-						vData: _self,
+						vData: this,
 						distance: 2400
 					});
 				}else if(zoom == 11){
-					setLocations({
+					StoresTools.SetLocations({
 						stores: stores,
-						vData: _self,
+						vData: this,
 						distance: 16000
 					});
 				}else if(zoom == 9 || zoom == 10){
-					setLocations({
+					StoresTools.SetLocations({
 						stores: stores,
-						vData: _self,
+						vData: this,
 						distance: 24000
 					});
 				}else{
-					setCityInfo({
+					StoresTools.SetCityInfo({
 						cityInfo: cityInfo,
-						vData: _self
+						vData: this
 					});
-				}
-
-				function setCityInfo(options){
-					// 展示各个城市的门店数量
-					let cityInfo = options.cityInfo,
-						vData = options.vData,
-						bounds = vData.map.getBounds();
-
-					if(cityInfo === undefined){
-						return ;
-					}
-
-					vData.map.remove(vData.markers);
-					vData.nearbyStores = [];
-					vData.markers = [];
-
-					for(let i = 0; i < cityInfo.length; i++){
-						let lng = parseFloat(cityInfo[i].CenterLon),
-							lat = parseFloat(cityInfo[i].CenterLat),
-							lnglat = [lng, lat],
-							label = cityInfo[i].StoreNum;
-						if(bounds.contains(lnglat)){
-							vData.addMarker(lng, lat, label, '#00A862');
-						}
-					}
-				}
-
-				function setLocations(options){
-					let stores = options.stores,
-						vData = options.vData,
-						disLeval = options.distance;
-
-					if(stores === undefined){
-						return ;
-					}
-
-					let len = stores.length,
-						label = 0,
-						bounds = vData.map.getBounds();
-
-					vData.map.remove(vData.markers);
-					vData.nearbyStores = [];
-					vData.markers = [];
-
-					for(let i = 0; i < len; i++){
-						try{
-							let lng = parseFloat(stores[i].Longitude),
-								lat = parseFloat(stores[i].Latitude),
-								dis = stores[i].Distance,
-								lnglat = [lng, lat];
-							if(bounds.contains(lnglat) && dis >= disLeval){
-								label += 1;
-								vData.nearbyStores.push(stores[i]);
-								vData.addMarker(lng, lat, label, '#B0B0B0');
-								if(label === 90){
-									break;
-								}
-							}
-						}
-						catch(err){
-							console.log('Error: ' + err, 'Item: ' + JSON.stringify(stores[i]));
-						}
-					}
-
-					// 如果当前视图中没有门店，则自动缩小地图级别进行门店展示
-					// if(vData.nearbyStores.length === 0){
-					// 	let zoom = vData.map.getZoom();
-					// 	vData.map.setZoom(--zoom)
-					// }
 				}
 			},
 			addMarker(lng, lat, label, color){
-				let _self = this;
-
 				AMapUI.loadUI(['overlay/SvgMarker'], (SvgMarker)=>{
-					addSvgMarker(lng, lat, label, SvgMarker);
+					StoresTools.AddSvgMarker({
+						lng: lng,
+						lat: lat,
+						label: label,
+						Marker: SvgMarker,
+						color: color,
+						vData: this
+					});
 				});
-
-				function addSvgMarker(lng, lat, label, Marker){
-				    let shape = new Marker.Shape.WaterDrop({
-				        height: 28,
-				        width: 21,
-				        fillColor: color
-				    });
-				    let marker = new Marker(
-				        shape,
-				        {
-				            showPositionPoint: false,
-				            iconLabel: {
-					            innerHTML: label,
-					            style: {
-					                color: '#fff'
-					            }
-					        },
-					        containerClassNames: 'my-font-style',
-				            map: _self.map,
-				            position: [lng,lat],
-				        }
-				    );
-				    _self.markers.push(marker);
-				}
 			},
 			storeClicked(index){
-                let _self = this;
-
 				// 当前门店信息滑动至顶部，SrollArea所对应的元素应为已经设置overflow:auto;的元素
 				let nearbyStores = $('.nearbyStores');
 
-				if(_self.lgMedia){
+				if(this.lgMedia){
 					let lSrollArea = $('.nav-container'),
 					    hdHeight = 97,
 	                    lStep = nearbyStores[index].offsetTop - hdHeight;
@@ -500,12 +391,15 @@
 				}
 
                 // 动态设置门店信息背景颜色
-				_self.clicked = index;
+				this.clicked = index;
 
                 // 动态设置地图标记点颜色
-				let len = _self.markers.length;
+				let len = this.markers.length;
 				for(let i = 0; i < len; i++){
-					let fillColor = getFillColor(i);
+					let fillColor = StoresTools.GetFillColor({
+						item: i,
+						vData: this
+					});
 					if(fillColor === '#00A862'){
 						AMapUI.loadUI(['overlay/SvgMarker'], (SvgMarker)=>{
 							let shape = new SvgMarker.Shape.WaterDrop({
@@ -513,9 +407,10 @@
 						        width: 21,
 						        fillColor: '#B0B0B0'
 						    });
-						    _self.markers[i].setSvgShape(shape);
+						    this.markers[i].setSvgShape(shape);
 						});
 					}
+					
 				}
 				AMapUI.loadUI(['overlay/SvgMarker'], (SvgMarker)=>{
 					let shape = new SvgMarker.Shape.WaterDrop({
@@ -524,17 +419,13 @@
 				        fillColor: '#00A862'
 				    });
 
-					let newIndex = _self.markersDuplic(index) || index;
-                    _self.markers[newIndex].setSvgShape(shape);
+					let newIndex = this.markersDuplic(index) || index;
+                    this.markers[newIndex].setSvgShape(shape);
 
 				});
-				function getFillColor(item){
-					return _self.markers[item].opts.svgShape.opts.fillColor;
-				}
 			},
 			storeMouseOver(index){
-				let _self = this;
-				if(_self.clicked === index){
+				if(this.clicked === index){
 					return ;
 				}
 				AMapUI.loadUI(['overlay/SvgMarker'], (SvgMarker)=>{
@@ -544,13 +435,12 @@
 				        fillColor: '#00A862'
 				    });
 
-				    let newIndex = _self.markersDuplic(index) || index;
-                    _self.markers[newIndex].setSvgShape(shape);
+				    let newIndex = this.markersDuplic(index) || index;
+                    this.markers[newIndex].setSvgShape(shape);
 				});
 			},
 			storeMouseOut(index){
-				let _self = this;
-				if(_self.clicked === index){
+				if(this.clicked === index){
 					return ;
 				}
 				AMapUI.loadUI(['overlay/SvgMarker'], (SvgMarker)=>{
@@ -560,8 +450,8 @@
 				        fillColor: '#B0B0B0'
 				    });
 
-				    let newIndex = _self.markersDuplic(index) || index;
-                    _self.markers[newIndex].setSvgShape(shape);
+				    let newIndex = this.markersDuplic(index) || index;
+                    this.markers[newIndex].setSvgShape(shape);
 				});
 			},
 			markersDuplic(index){
@@ -574,15 +464,18 @@
 					return false;
 				}
 
-				try{mLabel = getLabel(halfLen);}catch(err){console.log(err)}
+				try{
+					mLabel = StoresTools.GetLabel({
+						item: halfLen,
+						vData: this
+					});
+				}catch(err){
+					console.log(err);
+				}
 
 				if(mLabel == '1'){
 					let newIndex = halfLen + index;
 					return newIndex;
-				}
-
-				function getLabel(item){
-					return _self.markers[item].opts.iconLabel.innerHTML;
 				}
 			}
 		}

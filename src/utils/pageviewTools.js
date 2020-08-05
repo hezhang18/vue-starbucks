@@ -2,34 +2,16 @@ import CookieTools from './cookieTools'
 
 var PageviewTools = {
     
-    GetBrowser: GetBrowser,
-
     GetTime: GetTime,
+
+    GetScreenInfo: GetScreenInfo,
 
     ReturnAddress: ReturnAddress,
 
+    GetBrowser: GetBrowser,
+
     UploadData: UploadData
     
-}
-
-function GetBrowser() {
-    let ua = navigator.userAgent;
-
-    if(/chrome/i.test(ua)) {
-        return 'Chrome';
-    }else if(/safari/i.test(ua)){
-        return 'Safari';
-    }else if(/firefox/i.test(ua)) {
-        return 'Firefox';
-    }else if(/msie/i.test(ua)) {
-        return 'IE8 - IE10';
-    }else if("ActiveXObject" in window) {
-        return 'IE11';
-    }else if(/opera/i.test(ua)){
-        return 'Opera';
-    }else{
-        return 'Other Browser';
-    }
 }
 
 function GetTime() {
@@ -53,6 +35,14 @@ function GetTime() {
     return time;
 }
 
+function GetScreenInfo(win) {
+    let ow = win.outerWidth,
+        oh = win.outerHeight,
+        sw = win.screen.width,
+        sh = win.screen.height;
+    return '屏幕分辨率: ' + sw + ' * ' + sh + '  浏览器视口: ' + ow + ' * ' + oh;
+}
+
 function ReturnAddress(status, result) {
     if (status === 'complete' && result.regeocode) {
         let addressComponent = result.regeocode.addressComponent,
@@ -61,11 +51,16 @@ function ReturnAddress(status, result) {
             city = addressComponent.city,
             district = addressComponent.district,
             street = addressComponent.street,
-            streetNumber = addressComponent.streetNumber;
-        return country + province + city + district + street + streetNumber;
+            streetNumber = addressComponent.streetNumber,
+            township = addressComponent.township;
+        return country + province + city + district + street + streetNumber + '（' + township + '）';
     }else{
         return  '未知位置';
     }
+}
+
+function GetBrowser() {
+    return navigator.userAgent;
 }
 
 function UploadData(opt) {
@@ -73,6 +68,9 @@ function UploadData(opt) {
         let data = res.data;
         if(data.status == '0'){
             let res = data.result;
+            if(opt.storage){
+                opt.storage.setItem(opt.key, false);
+            }
         }
         CookieTools.DelCookie(opt.token);
     })
