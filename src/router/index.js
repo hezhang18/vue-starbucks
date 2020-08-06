@@ -22,6 +22,7 @@ import MenuBeverages from '@/views/menu/beverages'
 import MenuFood from '@/views/menu/food'
 import MenuCoffee from '@/views/menu/coffee'
 import MenuMerchandise from '@/views/menu/merchandise'
+import PrivatePVRecord from '@/views/private/pvrecord'
 
 Vue.use(Router)
 
@@ -44,7 +45,7 @@ const router = new Router({
       children: [
         {
           path: '',
-          meta: { 
+          meta: {
             requireAuth: true
           },
           component: AccountIndex
@@ -66,7 +67,7 @@ const router = new Router({
         },
         {
           path: 'activity',
-          meta: { 
+          meta: {
             requireAuth: true
           },
           name: 'activity',
@@ -74,7 +75,7 @@ const router = new Router({
         },
         {
           path: 'rewards',
-          meta: { 
+          meta: {
             requireAuth: true
           },
           name: 'rewards',
@@ -82,7 +83,7 @@ const router = new Router({
         },
         {
           path: 'profile',
-          meta: { 
+          meta: {
             requireAuth: true
           },
           component: AccountProfile,
@@ -129,6 +130,11 @@ const router = new Router({
           component: MenuMerchandise
         }
       ]
+    },
+    {
+      path: '/pvrecord',
+      name: 'pvrecord',
+      component: PrivatePVRecord
     }
   ]
 });
@@ -137,7 +143,7 @@ router.beforeEach((to, from, next) => {
 	if (to.matched.some(res => res.meta.requireAuth)) {
     let loginState = false;
     let ReqToken = TokenTools.TokenSetting('sbux_token_cl');
-				
+
 		if(ReqToken){
       axios.post("users/checkLogin",{
         ReqToken: ReqToken
@@ -160,7 +166,7 @@ router.beforeEach((to, from, next) => {
           })
         }
       })
-    }	
+    }
 	}else {
 		next()
 	}

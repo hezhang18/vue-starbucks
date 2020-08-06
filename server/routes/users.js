@@ -35,7 +35,7 @@ router.post('/login', function(req, res, next) {
 		});
 		return ;
 	}
-	
+
     Users.findOne(param, function(err, doc){
         if(err){
 			res.json({
@@ -44,7 +44,7 @@ router.post('/login', function(req, res, next) {
 			});
 			return ;
 		}
-		
+
 		if(doc){
 			// req.session.user = doc;使用session存储，需要express-session插件
 			updateCookie(res, doc, AutoLogin);
@@ -79,7 +79,7 @@ router.post('/logout', function(req, res, next){
 	//Web安全，CSRF Token验证
 	let bodyToken = req.body.ReqToken,
 		cookieToken = req.cookies.sbux_token_lo;
-	
+
 	if(bodyToken === undefined || cookieToken === undefined || bodyToken !== cookieToken){
 		res.json({
 			status: 1,
@@ -118,7 +118,7 @@ router.post('/checkLogin', function(req, res, next){
 	//Web安全，CSRF Token验证
 	let bodyToken = req.body.ReqToken,
 		cookieToken = req.cookies.sbux_token_cl;
-	
+
 	if(bodyToken === undefined || cookieToken === undefined || bodyToken !== cookieToken){
 		res.json({
 			status: 1,
@@ -161,7 +161,7 @@ router.post('/accountInfo', function(req, res, next) {
 	//Web安全，CSRF Token验证
 	let bodyToken = req.body.ReqToken,
 		cookieToken = req.cookies.sbux_token_gai;
-	
+
 	if(bodyToken === undefined || cookieToken === undefined || bodyToken !== cookieToken){
 		res.json({
 			status: 1,
@@ -169,7 +169,7 @@ router.post('/accountInfo', function(req, res, next) {
 		});
 		return ;
 	}
-	
+
 	let param = {
         UserID: req.cookies.UserID
 	}
@@ -182,7 +182,7 @@ router.post('/accountInfo', function(req, res, next) {
 			});
 			return ;
 		}
-		
+
 		if(doc){
 			res.json({
 				status: 0,
@@ -217,7 +217,7 @@ router.post('/checkExpireDate', function(req, res, next){
 	//Web安全，CSRF Token验证
 	let bodyToken = req.body.ReqToken,
 		cookieToken = req.cookies.sbux_token_ce;
-	
+
 	if(bodyToken === undefined || cookieToken === undefined || bodyToken !== cookieToken){
 		res.json({
 			status: 1,
@@ -225,7 +225,7 @@ router.post('/checkExpireDate', function(req, res, next){
 		});
 		return ;
 	}
-	
+
 	let param = {
         UserID: req.cookies.UserID
     }
@@ -238,7 +238,7 @@ router.post('/checkExpireDate', function(req, res, next){
 			});
 			return ;
 		}
-		
+
 		if(doc){
 			let MemberShipExpireDate = doc.MemberShip.ExpireDate,
 				MyRewardsExpireDateArr = getMyRewardsExpireDate(doc);
@@ -246,10 +246,10 @@ router.post('/checkExpireDate', function(req, res, next){
 			let obj = checkExpireDate(MemberShipExpireDate, MyRewardsExpireDateArr);
 			let MSED = obj.MSED,
 				MRED_Arr = obj.MRED_Arr;
-			
+
 			if(MSED != '' || MRED_Arr.length != 0){
 				let state = updateExpireDate(MSED, MRED_Arr, req.cookies.UserID);
-				
+
 				if(state === 'complete'){
 					res.json({
 						status: 0,
@@ -291,7 +291,7 @@ router.post("/pageview", (req, res, next)=>{
 	//Web安全，CSRF Token验证
 	let bodyToken = req.body.ReqToken,
 		cookieToken = req.cookies.sbux_token_pv;
-	
+
 	if(bodyToken === undefined || cookieToken === undefined || bodyToken !== cookieToken){
 		res.json({
 			status: 1,
@@ -333,6 +333,39 @@ router.post("/pageview", (req, res, next)=>{
 		})
 	})
 });
+
+router.get("/pvrecord", (req, res, next)=>{
+	PageView.findOne({UserType: 'Visitor'}, (err, doc)=>{
+		if(doc) {
+            res.json({
+            	status: 0,
+            	PageViews: doc.PageViews,
+            	VisitorInfo: doc.VisitorInfo
+            })
+		}
+	})
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -402,7 +435,7 @@ function getMyRewardsExpireDate(data){
 			if(!duplic){
 				MyRewardsExpireDateArr.push(MyRewards[i].ExpireDate);
 			}
-			
+
 		}
 	}
 
@@ -444,7 +477,7 @@ function updateExpireDate(MemberShipExpireDate, MyRewardsExpireDateArr, UserID){
 		Users.update({"UserID":UserID, "MemberShip.ExpireDate": MemberShipExpireDate}, {
 			"MemberShip.ExpireDate": getNewExpireDate(MemberShipExpireDate, 'month', 3),
 		}, function(err, doc){
-									
+
 		});
 	}
 
@@ -453,9 +486,9 @@ function updateExpireDate(MemberShipExpireDate, MyRewardsExpireDateArr, UserID){
 			function updateExec(){
 				Users.update(
 					//批量修改的方法无效，此处利用递归实现批量修改
-					// {"$set": {"MyRewards.$.ExpireDate": getNewExpireDate(MyRewardsExpireDateArr[0],'days',16),"MyRewards.$.StartDate": getCurrentDate(),}}, 
+					// {"$set": {"MyRewards.$.ExpireDate": getNewExpireDate(MyRewardsExpireDateArr[0],'days',16),"MyRewards.$.StartDate": getCurrentDate(),}},
 					// {multi: true, overwrite: true},
-					{"UserID": UserID, "MyRewards.ExpireDate": MyRewardsExpireDateArr[0]}, 
+					{"UserID": UserID, "MyRewards.ExpireDate": MyRewardsExpireDateArr[0]},
 					{"MyRewards.$.StartDate": getCurrentDate(), "MyRewards.$.ExpireDate": getNewExpireDate(MyRewardsExpireDateArr[0],'days',14)},
 					function(err, doc){
 						if(doc.ok === 1){
@@ -467,7 +500,7 @@ function updateExpireDate(MemberShipExpireDate, MyRewardsExpireDateArr, UserID){
 			updateExec();
 		}
 	}
-	
+
 	return 'complete';
 }
 
@@ -507,7 +540,7 @@ function getNewExpireDate(date, type, num){
 	}else if(type === 'days'){
 		let millsec = num*aDayMillSec + baseMillSec;
 		newDate = formatDate(millsec);
-		
+
 	}
 
 	return newDate;
