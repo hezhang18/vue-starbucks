@@ -409,6 +409,7 @@ function onListening() {
 # pm2 stop fileName
 # pm2 stop all
 # pm2 list
+# pm2 log
 ```
 
 ### 4.4 前端项目部署
