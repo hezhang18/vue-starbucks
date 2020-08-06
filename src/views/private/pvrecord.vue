@@ -31,12 +31,12 @@
         width: 100%;
         min-height: 100vh;
         padding: 0 24px;
-        background-color: rgba(0, 0, 0, 0.12);
+        /* background-color: rgba(0, 0, 0, 0.12); */
         font-size: 10px;
     }
     .pv-wrapper .inner-wrapper {
         width: 72%;
-        min-width: 375px;
+        min-width: 296px;
         margin: 0 auto;
     }
     .pv-wrapper .pv-title {
