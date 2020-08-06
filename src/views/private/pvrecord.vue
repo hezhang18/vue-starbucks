@@ -49,14 +49,16 @@
         line-height: 140%;
     }
     .pv-wrapper .pv-num {
-        margin: 24px 0;
+        margin: 36px 0;
         font-size: 2.0em;
         color: #00A862;
     }
     .pv-wrapper .pv-listTitle {
-        margin: 24px 0 12px;
-        font-size: 1.6em;
+        margin: 24px 0 0;
+        font-size: 2.0em;
         color: #00A862;
+        border-bottom: 1px solid #00A862;
+        padding-bottom: 12px;
     }
     .pv-wrapper .pv-list {
         margin: 12px 0;
@@ -68,6 +70,8 @@
     }
     .pv-wrapper .pv-infoTitle{
         margin-bottom: 6px;
+        color: #00A862;
+        opacity: .8;
     }
     .pv-wrapper .pv-info li{
        margin: 3px 0;
