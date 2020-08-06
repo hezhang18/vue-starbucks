@@ -3,18 +3,28 @@
         <article class="pv-wrapper">
             <article class="inner-wrapper clearfix">
                 <h1 class="pv-title">网站访客信息记录</h1>
-                <h2 class="pv-num">网站访问量：{{PageViews}}</h2>
-                <h2 class="pv-listTitle">访客列表：</h2>
+                <h2 v-show="ready" class="pv-num">网站访问量：{{PageViews}}</h2>
+                <h2 v-show="ready" class="pv-listTitle">访客列表：</h2>
                 <section v-for="(item, index) in VisitorInfo" class="pv-list">
                     <p class="pv-infoTitle">
                         访客编号：<span v-if="index < 9">0</span>{{index + 1}}
                     </p>
                     <ul class="pv-info">
-                        <li>IP 地址：{{item.IP}}</li>
-                        <li>访问时间：{{item.Time}}</li>
-                        <li>访客地址：{{item.Location}}</li>
-                        <li v-if="item.Device">屏幕尺寸：{{item.Device}}</li>
-                        <li>设备信息：{{item.Browser}}</li>
+                        <li>
+                            <span>IP 地址：</span>{{item.IP}}
+                        </li>
+                        <li>
+                            <span>访问时间：</span>{{item.Time}}
+                        </li>
+                        <li>
+                            <span>访客地址：</span>{{item.Location}}
+                        </li>
+                        <li>
+                            <span>屏幕尺寸：</span>{{item.Device}}
+                        </li>
+                        <li>
+                            <span>设备信息：</span>{{item.Browser}}
+                        </li>
                     </ul>
                 </section>
             </article>
@@ -31,12 +41,11 @@
         width: 100%;
         min-height: 100vh;
         padding: 0 24px;
-        /* background-color: rgba(0, 0, 0, 0.12); */
         font-size: 10px;
     }
     .pv-wrapper .inner-wrapper {
         width: 72%;
-        min-width: 296px;
+        min-width: 320px;
         margin: 0 auto;
     }
     .pv-wrapper .pv-title {
@@ -71,11 +80,16 @@
     .pv-wrapper .pv-infoTitle{
         margin-bottom: 6px;
         color: #00A862;
-        opacity: .8;
     }
     .pv-wrapper .pv-info li{
        margin: 3px 0;
        text-indent: 2em;
+       color: rgba(0, 0, 0, 0.8);
+       line-height: 160%;
+    }
+    .pv-wrapper .pv-info li span {
+        color: #00A862;
+        opacity: .8;
     }
 </style>
 <script>
@@ -84,6 +98,7 @@
     export default {
         data(){
             return {
+                ready: false,
                 PageViews:'',
                 VisitorInfo: null
             }
@@ -98,6 +113,7 @@
                     if(data.status === 0) {
                         this.PageViews = data.PageViews;
                         this.VisitorInfo = Array.prototype.reverse.call(data.VisitorInfo);
+                        this.ready = true;
                     }
 
                 })
