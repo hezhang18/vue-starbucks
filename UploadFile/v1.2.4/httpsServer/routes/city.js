@@ -1,27 +1,19 @@
 require('./linkedDB');
 
-let express = require('./node_modules/express');
+let express = require('express');
 let router = express.Router();
-let Selection = require('../models/selection');
+let City = require('../models/city');
 
 router.get("/items", (req, res, next)=>{
-
-	let page = parseInt(req.param("page")),
-	    pageSize = parseInt(req.param("pageSize")),
-	    skip = (page - 1) * pageSize,
-        params = {},
-        SelectionModel = Selection.find(params).skip(skip).limit(pageSize);
-
-    SelectionModel.exec((err, doc)=>{
-
+	City.find({}, (err, doc)=>{
 		if(err){
 			res.json({
 				status: 1,
 				msg: err.message
 			});
-			return ;
+			return;
 		}
-
+		
 		if(doc){
 			res.json({
 				status: 0,
@@ -37,9 +29,7 @@ router.get("/items", (req, res, next)=>{
 				msg: 'data file does not exist!'
 			});
 		}
-
 	});
-
 });
 
 module.exports = router;

@@ -66,6 +66,7 @@
 	import RewardsRecord from '@/components/rewardsRecord'
 	import TokenTools from '@/utils/tokenTools'
 	import CookieTools from '@/utils/cookieTools'
+	import PageviewTools from '@/utils/pageviewTools'
 	import axios from 'axios'
 
 	export default {
@@ -110,6 +111,7 @@
 				_self.lgMedia = window.matchMedia('(min-width: 1025px)').matches;
 			});
 			this.checkLogin();
+			this.trackingVisitor();
 		},
 		components: {
 			NavContainer: NavContainer,
@@ -167,6 +169,21 @@
 				}
 
 				this.hello = this.welcome[index];
+			},
+			trackingVisitor() {
+				let storage = window.sessionStorage || null;
+				if(storage) {
+					let VisitorID = storage.getItem('VisitorID'),
+						page = '我的账户-星享好礼',
+						time = PageviewTools.GetTime();
+					if(!VisitorID) return;
+					axios.post('users/tracking',{
+						visitorID: VisitorID,
+						page: page,
+						time: time
+					})
+				}
+				
 			}
 		}
 	}

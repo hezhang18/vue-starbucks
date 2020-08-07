@@ -246,19 +246,20 @@
 			},
 			pageview() {
 				let storage = window.sessionStorage || null,
-					key = 'isNewPV';
+					VisitorID = 'SessionStorageisNotSupported';
 				
-				// 如果 storage 存在 isNewPV 值为 false，说明相关数据已经上传过，不再重复上传。
-				if(storage && storage.getItem(key) === 'false') {
-					return;
+				if(storage) {
+					if(storage.getItem('isNewPV') === 'false') return;
+					VisitorID = PageviewTools.GetVisitorID();
+					storage.setItem('VisitorID', VisitorID);
+					storage.setItem('isNewPV', true);
 				}
-
-				if(storage) { storage.setItem(key, true); }
 
 				// 获取访客信息
 				let time = PageviewTools.GetTime(),
-					device = PageviewTools.GetScreenInfo(window),
-					browser = PageviewTools.GetBrowser(),
+					screen = PageviewTools.GetScreenInfo(window),
+					device = PageviewTools.GetBrowser(),
+					page = '主页',
 					ReqToken = TokenTools.TokenSetting('sbux_token_pv');
 
 				// 获取访客位置
@@ -285,16 +286,17 @@
 										axios: axios,
 										router: "users/pageview",
 										params: {
+											visitorID: VisitorID,
 											time: time,
 											location: location,
+											screen: screen,
 											device: device,
-											browser: browser,
-											// isNewPV: isNewPV,
+											page: page,
 											ReqToken: ReqToken
 										},
 										token: "sbux_token_pv",
 										storage: storage,
-										key: key
+										key: 'isNewPV'
 									})
 								}
 							});
@@ -310,16 +312,17 @@
 											axios: axios,
 											router: "users/pageview",
 											params: {
+												visitorID: VisitorID,
 												time: time,
-												device: device,
 												location: location,
-												browser: browser,
-												// isNewPV: isNewPV,
+												screen: screen,
+												device: device,
+												page: page,
 												ReqToken: ReqToken
 											},
 											token: "sbux_token_pv",
 											storage: storage,
-											key: key
+											key: 'isNewPV'
 										})
 									}
 								});

@@ -36,6 +36,7 @@
 	import CheckTools from '@/utils/checkTools'
 	import TokenTools from '@/utils/tokenTools'
 	import CookieTools from '@/utils/cookieTools'
+	import PageviewTools from '@/utils/pageviewTools'
 	
 	export default {
 		data(){
@@ -157,7 +158,7 @@
 				axios.post("/users/login", {
 					UserName: _self.username,
 					Password: _self.password,
-					AutoLogin: _self.autoLogin
+					AutoLogin: _self.autoLogin,
 				}).then((res)=>{
 					let data = res.data;
 					if(data.status == '0'){
@@ -172,6 +173,14 @@
 						setTimeout(()=>{
 							_self.errorTip = false;
 						}, 1200);
+					}
+
+					let storage = window.sessionStorage || null;
+					if(storage) {
+						axios.post('/users/trackLogin', {
+							visitorID: storage.getItem('VisitorID'),
+							LoginTime: PageviewTools.GetTime()
+						})
 					}
 				})
 			}

@@ -85,6 +85,7 @@
 	import axios from 'axios'
 	import TokenTools from '@/utils/tokenTools'
 	import CookieTools from '@/utils/cookieTools'
+	import PageviewTools from '@/utils/pageviewTools'
 
 	export default {
 		data(){
@@ -103,7 +104,6 @@
 			},
 			logout(){
 				let ReqToken = TokenTools.TokenSetting('sbux_token_lo');
-				
 				if(ReqToken){
 					axios.post("users/logout",{
 						ReqToken:ReqToken
@@ -118,7 +118,14 @@
 						CookieTools.DelCookie('sbux_token_lo');
 					})
 				}
-				
+
+				let storage = window.sessionStorage || null;
+				if(storage) {
+					axios.post('/users/trackLogout', {
+						visitorID: storage.getItem('VisitorID'),
+						LogoutTime: PageviewTools.GetTime()
+					})
+				}	
 			}
 		}
 	}

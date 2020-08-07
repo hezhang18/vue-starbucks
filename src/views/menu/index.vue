@@ -85,6 +85,7 @@
 	import NavOverlay from '@/components/NavOverlay'
 	import NavMobile from '@/components/navMobile'
 	import axios from 'axios'
+	import PageviewTools from '@/utils/pageviewTools'
 
 	export default {
 		name: 'menuIndex',
@@ -159,6 +160,7 @@
 			});
 
 			_self.init();
+			this.trackingVisitor();
 		},
 		components: {
 			NavContainer: NavContainer,
@@ -279,6 +281,21 @@
                     }
 				}
 			},
+			trackingVisitor() {
+				let storage = window.sessionStorage || null;
+				if(storage) {
+					let VisitorID = storage.getItem('VisitorID'),
+						page = '菜单-季度精选',
+						time = PageviewTools.GetTime();
+					if(!VisitorID) return;
+					axios.post('users/tracking',{
+						visitorID: VisitorID,
+						page: page,
+						time: time
+					})
+				}
+				
+			}
 		}
 	}
 

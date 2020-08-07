@@ -29,6 +29,45 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
+
+
+// HTTPS Server
+
+// var https = require('https')
+// var fs = require('fs')
+
+/**
+ * Get credentials
+ */
+
+// var privateKey  = fs.readFileSync('../cert/2698649_hppzhang.com.key', 'utf8');
+// var certificate = fs.readFileSync('../cert/2698649_hppzhang.com.pem', 'utf8');
+// var credentials = {key: privateKey, cert: certificate};
+
+/**
+ * Get port from environment and store in Express.
+ */
+
+// var sslport = normalizePort(process.env.PORT || '3001');
+// app.set('sslport', sslport);
+
+/**
+ * Create HTTPS server.
+ */
+
+// var httpsServer = https.createServer(credentials, app);
+
+/**
+ * Listen on provided port, on all network interfaces.
+ */
+
+// httpsServer.listen(sslport);
+// httpsServer.on('error', onError);
+// httpsServer.on('listening', onListening);
+// 第112行代码
+
+
+
 /**
  * Normalize a port into a number, string, or false.
  */
@@ -83,6 +122,7 @@ function onError(error) {
 
 function onListening() {
   var addr = server.address();
+  // var addr = httpsServer.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;

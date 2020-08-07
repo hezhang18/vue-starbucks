@@ -68,6 +68,7 @@
 	import NavMobile from '@/components/navMobile'
 	import AppRegister from '@/components/appRegister'
 	import CardRegister from '@/components/cardRegister'
+	import PageviewTools from '@/utils/pageviewTools'
 
 	export default {
 		name: 'account',
@@ -105,6 +106,7 @@
 			window.matchMedia('(max-width: 640px)').addListener(()=>{
 				_self.mbMedia = window.matchMedia('(max-width: 640px)').matches;
 			});
+			this.trackingVisitor();
 		},
 		components: {
 			NavContainer: NavContainer,
@@ -129,6 +131,21 @@
 			toggleActTab(tab){
 				this.curActTab = tab;
 				this.view = (tab === 'app' ? 'AppRegister' : 'CardRegister');
+			},
+			trackingVisitor() {
+				let storage = window.sessionStorage || null;
+				if(storage) {
+					let VisitorID = storage.getItem('VisitorID'),
+						page = '我的账户-注册',
+						time = PageviewTools.GetTime();
+					if(!VisitorID) return;
+					axios.post('users/tracking',{
+						visitorID: VisitorID,
+						page: page,
+						time: time
+					})
+				}
+				
 			}
 		}
 	}

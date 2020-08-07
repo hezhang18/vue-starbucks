@@ -87,6 +87,7 @@
 	import NavMobile from '@/components/navMobile'
 	import FormLogin from '@/components/formLogin'
 	import CodeLogin from '@/components/codeLogin'
+	import PageviewTools from '@/utils/pageviewTools'
 
 	export default {
 		name: 'account',
@@ -118,6 +119,7 @@
 			window.matchMedia('(min-width: 1025px)').addListener(()=>{
 				_self.lgMedia = window.matchMedia('(min-width: 1025px)').matches;
 			});
+			this.trackingVisitor();
 		},
 		components: {
 			NavContainer: NavContainer,
@@ -142,6 +144,21 @@
 			toggleLoginAct(){
 				this.showFormLogin = !this.showFormLogin;
 				this.view = (this.showFormLogin ? 'FormLogin' : 'CodeLogin');
+			},
+			trackingVisitor() {
+				let storage = window.sessionStorage || null;
+				if(storage) {
+					let VisitorID = storage.getItem('VisitorID'),
+						page = '我的账户-登录',
+						time = PageviewTools.GetTime();
+					if(!VisitorID) return;
+					axios.post('users/tracking',{
+						visitorID: VisitorID,
+						page: page,
+						time: time
+					})
+				}
+				
 			}
 		}
 	}

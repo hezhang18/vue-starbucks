@@ -69,6 +69,7 @@
 	import NavOverlay from '@/components/NavOverlay'
 	import NavMobile from '@/components/navMobile'
 	import axios from 'axios'
+	import PageviewTools from '@/utils/pageviewTools'
 
 	export default {
 		name: 'menuCoffee',
@@ -150,6 +151,7 @@
 				_self.lgMedia = window.matchMedia('(min-width: 1025px)').matches;
 			});
 			this.init();
+			this.trackingVisitor();
 		},
 		components: {
 			NavContainer: NavContainer,
@@ -268,6 +270,21 @@
 				}else if(curActive == '3'){
 					return ((curActive + 2) == index) || ((curActive + 3) == index);
 				}
+			},
+			trackingVisitor() {
+				let storage = window.sessionStorage || null;
+				if(storage) {
+					let VisitorID = storage.getItem('VisitorID'),
+						page = '菜单-咖啡',
+						time = PageviewTools.GetTime();
+					if(!VisitorID) return;
+					axios.post('users/tracking',{
+						visitorID: VisitorID,
+						page: page,
+						time: time
+					})
+				}
+				
 			}
 		}
 	}

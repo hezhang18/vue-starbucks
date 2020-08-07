@@ -71,6 +71,7 @@
 	import axios from 'axios'
 	import AMap from 'AMap'
 	import StoresTools from '@/utils/storesTools'
+	import PageviewTools from '@/utils/pageviewTools'
 
 	export default {
 		name: 'stores',
@@ -113,6 +114,7 @@
 			});
 			this.initData();
 			this.initMap();
+			this.trackingVisitor();
 		},
 		components: {
 			NavContainer: NavContainer,
@@ -136,6 +138,15 @@
 						itemName: 'storesList',
 						exp: 1000*60*60*24*7
 					});
+
+					let sStorage = sessionStorage || null;
+					if(sStorage) {
+						axios.post('/users/trackDataLoaded', {
+							visitorID: sStorage.getItem('VisitorID'),
+							dataOrigin:'本地存储',
+							time: PageviewTools.GetTime()
+						})
+					}
 				}else{
 					this.getStoresList();
 				}
@@ -256,6 +267,15 @@
 							itemName: 'storesList',
 							data: this.storesList
 						});
+					}
+
+					let sStorage = sessionStorage || null;
+					if(sStorage) {
+						axios.post('/users/trackDataLoaded', {
+							visitorID: sStorage.getItem('VisitorID'),
+							dataOrigin:'数据库加载',
+							time: PageviewTools.GetTime()
+						})
 					}
 				});
 			},
@@ -477,6 +497,21 @@
 					let newIndex = halfLen + index;
 					return newIndex;
 				}
+			},
+			trackingVisitor() {
+				let storage = window.sessionStorage || null;
+				if(storage) {
+					let VisitorID = storage.getItem('VisitorID'),
+						page = '门店',
+						time = PageviewTools.GetTime();
+					if(!VisitorID) return;
+					axios.post('users/tracking',{
+						visitorID: VisitorID,
+						page: page,
+						time: time
+					})
+				}
+				
 			}
 		}
 	}

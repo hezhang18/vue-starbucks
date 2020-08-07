@@ -12,15 +12,15 @@ var fs = require('fs')
 /**
  * Get credentials
  */
-var privateKey  = fs.readFileSync('../cert/2698649_hppzhang.com.key', 'utf8');
-var certificate = fs.readFileSync('../cert/2698649_hppzhang.com.pem', 'utf8');
+var privateKey  = fs.readFileSync('../cert/3651295_www.hezhang18.cn.key', 'utf8');
+var certificate = fs.readFileSync('../cert/3651295_www.hezhang18.cn.pem', 'utf8');
 var credentials = {key: privateKey, cert: certificate};
 
 /**
  * Get port from environment and store in Express.
  */
 
-var sslport = normalizePort(process.env.PORT || '3000');
+var sslport = normalizePort(process.env.PORT || '3001');
 app.set('sslport', sslport);
 
 /**

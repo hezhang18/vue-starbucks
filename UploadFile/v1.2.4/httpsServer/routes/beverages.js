@@ -1,11 +1,11 @@
 require('./linkedDB');
 
-let express = require('./node_modules/express');
+let express = require('express');
 let router = express.Router();
-let Merchandise = require('../models/merchandise');
+let Beverages = require('../models/beverages');
 
 router.get("/items", (req, res, next)=>{
-	Merchandise.find({}, (err, doc)=>{
+	Beverages.find({}, (err, doc)=>{
 		if(err){
 			res.json({
 				status: 1,
@@ -13,7 +13,7 @@ router.get("/items", (req, res, next)=>{
 			});
 			return;
 		}
-
+		
 		if(doc){
 			res.json({
 				status: 0,

@@ -84,6 +84,7 @@
 	import StarRecord from '@/components/starRecord'
 	import TokenTools from '@/utils/tokenTools'
 	import CookieTools from '@/utils/cookieTools'
+	import PageviewTools from '@/utils/pageviewTools'
 	import axios from 'axios'
 
 	export default {
@@ -130,6 +131,7 @@
 				_self.lgMedia = window.matchMedia('(min-width: 1025px)').matches;
 			});
 			this.checkLogin();
+			this.trackingVisitor();
 		},
 		components: {
 			NavContainer: NavContainer,
@@ -192,6 +194,21 @@
 			toggleActTab(tab){
 				this.curActTab = tab;
 				this.view = (tab === 'consume' ? 'ConsumeRecord' : 'StarRecord');
+			},
+			trackingVisitor() {
+				let storage = window.sessionStorage || null;
+				if(storage) {
+					let VisitorID = storage.getItem('VisitorID'),
+						page = '我的账户-消费记录',
+						time = PageviewTools.GetTime();
+					if(!VisitorID) return;
+					axios.post('users/tracking',{
+						visitorID: VisitorID,
+						page: page,
+						time: time
+					})
+				}
+				
 			}
 		}
 	}

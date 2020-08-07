@@ -71,6 +71,7 @@
 	import NavMobile from '@/components/navMobile'
 	import TokenTools from '@/utils/tokenTools'
 	import CookieTools from '@/utils/cookieTools'
+	import PageviewTools from '@/utils/pageviewTools'
 	import axios from 'axios'
 
 	export default {
@@ -105,6 +106,7 @@
 			});
 
 			this.checkLogin();
+			this.trackingVisitor();
 		},
 		components: {
 			NavContainer: NavContainer,
@@ -162,6 +164,21 @@
 						}
 					})
 				}
+			},
+			trackingVisitor() {
+				let storage = window.sessionStorage || null;
+				if(storage) {
+					let VisitorID = storage.getItem('VisitorID'),
+						page = '我的账户-管理星礼卡',
+						time = PageviewTools.GetTime();
+					if(!VisitorID) return;
+					axios.post('users/tracking',{
+						visitorID: VisitorID,
+						page: page,
+						time: time
+					})
+				}
+				
 			}
 		}
 	}

@@ -2,6 +2,8 @@ import CookieTools from './cookieTools'
 
 var PageviewTools = {
     
+    GetVisitorID: GetVisitorID,
+    
     GetTime: GetTime,
 
     GetScreenInfo: GetScreenInfo,
@@ -12,6 +14,10 @@ var PageviewTools = {
 
     UploadData: UploadData
     
+}
+
+function GetVisitorID() {
+    return Math.random().toString().substring(2,12);
 }
 
 function GetTime() {
@@ -46,14 +52,14 @@ function GetScreenInfo(win) {
 function ReturnAddress(status, result) {
     if (status === 'complete' && result.regeocode) {
         let addressComponent = result.regeocode.addressComponent,
-            country = addressComponent.country,
-            province = addressComponent.province,
-            city = addressComponent.city,
-            district = addressComponent.district,
-            street = addressComponent.street,
-            streetNumber = addressComponent.streetNumber,
-            township = addressComponent.township;
-        return country + province + city + district + street + streetNumber + '（' + township + '）';
+            country = addressComponent.country || '',
+            province = addressComponent.province || '',
+            city = addressComponent.city || '',
+            district = addressComponent.district || '',
+            township = addressComponent.township || '',
+            street = addressComponent.street || '',
+            streetNumber = addressComponent.streetNumber || '';
+        return country + province + city + district + township + street + streetNumber;
     }else{
         return  '未知位置';
     }

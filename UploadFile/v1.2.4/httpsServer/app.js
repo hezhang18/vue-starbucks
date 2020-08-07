@@ -1,8 +1,8 @@
-var createError = require('./node_modules/http-errors');
-var express = require('./node_modules/express');
+var createError = require('http-errors');
+var express = require('express');
 var path = require('path');
-var cookieParser = require('./node_modules/cookie-parser');
-var logger = require('./node_modules/morgan');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
 var app = express();
 
 /*

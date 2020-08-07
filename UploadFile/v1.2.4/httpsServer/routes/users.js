@@ -62,7 +62,7 @@ router.post('/login', function(req, res, next) {
 				msg: 'user does not exist!'
 			});
 		}
-    });
+	});
 });
 
 router.post('/logout', function(req, res, next){
@@ -300,47 +300,121 @@ router.post("/pageview", (req, res, next)=>{
 		return ;
 	}
 
-	PageView.update({
-		UserType: 'Visitor'
-	}, {
-		$push: {
-			VisitorInfo: {
-				Location: req.body.location,
-				Time: req.body.time,
-				Device: req.body.device,
-				Browser: req.body.browser,
-				IP: getClientIp(req, 'nginx')
+	let params = req.body;
+
+	PageView.create({
+		UserType: 'Visitor',
+		VisitorID: params.visitorID,
+		IP: getClientIp(req, 'nginx'),
+		VisitTime: params.time,
+		Location: params.location,
+		Screen: params.browser,
+		Device: params.device,
+		BrowseRecord: [
+			{
+				Page: params.page,
+				BrowseTime: params.time
 			}
-		}
+		]		
 	}, (err, doc)=>{
-		PageView.findOne({UserType: 'Visitor'}, (err, doc)=>{
-			let pageviews = doc.PageViews;
-			PageView.update({
-				UserType: 'Visitor'
-			}, {
-				PageViews: ++pageviews
-			}, (err, doc)=>{
-				if(doc) {
-					res.json({
-						status: 0,
-						msg: '',
-						result: {
-							PageViews: pageviews
-						}
-					})
-				}
+		if(doc) {
+			res.json({
+				status: 0,
+				msg:'',
 			})
-		})
+		}
 	})
 });
 
+router.post("/tracking", (req, res, next)=>{
+	let params = req.body;
+	PageView.update({
+		VisitorID: params.visitorID
+	}, {
+		$push: {
+			BrowseRecord: {
+				Page: params.page,
+				BrowseTime: params.time
+			}
+		}
+	}, (err, doc)=>{
+		if(doc) {
+			res.json({
+				status: 0,
+				msg: ''
+			})
+		}
+	})
+})
+
+router.post("/trackDataLoaded", (req, res, next)=>{
+	let params = req.body;
+	PageView.update({
+		VisitorID: params.visitorID
+	}, {
+		$push: {
+			StoresDataLoaded: {
+				DataOrigin: params.dataOrigin,
+				LoadTime: params.time
+			}
+		}
+	},(err, doc)=>{
+		if(doc) {
+			res.json({
+				status: 0,
+				msg: req.body
+			})
+		}
+	})
+})
+
+router.post("/trackLogin", (req, res, next)=>{
+	let params = req.body;
+	PageView.update({
+		VisitorID: params.visitorID
+	}, {
+		$push: {
+			Login: {
+				LoginTime: params.LoginTime
+			}
+		}
+	},(err, doc)=>{
+		if(doc) {
+			res.json({
+				status: 0,
+				msg: ''
+			})
+		}
+	})
+})
+
+router.post("/trackLogout", (req, res, next)=>{
+	let params = req.body;
+	PageView.update({
+		VisitorID: params.visitorID
+	}, {
+		$push: {
+			Logout: {
+				LogoutTime: params.LogoutTime
+			}
+		}
+	},(err, doc)=>{
+		if(doc) {
+			res.json({
+				status: 0,
+				msg: ''
+			})
+		}
+	})
+})
+
 router.get("/pvrecord", (req, res, next)=>{
-	PageView.findOne({UserType: 'Visitor'}, (err, doc)=>{
+	PageView.find({UserType: 'Visitor'}, (err, doc)=>{
 		if(doc) {
             res.json({
             	status: 0,
-            	PageViews: doc.PageViews,
-            	VisitorInfo: doc.VisitorInfo
+				msg:'',
+				result: doc
             })
 		}
 	})
