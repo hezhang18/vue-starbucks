@@ -1,0 +1,1142 @@
+{ 
+    "_id" : ObjectId("58c41d5d3eddd93e9ab5b001"), 
+    "UserID" : "2717092101", 
+    "UserName" : "Jeff", 
+    "Password" : "HelloWorld", 
+    "NickName" : "Jeff", 
+    "Gender" : "Man", 
+    "MemberShip" : {
+        "StarLevel" : "Gold", 
+        "StarsNumber" : NumberInt(9), 
+        "StarsOfNextLevNeed" : 16.0, 
+        "Privileges" : {
+            "GreenPri" : {
+                "RewardsWelcomeToGreenDrink" : true, 
+                "RewardsBithdayDrink" : true, 
+                "RewardsTasteOfGoldDrink" : true, 
+                "rewardsGreenForever" : true
+            }, 
+            "GoldPri" : {
+                "RewardsWelcomeToGoldDrink" : true, 
+                "RewardsAnniversaryDrink" : true, 
+                "RewardsStarsRedemption" : true, 
+                "RewardsDigitalGoldSvc" : true
+            }
+        }, 
+        "ExpireDate" : "2020/04/24"
+    }, 
+    "SvcCard" : [
+        {
+            "CardID" : "7310 2332 6124 1720", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_bear@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 7532", 
+            "Balance" : 600.0, 
+            "CardImage" : "svc_main_stand@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6532 1720", 
+            "Balance" : 300.0, 
+            "CardImage" : "svc_main_71@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 4632", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_tea@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 2071", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_music@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 2337", 
+            "Balance" : 800.0, 
+            "CardImage" : "svc_main_re@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 6146", 
+            "Balance" : 600.0, 
+            "CardImage" : "svc_main_flower@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 1994", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_zg@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 2017", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_sz@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 2017 1994", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_hz@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 2018", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_xa@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 2018 1994", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_km@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2018 6124 1994", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_sh@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 8265", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_gz@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 8642", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_jn@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 6253", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_sjz@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 3702", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_ty@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 9275", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_zz@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 3895", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_wh@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 7532", 
+            "Balance" : 800.0, 
+            "CardImage" : "svc_main_zh@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 5160", 
+            "Balance" : 1000.0, 
+            "CardImage" : "svc_main_cc@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 1470", 
+            "Balance" : 1000.0, 
+            "CardImage" : "svc_main_nc@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 4317", 
+            "Balance" : 600.0, 
+            "CardImage" : "svc_main_gy@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 0436", 
+            "Balance" : 800.0, 
+            "CardImage" : "svc_main_fs@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 2366", 
+            "Balance" : 100.0, 
+            "CardImage" : "svc_main_cz@3x.png"
+        }
+    ], 
+    "MyRewards" : [
+        {
+            "Title" : "星巴克玩味冰调™立减5元", 
+            "StartDate" : "2019/05/07", 
+            "ExpireDate" : "2019/05/16", 
+            "UseDate" : "2019/05/12", 
+            "State" : "USED", 
+            "GoodsType" : "Beverages/Mixology", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "5", 
+            "Image" : "x3.png", 
+            "Rules" : "1. 凭本好礼购买任意一杯星巴克玩味冰调™系列饮品可享正价立减5元优惠。星巴克玩味冰调™系列饮品包括橙柚派对、醋意桃桃、橘香茉吉托、石榴仲夏梦、蓝莓星空、酸柠浮冷萃、璃光石榴冷萃、气炫冰山美式。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "星巴克玩味冰调™立减5元", 
+            "StartDate" : "2019/05/07", 
+            "ExpireDate" : "2020/07/19", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Beverages/Mixology", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "5", 
+            "Image" : "x3.png", 
+            "Rules" : "1. 凭本好礼购买任意一杯星巴克玩味冰调™系列饮品可享正价立减5元优惠。星巴克玩味冰调™系列饮品包括橙柚派对、醋意桃桃、橘香茉吉托、石榴仲夏梦、蓝莓星空、酸柠浮冷萃、璃光石榴冷萃、气炫冰山美式。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "星冰粽单包减28元", 
+            "StartDate" : "2019/05/24", 
+            "ExpireDate" : "2020/07/19", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "1", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "28", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买1包星冰粽（10枚装）可立减28元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "同笔交易两包或以上星冰粽减66元", 
+            "StartDate" : "2019/05/24", 
+            "ExpireDate" : "2020/07/19", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "2", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "66", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买2包星冰粽（10枚装）可立减66元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "同笔交易三包或以上星冰粽减90元", 
+            "StartDate" : "2019/05/24", 
+            "ExpireDate" : "2020/07/19", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "3", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "90", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买3包星冰粽（10枚装）可立减90元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "欢庆蛋糕礼盒立减25元", 
+            "StartDate" : "2019/05/07", 
+            "ExpireDate" : "2020/07/19", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Food/Cake", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "25", 
+            "Image" : "x2.png", 
+            "Rules" : "1. 凭本好礼，单笔交易中购买欢庆蛋糕礼盒可享立减25元优惠。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "欢庆蛋糕礼盒立减25元", 
+            "StartDate" : "2019/05/07", 
+            "ExpireDate" : "2019/06/06", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Food/Cake", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "25", 
+            "Image" : "x2.png", 
+            "Rules" : "1. 凭本好礼，单笔交易中购买欢庆蛋糕礼盒可享立减25元优惠。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "欢庆蛋糕礼盒立减25元", 
+            "StartDate" : "2019/05/16", 
+            "ExpireDate" : "2019/05/24", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Cake", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "25", 
+            "Image" : "x2.png", 
+            "Rules" : "1. 凭本好礼，单笔交易中购买欢庆蛋糕礼盒可享立减25元优惠。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "欢庆蛋糕礼盒立减25元", 
+            "StartDate" : "2019/05/12", 
+            "ExpireDate" : "2019/05/16", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Cake", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "25", 
+            "Image" : "x2.png", 
+            "Rules" : "1. 凭本好礼，单笔交易中购买欢庆蛋糕礼盒可享立减25元优惠。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "欢庆蛋糕礼盒立减25元", 
+            "StartDate" : "2019/05/07", 
+            "ExpireDate" : "2019/05/12", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Cake", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "25", 
+            "Image" : "x2.png", 
+            "Rules" : "1. 凭本好礼，单笔交易中购买欢庆蛋糕礼盒可享立减25元优惠。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "20元指定中杯饮品（门店使用）", 
+            "StartDate" : "2019/04/28", 
+            "ExpireDate" : "2019/05/06", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Bever", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "M/Store", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "20", 
+            "Image" : "x4.png", 
+            "Rules" : "1. 使用此电子兑换券您可以享受以人民币20元的优惠价购买一杯中杯手工调制的饮料，但个别特定饮品（例如：星巴克臻选咖啡、虹吸壶冲泡咖啡、星巴克气致冷萃系列饮品、咖啡融合冰淇淋系列以及星巴克臻选上海烘焙工坊、星巴克臻选咖啡·焙烤坊、星巴克臻选北京坊旗舰店、星巴克臻选上海百联世茂店、星巴克臻选深圳湾万象城店和其他不时指定的门店内售卖的所有饮品、其他星巴克不时指定的饮品）除外。|2. 升杯、添加浓缩咖啡、糖浆及搅打奶油等额外客制化服务需另行付费。|3. 本电子兑换券仅可使用一次，且不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|4. 本电子兑换券无法在星巴克专星送线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "饮品买一赠一（门店使用）", 
+            "StartDate" : "2019/04/28", 
+            "ExpireDate" : "2019/05/06", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Bever", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "1/Store", 
+            "RewardsType" : "Free", 
+            "Rewards" : "1", 
+            "Image" : "x3.png", 
+            "Rules" : "1.使用此电子兑换券您可以享受在购买一杯手工调制的饮料情况下另外获赠一杯手工调制的饮料，但个别特定饮品（例如：星巴克臻选咖啡、虹吸壶冲泡咖啡、星巴克气致冷萃系列饮品、星巴克冰淇淋系列产品、星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊店、星巴克臻选咖啡焙烤坊店、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊内售卖的所有饮品等星巴克不时指定的饮品）除外。该赠送的饮料必须是不高于您所购买的饮料单价。|2.添加浓缩咖啡、糖浆及搅打奶油等额外客制化服务需另行付费。|3.本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|4. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "玉星晋级饮品券", 
+            "StartDate" : "2019/04/08", 
+            "ExpireDate" : "2019/04/16", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Bever", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "none", 
+            "RewardsType" : "Free", 
+            "Rewards" : "1", 
+            "Image" : "x3.png", 
+            "Rules" : "1.使用此电子兑换券您可以获赠一杯中杯手工调制饮料,但个别特定饮品（例如：星巴克臻选咖啡、虹吸壶冲泡咖啡、星巴克气致冷萃系列饮品、星巴克冰淇淋系列产品、星巴克臻选上海烘焙工坊、星巴克臻选咖啡·焙烤坊、星巴克臻选上海世茂广场店、星巴克臻选深圳湾万象城店、星巴克臻选咖啡·酒坊和星巴克臻选北京坊店内售卖的所有饮品等星巴克不时指定的饮品）除外。|2.添加浓缩咖啡、糖浆及搅打奶油等额外客制化服务需另行付费。|3.本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|4.本好礼无法在星巴克专星送线上订餐服务中使用。|5.本好礼仅限使用一次。"
+        }, 
+        {
+            "Title" : "星冰粽单包减24元", 
+            "StartDate" : "2019/03/24", 
+            "ExpireDate" : "2020/04/15", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "1", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "24", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买1包星冰粽（10枚装）可立减24元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "同笔交易两包或以上星冰粽减60元", 
+            "StartDate" : "2019/03/24", 
+            "ExpireDate" : "2020/04/15", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "2", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "60", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买2包星冰粽（10枚装）可立减60元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "同笔交易三包或以上星冰粽减80元", 
+            "StartDate" : "2019/03/24", 
+            "ExpireDate" : "2020/04/15", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "3", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "80", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买3包星冰粽（10枚装）可立减80元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }
+    ], 
+    "ExpensesRecord" : [
+        {
+            "ConsumeDate" : "2019-04-25 12:42", 
+            "StoreName" : "金桥佳邻坊店(Joy Link Hub Store)", 
+            "GoodsItem" : [
+                {
+                    "GoodsName" : "蓝莓星空", 
+                    "GoodsPrice" : 38.0, 
+                    "GoodsSize" : "L", 
+                    "GoodsNum" : NumberInt(1)
+                }
+            ], 
+            "TotalPrice" : 38.0, 
+            "StarsGain" : 1.0
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("58c41d5d3eddd93e9ab5b002"), 
+    "UserID" : "2717092100", 
+    "UserName" : "ZhangHe", 
+    "Password" : "HelloWorld", 
+    "NickName" : "Jeff", 
+    "Gender" : "Man", 
+    "MemberShip" : {
+        "StarLevel" : "Green", 
+        "StarsNumber" : NumberInt(6), 
+        "StarsOfNextLevNeed" : 16.0, 
+        "Privileges" : {
+            "GreenPri" : {
+                "RewardsWelcomeToGreenDrink" : true, 
+                "RewardsBithdayDrink" : true, 
+                "RewardsTasteOfGoldDrink" : true, 
+                "rewardsGreenForever" : true
+            }, 
+            "GoldPri" : {
+                "RewardsWelcomeToGoldDrink" : false, 
+                "RewardsAnniversaryDrink" : false, 
+                "RewardsStarsRedemption" : false, 
+                "RewardsDigitalGoldSvc" : false
+            }
+        }, 
+        "ExpireDate" : "2020/09/04"
+    }, 
+    "SvcCard" : [
+        {
+            "CardID" : "7310 2332 6124 1994", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_zg@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 2017", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_sz@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 2017 1994", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_hz@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 2018", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_xa@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 2018 1994", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_km@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2018 6124 1994", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_sh@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 8265", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_gz@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 8642", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_jn@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 6253", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_sjz@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 3702", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_ty@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 9275", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_zz@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 3895", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_wh@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 7532", 
+            "Balance" : 800.0, 
+            "CardImage" : "svc_main_zh@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 5160", 
+            "Balance" : 1000.0, 
+            "CardImage" : "svc_main_cc@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 1470", 
+            "Balance" : 1000.0, 
+            "CardImage" : "svc_main_nc@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 4317", 
+            "Balance" : 600.0, 
+            "CardImage" : "svc_main_gy@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 0436", 
+            "Balance" : 800.0, 
+            "CardImage" : "svc_main_fs@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 2366", 
+            "Balance" : 100.0, 
+            "CardImage" : "svc_main_cz@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 1720", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_bear@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 7532", 
+            "Balance" : 600.0, 
+            "CardImage" : "svc_main_stand@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6532 1720", 
+            "Balance" : 300.0, 
+            "CardImage" : "svc_main_71@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 4632", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_tea@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 2071", 
+            "Balance" : 200.0, 
+            "CardImage" : "svc_main_music@3x.png"
+        }, 
+        {
+            "CardID" : "7310 2332 6124 2337", 
+            "Balance" : 800.0, 
+            "CardImage" : "svc_main_re@3x.png"
+        }
+    ], 
+    "MyRewards" : [
+        {
+            "Title" : "玉星晋级饮品券", 
+            "StartDate" : "2020/08/08", 
+            "ExpireDate" : "2020/08/22", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Food/Bever", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "none", 
+            "RewardsType" : "Free", 
+            "Rewards" : "1", 
+            "Image" : "x3.png", 
+            "Rules" : "1.使用此电子兑换券您可以获赠一杯中杯手工调制饮料,但个别特定饮品（例如：星巴克臻选咖啡、虹吸壶冲泡咖啡、星巴克气致冷萃系列饮品、星巴克冰淇淋系列产品、星巴克臻选上海烘焙工坊、星巴克臻选咖啡·焙烤坊、星巴克臻选上海世茂广场店、星巴克臻选深圳湾万象城店、星巴克臻选咖啡·酒坊和星巴克臻选北京坊店内售卖的所有饮品等星巴克不时指定的饮品）除外。|2.添加浓缩咖啡、糖浆及搅打奶油等额外客制化服务需另行付费。|3.本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|4.本好礼无法在星巴克专星送线上订餐服务中使用。|5.本好礼仅限使用一次。"
+        }, 
+        {
+            "Title" : "星巴克玩味冰调™立减5元", 
+            "StartDate" : "2020/08/08", 
+            "ExpireDate" : "2020/08/22", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Beverages/Mixology", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "5", 
+            "Image" : "x3.png", 
+            "Rules" : "1. 凭本好礼购买任意一杯星巴克玩味冰调™系列饮品可享正价立减5元优惠。星巴克玩味冰调™系列饮品包括橙柚派对、醋意桃桃、橘香茉吉托、石榴仲夏梦、蓝莓星空、酸柠浮冷萃、璃光石榴冷萃、气炫冰山美式。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "星冰粽单包减28元", 
+            "StartDate" : "2020/08/08", 
+            "ExpireDate" : "2020/08/22", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "1", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "28", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买1包星冰粽（10枚装）可立减28元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "同笔交易两包或以上星冰粽减66元", 
+            "StartDate" : "2020/08/08", 
+            "ExpireDate" : "2020/08/22", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "2", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "66", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买2包星冰粽（10枚装）可立减66元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "同笔交易三包或以上星冰粽减90元", 
+            "StartDate" : "2020/08/08", 
+            "ExpireDate" : "2020/08/22", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "3", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "90", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买3包星冰粽（10枚装）可立减90元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "欢庆蛋糕礼盒立减25元", 
+            "StartDate" : "2020/08/08", 
+            "ExpireDate" : "2020/08/22", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Food/Cake", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "25", 
+            "Image" : "x2.png", 
+            "Rules" : "1. 凭本好礼，单笔交易中购买欢庆蛋糕礼盒可享立减25元优惠。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "星巴克玩味冰调™立减5元", 
+            "StartDate" : "2019/05/02", 
+            "ExpireDate" : "2019/05/16", 
+            "UseDate" : "2019/05/12", 
+            "State" : "USED", 
+            "GoodsType" : "Beverages/Mixology", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "5", 
+            "Image" : "x3.png", 
+            "Rules" : "1. 凭本好礼购买任意一杯星巴克玩味冰调™系列饮品可享正价立减5元优惠。星巴克玩味冰调™系列饮品包括橙柚派对、醋意桃桃、橘香茉吉托、石榴仲夏梦、蓝莓星空、酸柠浮冷萃、璃光石榴冷萃、气炫冰山美式。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "欢庆蛋糕礼盒立减25元", 
+            "StartDate" : "2019/05/16", 
+            "ExpireDate" : "2019/05/24", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Cake", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "25", 
+            "Image" : "x2.png", 
+            "Rules" : "1. 凭本好礼，单笔交易中购买欢庆蛋糕礼盒可享立减25元优惠。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "欢庆蛋糕礼盒立减25元", 
+            "StartDate" : "2019/06/03", 
+            "ExpireDate" : "2019/06/15", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Cake", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "25", 
+            "Image" : "x2.png", 
+            "Rules" : "1. 凭本好礼，单笔交易中购买欢庆蛋糕礼盒可享立减25元优惠。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "欢庆蛋糕礼盒立减25元", 
+            "StartDate" : "2019/05/07", 
+            "ExpireDate" : "2019/05/12", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Cake", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "25", 
+            "Image" : "x2.png", 
+            "Rules" : "1. 凭本好礼，单笔交易中购买欢庆蛋糕礼盒可享立减25元优惠。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "20元指定中杯饮品（门店使用）", 
+            "StartDate" : "2019/04/28", 
+            "ExpireDate" : "2019/05/06", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Bever", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "M/Store", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "20", 
+            "Image" : "x4.png", 
+            "Rules" : "1. 使用此电子兑换券您可以享受以人民币20元的优惠价购买一杯中杯手工调制的饮料，但个别特定饮品（例如：星巴克臻选咖啡、虹吸壶冲泡咖啡、星巴克气致冷萃系列饮品、咖啡融合冰淇淋系列以及星巴克臻选上海烘焙工坊、星巴克臻选咖啡·焙烤坊、星巴克臻选北京坊旗舰店、星巴克臻选上海百联世茂店、星巴克臻选深圳湾万象城店和其他不时指定的门店内售卖的所有饮品、其他星巴克不时指定的饮品）除外。|2. 升杯、添加浓缩咖啡、糖浆及搅打奶油等额外客制化服务需另行付费。|3. 本电子兑换券仅可使用一次，且不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|4. 本电子兑换券无法在星巴克专星送线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "饮品买一赠一（门店使用）", 
+            "StartDate" : "2019/04/28", 
+            "ExpireDate" : "2019/05/06", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Bever", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "1/Store", 
+            "RewardsType" : "Free", 
+            "Rewards" : "1", 
+            "Image" : "x3.png", 
+            "Rules" : "1.使用此电子兑换券您可以享受在购买一杯手工调制的饮料情况下另外获赠一杯手工调制的饮料，但个别特定饮品（例如：星巴克臻选咖啡、虹吸壶冲泡咖啡、星巴克气致冷萃系列饮品、星巴克冰淇淋系列产品、星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊店、星巴克臻选咖啡焙烤坊店、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊内售卖的所有饮品等星巴克不时指定的饮品）除外。该赠送的饮料必须是不高于您所购买的饮料单价。|2.添加浓缩咖啡、糖浆及搅打奶油等额外客制化服务需另行付费。|3.本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|4. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "星冰粽单包减24元", 
+            "StartDate" : "2019/03/24", 
+            "ExpireDate" : "2020/04/15", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "1", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "24", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买1包星冰粽（10枚装）可立减24元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "同笔交易两包或以上星冰粽减60元", 
+            "StartDate" : "2019/03/24", 
+            "ExpireDate" : "2020/04/15", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "2", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "60", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买2包星冰粽（10枚装）可立减60元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "同笔交易三包或以上星冰粽减80元", 
+            "StartDate" : "2019/03/24", 
+            "ExpireDate" : "2020/04/15", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "3", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "80", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买3包星冰粽（10枚装）可立减80元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }
+    ], 
+    "ExpensesRecord" : [
+        {
+            "ConsumeDate" : "2019/05/24 12:42", 
+            "StoreName" : "金桥佳邻坊店(Joy Link Hub Store)", 
+            "GoodsItem" : [
+                {
+                    "GoodsName" : "摩卡咖啡", 
+                    "GoodsPrice" : 33.0, 
+                    "GoodsSize" : "M", 
+                    "GoodsNum" : NumberInt(1)
+                }, 
+                {
+                    "GoodsName" : "摩卡星冰乐", 
+                    "GoodsPrice" : 28.0, 
+                    "GoodsSize" : "M", 
+                    "GoodsNum" : NumberInt(1)
+                }
+            ], 
+            "TotalPrice" : 61.0, 
+            "StarsGain" : 1.0
+        }, 
+        {
+            "ConsumeDate" : "2019/05/18 18:00", 
+            "StoreName" : "金桥佳邻坊店(Joy Link Hub Store)", 
+            "GoodsItem" : [
+                {
+                    "GoodsName" : "拿铁咖啡", 
+                    "GoodsPrice" : 35.0, 
+                    "GoodsSize" : "L", 
+                    "GoodsNum" : NumberInt(1)
+                }
+            ], 
+            "TotalPrice" : 35.0, 
+            "StarsGain" : 0.9
+        }, 
+        {
+            "ConsumeDate" : "2019/05/16 11:04", 
+            "StoreName" : "金桥佳邻坊店(Joy Link Hub Store)", 
+            "GoodsItem" : [
+                {
+                    "GoodsName" : "摩卡咖啡", 
+                    "GoodsPrice" : 33.0, 
+                    "GoodsSize" : "M", 
+                    "GoodsNum" : NumberInt(1)
+                }, 
+                {
+                    "GoodsName" : "抹茶星冰乐", 
+                    "GoodsPrice" : 35.0, 
+                    "GoodsSize" : "L", 
+                    "GoodsNum" : NumberInt(1)
+                }, 
+                {
+                    "GoodsName" : "香草星冰乐", 
+                    "GoodsPrice" : 32.0, 
+                    "GoodsSize" : "L", 
+                    "GoodsNum" : NumberInt(1)
+                }
+            ], 
+            "TotalPrice" : 100.0, 
+            "StarsGain" : 2.5
+        }, 
+        {
+            "ConsumeDate" : "2019/05/04 10:32", 
+            "StoreName" : "金桥佳邻坊店(Joy Link Hub Store)", 
+            "GoodsItem" : [
+                {
+                    "GoodsName" : "石榴仲夏梦", 
+                    "GoodsPrice" : 38.0, 
+                    "GoodsSize" : "L", 
+                    "GoodsNum" : NumberInt(1)
+                }
+            ], 
+            "TotalPrice" : 38.0, 
+            "StarsGain" : NumberInt(1)
+        }, 
+        {
+            "ConsumeDate" : "2019/04/25 12:42", 
+            "StoreName" : "金桥佳邻坊店(Joy Link Hub Store)", 
+            "GoodsItem" : [
+                {
+                    "GoodsName" : "摩卡咖啡", 
+                    "GoodsPrice" : 33.0, 
+                    "GoodsSize" : "M", 
+                    "GoodsNum" : NumberInt(1)
+                }
+            ], 
+            "TotalPrice" : 33.0, 
+            "StarsGain" : 0.8
+        }, 
+        {
+            "ConsumeDate" : "2019/04/24 19:31", 
+            "StoreName" : "金桥佳邻坊店(Joy Link Hub Store)", 
+            "GoodsItem" : [
+                {
+                    "GoodsName" : "蓝莓星空", 
+                    "GoodsPrice" : 38.0, 
+                    "GoodsSize" : "L", 
+                    "GoodsNum" : NumberInt(1)
+                }, 
+                {
+                    "GoodsName" : "橙柚派对", 
+                    "GoodsPrice" : 38.0, 
+                    "GoodsSize" : "L", 
+                    "GoodsNum" : NumberInt(1)
+                }
+            ], 
+            "TotalPrice" : 76.0, 
+            "StarsGain" : 1.8
+        }
+    ]
+}
+{ 
+    "_id" : ObjectId("58c41d5d3eddd93e9ab5b003"), 
+    "UserID" : "2717092102", 
+    "UserName" : "Guest", 
+    "Password" : "HelloWorld", 
+    "NickName" : "Guest", 
+    "Gender" : "Man", 
+    "MemberShip" : {
+        "StarLevel" : "White", 
+        "StarsNumber" : NumberInt(6), 
+        "StarsOfNextLevNeed" : 8.0, 
+        "Privileges" : {
+            "GreenPri" : {
+                "RewardsWelcomeToGreenDrink" : false, 
+                "RewardsBithdayDrink" : false, 
+                "RewardsTasteOfGoldDrink" : false, 
+                "rewardsGreenForever" : false
+            }, 
+            "GoldPri" : {
+                "RewardsWelcomeToGoldDrink" : false, 
+                "RewardsAnniversaryDrink" : false, 
+                "RewardsStarsRedemption" : false, 
+                "RewardsDigitalGoldSvc" : false
+            }
+        }, 
+        "ExpireDate" : "2020/04/24"
+    }, 
+    "SvcCard" : [
+
+    ], 
+    "MyRewards" : [
+        {
+            "Title" : "星巴克玩味冰调™立减5元", 
+            "StartDate" : "2019/05/07", 
+            "ExpireDate" : "2019/05/16", 
+            "UseDate" : "2019/05/12", 
+            "State" : "USED", 
+            "GoodsType" : "Beverages/Mixology", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "5", 
+            "Image" : "x3.png", 
+            "Rules" : "1. 凭本好礼购买任意一杯星巴克玩味冰调™系列饮品可享正价立减5元优惠。星巴克玩味冰调™系列饮品包括橙柚派对、醋意桃桃、橘香茉吉托、石榴仲夏梦、蓝莓星空、酸柠浮冷萃、璃光石榴冷萃、气炫冰山美式。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "星巴克玩味冰调™立减5元", 
+            "StartDate" : "2019/05/07", 
+            "ExpireDate" : "2020/07/19", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Beverages/Mixology", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "5", 
+            "Image" : "x3.png", 
+            "Rules" : "1. 凭本好礼购买任意一杯星巴克玩味冰调™系列饮品可享正价立减5元优惠。星巴克玩味冰调™系列饮品包括橙柚派对、醋意桃桃、橘香茉吉托、石榴仲夏梦、蓝莓星空、酸柠浮冷萃、璃光石榴冷萃、气炫冰山美式。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "星冰粽单包减28元", 
+            "StartDate" : "2019/05/24", 
+            "ExpireDate" : "2020/07/19", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "1", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "28", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买1包星冰粽（10枚装）可立减28元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "同笔交易两包或以上星冰粽减66元", 
+            "StartDate" : "2019/05/24", 
+            "ExpireDate" : "2020/07/19", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "2", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "66", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买2包星冰粽（10枚装）可立减66元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "同笔交易三包或以上星冰粽减90元", 
+            "StartDate" : "2019/05/24", 
+            "ExpireDate" : "2020/07/19", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "3", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "90", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买3包星冰粽（10枚装）可立减90元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "欢庆蛋糕礼盒立减25元", 
+            "StartDate" : "2019/05/07", 
+            "ExpireDate" : "2020/07/19", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Food/Cake", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "25", 
+            "Image" : "x2.png", 
+            "Rules" : "1. 凭本好礼，单笔交易中购买欢庆蛋糕礼盒可享立减25元优惠。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "欢庆蛋糕礼盒立减25元", 
+            "StartDate" : "2019/05/07", 
+            "ExpireDate" : "2019/06/06", 
+            "UseDate" : "", 
+            "State" : "AVL", 
+            "GoodsType" : "Food/Cake", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "25", 
+            "Image" : "x2.png", 
+            "Rules" : "1. 凭本好礼，单笔交易中购买欢庆蛋糕礼盒可享立减25元优惠。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "欢庆蛋糕礼盒立减25元", 
+            "StartDate" : "2019/05/16", 
+            "ExpireDate" : "2019/05/24", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Cake", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "25", 
+            "Image" : "x2.png", 
+            "Rules" : "1. 凭本好礼，单笔交易中购买欢庆蛋糕礼盒可享立减25元优惠。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "欢庆蛋糕礼盒立减25元", 
+            "StartDate" : "2019/05/12", 
+            "ExpireDate" : "2019/05/16", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Cake", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "25", 
+            "Image" : "x2.png", 
+            "Rules" : "1. 凭本好礼，单笔交易中购买欢庆蛋糕礼盒可享立减25元优惠。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "欢庆蛋糕礼盒立减25元", 
+            "StartDate" : "2019/05/07", 
+            "ExpireDate" : "2019/05/12", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Cake", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "none", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "25", 
+            "Image" : "x2.png", 
+            "Rules" : "1. 凭本好礼，单笔交易中购买欢庆蛋糕礼盒可享立减25元优惠。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "20元指定中杯饮品（门店使用）", 
+            "StartDate" : "2019/04/28", 
+            "ExpireDate" : "2019/05/06", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Bever", 
+            "RequireType" : "GoodsPrice", 
+            "Require" : "M/Store", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "20", 
+            "Image" : "x4.png", 
+            "Rules" : "1. 使用此电子兑换券您可以享受以人民币20元的优惠价购买一杯中杯手工调制的饮料，但个别特定饮品（例如：星巴克臻选咖啡、虹吸壶冲泡咖啡、星巴克气致冷萃系列饮品、咖啡融合冰淇淋系列以及星巴克臻选上海烘焙工坊、星巴克臻选咖啡·焙烤坊、星巴克臻选北京坊旗舰店、星巴克臻选上海百联世茂店、星巴克臻选深圳湾万象城店和其他不时指定的门店内售卖的所有饮品、其他星巴克不时指定的饮品）除外。|2. 升杯、添加浓缩咖啡、糖浆及搅打奶油等额外客制化服务需另行付费。|3. 本电子兑换券仅可使用一次，且不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|4. 本电子兑换券无法在星巴克专星送线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "饮品买一赠一（门店使用）", 
+            "StartDate" : "2019/04/28", 
+            "ExpireDate" : "2019/05/06", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Bever", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "1/Store", 
+            "RewardsType" : "Free", 
+            "Rewards" : "1", 
+            "Image" : "x3.png", 
+            "Rules" : "1.使用此电子兑换券您可以享受在购买一杯手工调制的饮料情况下另外获赠一杯手工调制的饮料，但个别特定饮品（例如：星巴克臻选咖啡、虹吸壶冲泡咖啡、星巴克气致冷萃系列饮品、星巴克冰淇淋系列产品、星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊店、星巴克臻选咖啡焙烤坊店、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊内售卖的所有饮品等星巴克不时指定的饮品）除外。该赠送的饮料必须是不高于您所购买的饮料单价。|2.添加浓缩咖啡、糖浆及搅打奶油等额外客制化服务需另行付费。|3.本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|4. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "玉星晋级饮品券", 
+            "StartDate" : "2019/04/08", 
+            "ExpireDate" : "2019/04/16", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Bever", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "none", 
+            "RewardsType" : "Free", 
+            "Rewards" : "1", 
+            "Image" : "x3.png", 
+            "Rules" : "1.使用此电子兑换券您可以获赠一杯中杯手工调制饮料,但个别特定饮品（例如：星巴克臻选咖啡、虹吸壶冲泡咖啡、星巴克气致冷萃系列饮品、星巴克冰淇淋系列产品、星巴克臻选上海烘焙工坊、星巴克臻选咖啡·焙烤坊、星巴克臻选上海世茂广场店、星巴克臻选深圳湾万象城店、星巴克臻选咖啡·酒坊和星巴克臻选北京坊店内售卖的所有饮品等星巴克不时指定的饮品）除外。|2.添加浓缩咖啡、糖浆及搅打奶油等额外客制化服务需另行付费。|3.本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|4.本好礼无法在星巴克专星送线上订餐服务中使用。|5.本好礼仅限使用一次。"
+        }, 
+        {
+            "Title" : "星冰粽单包减24元", 
+            "StartDate" : "2019/03/24", 
+            "ExpireDate" : "2020/04/15", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "1", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "24", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买1包星冰粽（10枚装）可立减24元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "同笔交易两包或以上星冰粽减60元", 
+            "StartDate" : "2019/03/24", 
+            "ExpireDate" : "2020/04/15", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "2", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "60", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买2包星冰粽（10枚装）可立减60元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }, 
+        {
+            "Title" : "同笔交易三包或以上星冰粽减80元", 
+            "StartDate" : "2019/03/24", 
+            "ExpireDate" : "2020/04/15", 
+            "UseDate" : "", 
+            "State" : "EXP", 
+            "GoodsType" : "Food/Zongzi", 
+            "RequireType" : "GoodsNum", 
+            "Require" : "3", 
+            "RewardsType" : "FullMinus", 
+            "Rewards" : "80", 
+            "Image" : "x1.png", 
+            "Rules" : "1. 凭本好礼正价购买3包星冰粽（10枚装）可立减80元。本好礼优惠金额不可叠加享受。|2. 本好礼仅限使用一次。|3. 本好礼可以在中国大陆地区指定星巴克门店（不包括星巴克臻选上海烘焙工坊、星巴克臻选上海世茂广场店、星巴克臻选北京坊旗舰店、星巴克臻选咖啡焙烤坊、星巴克臻选深圳湾万象城店及星巴克臻选咖啡酒坊）使用。|4. 本好礼不可与店内其他优惠活动或其他好礼（包括星享俱乐部会员好礼）同享，不可兑换现金。|5. 本好礼无法在星巴克专星送和啡快线上订餐服务中使用。"
+        }
+    ], 
+    "ExpensesRecord" : [
+        {
+            "ConsumeDate" : "2019-04-25 12:42", 
+            "StoreName" : "金桥佳邻坊店(Joy Link Hub Store)", 
+            "GoodsItem" : [
+                {
+                    "GoodsName" : "蓝莓星空", 
+                    "GoodsPrice" : 33.0, 
+                    "GoodsSize" : "L", 
+                    "GoodsNum" : NumberInt(1)
+                }
+            ], 
+            "TotalPrice" : 33.0, 
+            "StarsGain" : 0.8
+        }
+    ]
+}

@@ -1,0 +1,1085 @@
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab2fd"), 
+    "City" : "北京市", 
+    "CenterLon" : "116.407526", 
+    "CenterLat" : "39.904030", 
+    "StoreNum" : "234"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab2fe"), 
+    "City" : "廊坊市", 
+    "CenterLon" : "116.683752", 
+    "CenterLat" : "39.538047", 
+    "StoreNum" : "5"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab2ff"), 
+    "City" : "天津市", 
+    "CenterLon" : "117.200983", 
+    "CenterLat" : "39.084158", 
+    "StoreNum" : "58"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab300"), 
+    "City" : "保定市", 
+    "CenterLon" : "115.464806", 
+    "CenterLat" : "38.873891", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab301"), 
+    "City" : "唐山市", 
+    "CenterLon" : "118.180193", 
+    "CenterLat" : "39.630867", 
+    "StoreNum" : "4"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab302"), 
+    "City" : "张家口", 
+    "CenterLon" : "114.887543", 
+    "CenterLat" : "40.824418", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab303"), 
+    "City" : "承德市", 
+    "CenterLon" : "117.962410", 
+    "CenterLat" : "40.954071", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab304"), 
+    "City" : "石家庄", 
+    "CenterLon" : "114.514860", 
+    "CenterLat" : "38.042307", 
+    "StoreNum" : "7"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab305"), 
+    "City" : "秦皇岛", 
+    "CenterLon" : "119.600492", 
+    "CenterLat" : "39.935385", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab306"), 
+    "City" : "邢台市", 
+    "CenterLon" : "114.504844", 
+    "CenterLat" : "37.070589", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab307"), 
+    "City" : "邯郸", 
+    "CenterLon" : "114.538961", 
+    "CenterLat" : "36.625657", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab308"), 
+    "City" : "太原市", 
+    "CenterLon" : "112.548879", 
+    "CenterLat" : "37.870590", 
+    "StoreNum" : "8"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab309"), 
+    "City" : "包头市", 
+    "CenterLon" : "109.840347", 
+    "CenterLat" : "40.657449", 
+    "StoreNum" : "4"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab30a"), 
+    "City" : "呼和浩特", 
+    "CenterLon" : "111.749180", 
+    "CenterLat" : "40.842585", 
+    "StoreNum" : "4"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab30b"), 
+    "City" : "大连市", 
+    "CenterLon" : "121.614682", 
+    "CenterLat" : "38.914003", 
+    "StoreNum" : "25"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab30c"), 
+    "City" : "抚顺市", 
+    "CenterLon" : "123.957208", 
+    "CenterLat" : "41.880872", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab30d"), 
+    "City" : "沈阳市", 
+    "CenterLon" : "123.431474", 
+    "CenterLat" : "41.805698", 
+    "StoreNum" : "24"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab30e"), 
+    "City" : "盘锦市", 
+    "CenterLon" : "122.070714", 
+    "CenterLat" : "41.119997", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab30f"), 
+    "City" : "营口市", 
+    "CenterLon" : "122.235417", 
+    "CenterLat" : "40.667012", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab310"), 
+    "City" : "鞍山市", 
+    "CenterLon" : "122.994329", 
+    "CenterLat" : "41.108647", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab311"), 
+    "City" : "吉林市", 
+    "CenterLon" : "126.549576", 
+    "CenterLat" : "43.837883", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab312"), 
+    "City" : "延吉市", 
+    "CenterLon" : "129.508946", 
+    "CenterLat" : "42.891255", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab313"), 
+    "City" : "长春市", 
+    "CenterLon" : "125.323544", 
+    "CenterLat" : "43.817071", 
+    "StoreNum" : "10"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab314"), 
+    "City" : "哈尔滨", 
+    "CenterLon" : "126.534967", 
+    "CenterLat" : "45.803775", 
+    "StoreNum" : "14"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab315"), 
+    "City" : "大庆市", 
+    "CenterLon" : "125.103784", 
+    "CenterLat" : "46.589309", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab316"), 
+    "City" : "上海市", 
+    "CenterLon" : "121.473701", 
+    "CenterLat" : "31.230416", 
+    "StoreNum" : "539"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab317"), 
+    "City" : "宁波市", 
+    "CenterLon" : "121.550357", 
+    "CenterLat" : "29.874556", 
+    "StoreNum" : "59"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab318"), 
+    "City" : "南京市", 
+    "CenterLon" : "118.796877", 
+    "CenterLat" : "32.060255", 
+    "StoreNum" : "73"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab319"), 
+    "City" : "南通市", 
+    "CenterLon" : "120.894291", 
+    "CenterLat" : "31.980171", 
+    "StoreNum" : "21"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab31a"), 
+    "City" : "吴江市", 
+    "CenterLon" : "120.641602", 
+    "CenterLat" : "31.160404", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab31b"), 
+    "City" : "太仓市", 
+    "CenterLon" : "121.130550", 
+    "CenterLat" : "31.457735", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab31c"), 
+    "City" : "姜堰市", 
+    "CenterLon" : "115.508797", 
+    "CenterLat" : "32.830109", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab31d"), 
+    "City" : "宜兴市", 
+    "CenterLon" : "119.823308", 
+    "CenterLat" : "31.340637", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab31e"), 
+    "City" : "宿迁市", 
+    "CenterLon" : "118.275198", 
+    "CenterLat" : "33.963232", 
+    "StoreNum" : "4"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab31f"), 
+    "City" : "常州市", 
+    "CenterLon" : "119.973987", 
+    "CenterLat" : "31.810689", 
+    "StoreNum" : "26"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab320"), 
+    "City" : "常熟市", 
+    "CenterLon" : "120.752481", 
+    "CenterLat" : "31.654376", 
+    "StoreNum" : "6"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab321"), 
+    "City" : "张家港", 
+    "CenterLon" : "120.768611", 
+    "CenterLat" : "31.446084", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab322"), 
+    "City" : "张家港市", 
+    "CenterLon" : "120.479033", 
+    "CenterLat" : "31.899861", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab323"), 
+    "City" : "徐州市", 
+    "CenterLon" : "117.284124", 
+    "CenterLat" : "34.205768", 
+    "StoreNum" : "7"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab324"), 
+    "City" : "扬中市", 
+    "CenterLon" : "119.797635", 
+    "CenterLat" : "32.234831", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab325"), 
+    "City" : "扬州市", 
+    "CenterLon" : "119.412966", 
+    "CenterLat" : "32.394210", 
+    "StoreNum" : "12"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab326"), 
+    "City" : "无锡市", 
+    "CenterLon" : "120.311910", 
+    "CenterLat" : "31.491169", 
+    "StoreNum" : "40"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab327"), 
+    "City" : "昆山市", 
+    "CenterLon" : "120.980737", 
+    "CenterLat" : "31.385598", 
+    "StoreNum" : "13"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab328"), 
+    "City" : "江苏省", 
+    "CenterLon" : "118.763232", 
+    "CenterLat" : "32.061707", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab329"), 
+    "City" : "江阴市", 
+    "CenterLon" : "120.284939", 
+    "CenterLat" : "31.920658", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab32a"), 
+    "City" : "泰州市", 
+    "CenterLon" : "119.923116", 
+    "CenterLat" : "32.455778", 
+    "StoreNum" : "7"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab32b"), 
+    "City" : "海门市", 
+    "CenterLon" : "121.181615", 
+    "CenterLat" : "31.871173", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab32c"), 
+    "City" : "淮安市", 
+    "CenterLon" : "119.015285", 
+    "CenterLat" : "33.610353", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab32d"), 
+    "City" : "盐城市", 
+    "CenterLon" : "120.163561", 
+    "CenterLat" : "33.347382", 
+    "StoreNum" : "6"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab32e"), 
+    "City" : "苏州市", 
+    "CenterLon" : "120.585315", 
+    "CenterLat" : "31.298886", 
+    "StoreNum" : "90"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab32f"), 
+    "City" : "连云港", 
+    "CenterLon" : "119.221611", 
+    "CenterLat" : "34.596653", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab330"), 
+    "City" : "连云港市", 
+    "CenterLon" : "119.221611", 
+    "CenterLat" : "34.596653", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab331"), 
+    "City" : "镇江市", 
+    "CenterLon" : "119.425836", 
+    "CenterLat" : "32.187849", 
+    "StoreNum" : "9"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab332"), 
+    "City" : "靖江市", 
+    "CenterLon" : "120.277138", 
+    "CenterLat" : "31.982751", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab333"), 
+    "City" : "高邮市", 
+    "CenterLon" : "119.459161", 
+    "CenterLat" : "32.781659", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab334"), 
+    "City" : "上虞市", 
+    "CenterLon" : "118.897163", 
+    "CenterLat" : "32.466564", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab335"), 
+    "City" : "东阳市", 
+    "CenterLon" : "120.241566", 
+    "CenterLat" : "29.289648", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab336"), 
+    "City" : "丽水市", 
+    "CenterLon" : "119.922796", 
+    "CenterLat" : "28.467630", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab337"), 
+    "City" : "临海市", 
+    "CenterLon" : "121.145047", 
+    "CenterLat" : "28.858457", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab338"), 
+    "City" : "义乌市", 
+    "CenterLon" : "120.075058", 
+    "CenterLat" : "29.306841", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab339"), 
+    "City" : "余姚市", 
+    "CenterLon" : "121.154594", 
+    "CenterLat" : "30.037858", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab33a"), 
+    "City" : "兰溪市", 
+    "CenterLon" : "119.460526", 
+    "CenterLat" : "29.208919", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab33b"), 
+    "City" : "台州市", 
+    "CenterLon" : "121.420757", 
+    "CenterLat" : "28.656386", 
+    "StoreNum" : "11"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab33c"), 
+    "City" : "嘉兴", 
+    "CenterLon" : "120.755486", 
+    "CenterLat" : "30.746129", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab33d"), 
+    "City" : "嘉兴市", 
+    "CenterLon" : "120.755486", 
+    "CenterLat" : "30.746129", 
+    "StoreNum" : "14"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab33e"), 
+    "City" : "嘉善市", 
+    "CenterLon" : "120.921867", 
+    "CenterLat" : "30.841352", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab33f"), 
+    "City" : "奉化市", 
+    "CenterLon" : "121.406728", 
+    "CenterLat" : "29.656560", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab340"), 
+    "City" : "慈溪市", 
+    "CenterLon" : "121.266579", 
+    "CenterLat" : "30.169665", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab341"), 
+    "City" : "杭州市", 
+    "CenterLon" : "120.155070", 
+    "CenterLat" : "30.274084", 
+    "StoreNum" : "117"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab342"), 
+    "City" : "江山市", 
+    "CenterLon" : "118.626926", 
+    "CenterLat" : "28.737245", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab343"), 
+    "City" : "海宁市", 
+    "CenterLon" : "120.680757", 
+    "CenterLat" : "30.510659", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab344"), 
+    "City" : "温岭市", 
+    "CenterLon" : "121.385604", 
+    "CenterLat" : "28.372506", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab345"), 
+    "City" : "温州市", 
+    "CenterLon" : "120.699366", 
+    "CenterLat" : "27.994267", 
+    "StoreNum" : "20"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab346"), 
+    "City" : "湖州市", 
+    "CenterLon" : "120.086823", 
+    "CenterLat" : "30.894348", 
+    "StoreNum" : "12"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab347"), 
+    "City" : "绍兴市", 
+    "CenterLon" : "120.580232", 
+    "CenterLat" : "30.029752", 
+    "StoreNum" : "18"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab348"), 
+    "City" : "舟山市", 
+    "CenterLon" : "122.207215", 
+    "CenterLat" : "29.985295", 
+    "StoreNum" : "5"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab349"), 
+    "City" : "萧山市", 
+    "CenterLon" : "120.264253", 
+    "CenterLat" : "30.183806", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab34a"), 
+    "City" : "衢州市", 
+    "CenterLon" : "118.859457", 
+    "CenterLat" : "28.970079", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab34b"), 
+    "City" : "诸暨市", 
+    "CenterLon" : "120.246863", 
+    "CenterLat" : "29.708692", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab34c"), 
+    "City" : "金华市", 
+    "CenterLon" : "119.647444", 
+    "CenterLat" : "29.079059", 
+    "StoreNum" : "11"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab34d"), 
+    "City" : "合肥市", 
+    "CenterLon" : "117.227239", 
+    "CenterLat" : "31.820586", 
+    "StoreNum" : "18"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab34e"), 
+    "City" : "芜湖市", 
+    "CenterLon" : "118.432941", 
+    "CenterLat" : "31.352859", 
+    "StoreNum" : "4"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab34f"), 
+    "City" : "蚌埠市", 
+    "CenterLon" : "117.389719", 
+    "CenterLat" : "32.916287", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab350"), 
+    "City" : "马鞍山", 
+    "CenterLon" : "118.506759", 
+    "CenterLat" : "31.670452", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab351"), 
+    "City" : "厦门市", 
+    "CenterLon" : "118.089425", 
+    "CenterLat" : "24.479833", 
+    "StoreNum" : "31"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab352"), 
+    "City" : "宁德市", 
+    "CenterLon" : "119.547932", 
+    "CenterLat" : "26.665617", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab353"), 
+    "City" : "泉州市", 
+    "CenterLon" : "118.675675", 
+    "CenterLat" : "24.874132", 
+    "StoreNum" : "13"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab354"), 
+    "City" : "漳州市", 
+    "CenterLon" : "117.647481", 
+    "CenterLat" : "24.512948", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab355"), 
+    "City" : "福州市", 
+    "CenterLon" : "119.296494", 
+    "CenterLat" : "26.074507", 
+    "StoreNum" : "23"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab356"), 
+    "City" : "莆田市", 
+    "CenterLon" : "119.007777", 
+    "CenterLat" : "25.454084", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab357"), 
+    "City" : "龙岩市", 
+    "CenterLon" : "117.017536", 
+    "CenterLat" : "25.075123", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab358"), 
+    "City" : "九江市", 
+    "CenterLon" : "116.001930", 
+    "CenterLat" : "29.705077", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab359"), 
+    "City" : "南昌市", 
+    "CenterLon" : "115.858197", 
+    "CenterLat" : "28.682892", 
+    "StoreNum" : "11"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab35a"), 
+    "City" : "东营市", 
+    "CenterLon" : "118.674767", 
+    "CenterLat" : "37.434751", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab35b"), 
+    "City" : "临沂市", 
+    "CenterLon" : "118.356448", 
+    "CenterLat" : "35.104672", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab35c"), 
+    "City" : "威海市", 
+    "CenterLon" : "122.120419", 
+    "CenterLat" : "37.513068", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab35d"), 
+    "City" : "德州市", 
+    "CenterLon" : "116.357464", 
+    "CenterLat" : "37.434092", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab35e"), 
+    "City" : "日照市", 
+    "CenterLon" : "119.526888", 
+    "CenterLat" : "35.416377", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab35f"), 
+    "City" : "泰安市", 
+    "CenterLon" : "117.087614", 
+    "CenterLat" : "36.200252", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab360"), 
+    "City" : "济南市", 
+    "CenterLon" : "117.119999", 
+    "CenterLat" : "36.651216", 
+    "StoreNum" : "16"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab361"), 
+    "City" : "济宁市", 
+    "CenterLon" : "116.587098", 
+    "CenterLat" : "35.414921", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab362"), 
+    "City" : "淄博市", 
+    "CenterLon" : "118.054927", 
+    "CenterLat" : "36.813487", 
+    "StoreNum" : "5"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab363"), 
+    "City" : "潍坊市", 
+    "CenterLon" : "119.161755", 
+    "CenterLat" : "36.706774", 
+    "StoreNum" : "4"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab364"), 
+    "City" : "烟台市", 
+    "CenterLon" : "121.447935", 
+    "CenterLat" : "37.463822", 
+    "StoreNum" : "8"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab365"), 
+    "City" : "青岛市", 
+    "CenterLon" : "120.382639", 
+    "CenterLat" : "36.067082", 
+    "StoreNum" : "28"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab366"), 
+    "City" : "洛阳", 
+    "CenterLon" : "112.454040", 
+    "CenterLat" : "34.619682", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab367"), 
+    "City" : "郑州市", 
+    "CenterLon" : "113.625368", 
+    "CenterLat" : "34.746599", 
+    "StoreNum" : "18"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab368"), 
+    "City" : "十堰市", 
+    "CenterLon" : "110.797990", 
+    "CenterLat" : "32.629397", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab369"), 
+    "City" : "宜昌市", 
+    "CenterLon" : "111.286471", 
+    "CenterLat" : "30.691967", 
+    "StoreNum" : "4"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab36a"), 
+    "City" : "武汉市", 
+    "CenterLon" : "114.305392", 
+    "CenterLat" : "30.593098", 
+    "StoreNum" : "67"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab36b"), 
+    "City" : "襄樊市", 
+    "CenterLon" : "112.144150", 
+    "CenterLat" : "32.042427", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab36c"), 
+    "City" : "襄阳市", 
+    "CenterLon" : "112.122414", 
+    "CenterLat" : "32.008986", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab36d"), 
+    "City" : "黄石市", 
+    "CenterLon" : "115.038520", 
+    "CenterLat" : "30.199652", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab36e"), 
+    "City" : "岳阳市", 
+    "CenterLon" : "113.128958", 
+    "CenterLat" : "29.357104", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab36f"), 
+    "City" : "株洲市", 
+    "CenterLon" : "113.134002", 
+    "CenterLat" : "27.827550", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab370"), 
+    "City" : "湘潭市", 
+    "CenterLon" : "112.944049", 
+    "CenterLat" : "27.829738", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab371"), 
+    "City" : "衡阳市", 
+    "CenterLon" : "112.571997", 
+    "CenterLat" : "26.893230", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab372"), 
+    "City" : "长沙市", 
+    "CenterLon" : "112.938814", 
+    "CenterLat" : "28.228209", 
+    "StoreNum" : "26"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab373"), 
+    "City" : "东莞市", 
+    "CenterLon" : "113.751765", 
+    "CenterLat" : "23.020536", 
+    "StoreNum" : "31"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab374"), 
+    "City" : "中山市", 
+    "CenterLon" : "113.392782", 
+    "CenterLat" : "22.517645", 
+    "StoreNum" : "11"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab375"), 
+    "City" : "佛山市", 
+    "CenterLon" : "113.121416", 
+    "CenterLat" : "23.021548", 
+    "StoreNum" : "33"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab376"), 
+    "City" : "广州市", 
+    "CenterLon" : "113.264434", 
+    "CenterLat" : "23.129162", 
+    "StoreNum" : "106"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab377"), 
+    "City" : "惠州市", 
+    "CenterLon" : "114.416196", 
+    "CenterLat" : "23.111847", 
+    "StoreNum" : "7"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab378"), 
+    "City" : "梅州市", 
+    "CenterLon" : "116.122238", 
+    "CenterLat" : "24.288615", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab379"), 
+    "City" : "汕头市", 
+    "CenterLon" : "116.681972", 
+    "CenterLat" : "23.354091", 
+    "StoreNum" : "4"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab37a"), 
+    "City" : "江门市", 
+    "CenterLon" : "113.081901", 
+    "CenterLat" : "22.578738", 
+    "StoreNum" : "6"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab37b"), 
+    "City" : "深圳市", 
+    "CenterLon" : "114.057868", 
+    "CenterLat" : "22.543099", 
+    "StoreNum" : "112"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab37c"), 
+    "City" : "清远市", 
+    "CenterLon" : "113.056031", 
+    "CenterLat" : "23.681763", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab37d"), 
+    "City" : "湛江市", 
+    "CenterLon" : "110.359377", 
+    "CenterLat" : "21.270707", 
+    "StoreNum" : "4"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab37e"), 
+    "City" : "珠海市", 
+    "CenterLon" : "113.576726", 
+    "CenterLat" : "22.270715", 
+    "StoreNum" : "14"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab37f"), 
+    "City" : "肇庆市", 
+    "CenterLon" : "112.465091", 
+    "CenterLat" : "23.047191", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab380"), 
+    "City" : "阳江市", 
+    "CenterLon" : "111.982232", 
+    "CenterLat" : "21.857958", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab381"), 
+    "City" : "北海市", 
+    "CenterLon" : "109.119927", 
+    "CenterLat" : "21.481254", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab382"), 
+    "City" : "南宁市", 
+    "CenterLon" : "108.366543", 
+    "CenterLat" : "22.817002", 
+    "StoreNum" : "12"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab383"), 
+    "City" : "柳州", 
+    "CenterLon" : "109.415953", 
+    "CenterLat" : "24.325502", 
+    "StoreNum" : "6"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab384"), 
+    "City" : "桂林", 
+    "CenterLon" : "110.290194", 
+    "CenterLat" : "25.273566", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab385"), 
+    "City" : "三亚市", 
+    "CenterLon" : "109.511909", 
+    "CenterLat" : "18.252847", 
+    "StoreNum" : "6"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab386"), 
+    "City" : "儋州市", 
+    "CenterLon" : "109.580811", 
+    "CenterLat" : "19.521134", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab387"), 
+    "City" : "海口市", 
+    "CenterLon" : "110.198293", 
+    "CenterLat" : "20.044001", 
+    "StoreNum" : "9"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab388"), 
+    "City" : "重庆市", 
+    "CenterLon" : "106.551556", 
+    "CenterLat" : "29.563009", 
+    "StoreNum" : "41"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab389"), 
+    "City" : "乐山市", 
+    "CenterLon" : "103.765568", 
+    "CenterLat" : "29.552106", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab38a"), 
+    "City" : "德阳市", 
+    "CenterLon" : "104.397894", 
+    "CenterLat" : "31.126855", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab38b"), 
+    "City" : "成都市", 
+    "CenterLon" : "104.066541", 
+    "CenterLat" : "30.572269", 
+    "StoreNum" : "98"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab38c"), 
+    "City" : "绵阳市", 
+    "CenterLon" : "104.679114", 
+    "CenterLat" : "31.467450", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab38d"), 
+    "City" : "贵阳", 
+    "CenterLon" : "106.630153", 
+    "CenterLat" : "26.647661", 
+    "StoreNum" : "8"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab38e"), 
+    "City" : "贵阳市", 
+    "CenterLon" : "106.630153", 
+    "CenterLat" : "26.647661", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab38f"), 
+    "City" : "丽江市", 
+    "CenterLon" : "100.227750", 
+    "CenterLat" : "26.855047", 
+    "StoreNum" : "2"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab390"), 
+    "City" : "大理市", 
+    "CenterLon" : "100.267638", 
+    "CenterLat" : "25.606486", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab391"), 
+    "City" : "昆明市", 
+    "CenterLon" : "102.832891", 
+    "CenterLat" : "24.880095", 
+    "StoreNum" : "21"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5ac48f6016683ab392"), 
+    "City" : "咸阳市", 
+    "CenterLon" : "108.708991", 
+    "CenterLat" : "34.329605", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5bc48f6016683ab393"), 
+    "City" : "宝鸡市", 
+    "CenterLon" : "107.237974", 
+    "CenterLat" : "34.361979", 
+    "StoreNum" : "1"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5bc48f6016683ab394"), 
+    "City" : "西安市", 
+    "CenterLon" : "108.940174", 
+    "CenterLat" : "34.341568", 
+    "StoreNum" : "40"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5bc48f6016683ab395"), 
+    "City" : "兰州市", 
+    "CenterLon" : "103.834303", 
+    "CenterLat" : "36.061089", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5bc48f6016683ab396"), 
+    "City" : "西宁市", 
+    "CenterLon" : "101.778228", 
+    "CenterLat" : "36.617144", 
+    "StoreNum" : "3"
+}
+{ 
+    "_id" : ObjectId("5ca5ce5bc48f6016683ab397"), 
+    "City" : "银川市", 
+    "CenterLon" : "106.230909", 
+    "CenterLat" : "38.487193", 
+    "StoreNum" : "2"
+}
