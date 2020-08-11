@@ -12,8 +12,8 @@ var fs = require('fs')
 /**
  * Get credentials
  */
-var privateKey  = fs.readFileSync('../cert/3651295_www.hezhang18.cn.key', 'utf8');
-var certificate = fs.readFileSync('../cert/3651295_www.hezhang18.cn.pem', 'utf8');
+var privateKey  = fs.readFileSync('../cert/www.zh.cn.key', 'utf8');
+var certificate = fs.readFileSync('../cert/www.zh.cn.pem', 'utf8');
 var credentials = {key: privateKey, cert: certificate};
 
 /**
