@@ -108,7 +108,7 @@
     }
     .pv-num .td-pageviews {
         position: absolute;
-        bottom: 0px;
+        bottom: 3px;
         right: 6px;
     }
     .pv-wrapper .pv-listTitle {
