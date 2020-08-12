@@ -173,7 +173,9 @@ MongoDB 的安装可参考 [MongoDB 官方文档](https://docs.mongodb.com/manua
 ```
 * 上传 SSL 证书
 
-在阿里云网站[申请 SSL 证书](https://www.aliyun.com/product/security/markets/aliyun/product/cas?spm=5176.12825654.eofdhaal5.17.3dbd2c4aohLKLr)，并将证书保存至 cert 文件夹中。
+最近阿里云网站不支持申请免费 SSL 证书，可在[腾讯云申请 SSL 证书](https://console.cloud.tencent.com/ssl)，申请完成将证书下载并保存至 cert 文件夹中。
+
+
 
 ``` bash
 # scp -r cert root@Server_IP:/usr/share/nginx
