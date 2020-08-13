@@ -91,9 +91,23 @@
 			showRecordDetail(item){
 				this.detailOfItem = item;
 				this.show = true;
+				this.trackingVisitor();
 			},
 			closeRecordDetail(){
 				this.show = false;
+			},
+			trackingVisitor() {
+				let storage = window.sessionStorage || null;
+				if(storage) {
+					let VisitorID = storage.getItem('VisitorID'),
+						page = '消费记录-弹窗';
+					if(!VisitorID) return;
+					axios.post('users/tracking',{
+						visitorID: VisitorID,
+						page: page
+					})
+				}
+				
 			}
 		}
 	}

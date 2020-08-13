@@ -577,7 +577,6 @@
 	import NavMobile from '@/components/navMobile'
 	import TokenTools from '@/utils/tokenTools'
 	import CookieTools from '@/utils/cookieTools'
-	import PageviewTools from '@/utils/pageviewTools'
 	import axios from 'axios'
 
 	export default {
@@ -702,13 +701,11 @@
 			let storage = window.sessionStorage || null;
 			if(storage) {
 				let VisitorID = storage.getItem('VisitorID'),
-					page = '我的账户-星享俱乐部',
-					time = PageviewTools.GetTime();
+					page = '我的账户-星享俱乐部';
 				if(!VisitorID) return;
 				axios.post('users/tracking',{
 					visitorID: VisitorID,
-					page: page,
-					time: time
+					page: page
 				})
 			}
 			

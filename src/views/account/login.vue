@@ -87,8 +87,7 @@
 	import NavMobile from '@/components/navMobile'
 	import FormLogin from '@/components/formLogin'
 	import CodeLogin from '@/components/codeLogin'
-	import PageviewTools from '@/utils/pageviewTools'
-
+	
 	export default {
 		name: 'account',
 		metaInfo: {
@@ -149,13 +148,11 @@
 				let storage = window.sessionStorage || null;
 				if(storage) {
 					let VisitorID = storage.getItem('VisitorID'),
-						page = '我的账户-登录',
-						time = PageviewTools.GetTime();
+						page = '我的账户-登录';
 					if(!VisitorID) return;
 					axios.post('users/tracking',{
 						visitorID: VisitorID,
-						page: page,
-						time: time
+						page: page
 					})
 				}
 				

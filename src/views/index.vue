@@ -166,7 +166,7 @@
 			},
 			checkLogin(){
 				let ReqToken = TokenTools.TokenSetting('sbux_token_cl');
-				
+
 				if(ReqToken){
 					axios.post("users/checkLogin",{
 						ReqToken: ReqToken
@@ -177,6 +177,14 @@
 							this.$store.commit('updateUserInfo', res.NickName);
 							//如果当前为登录状态，则进一步获取用户信息
 							this.accountInfoDisp();
+
+							let storage = window.sessionStorage || null;
+							if(storage && storage.getItem('isNewPV') !== 'false') {
+								axios.post('/users/trackLogin', {
+									visitorID: storage.getItem('VisitorID'),
+									msg: '自动登录'
+								})
+							}
 						}else{
 							this.$store.commit('updateUserInfo', '');
 						}
@@ -256,8 +264,7 @@
 				}
 
 				// 获取访客信息
-				let time = PageviewTools.GetTime(),
-					screen = PageviewTools.GetScreenInfo(window),
+				let screen = PageviewTools.GetScreenInfo(window),
 					device = PageviewTools.GetBrowser(),
 					page = '主页',
 					ReqToken = TokenTools.TokenSetting('sbux_token_pv');
@@ -287,7 +294,6 @@
 										router: "users/pageview",
 										params: {
 											visitorID: VisitorID,
-											time: time,
 											location: location,
 											screen: screen,
 											device: device,
@@ -313,7 +319,6 @@
 											router: "users/pageview",
 											params: {
 												visitorID: VisitorID,
-												time: time,
 												location: location,
 												screen: screen,
 												device: device,

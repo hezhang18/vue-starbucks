@@ -38,6 +38,7 @@ function GetTime() {
     if (sec < 10) sec = "0" + sec;
     
     let time = year + "-" + month + "-" + date+ " " + hour + ":" + minu + ":" + sec;
+    
     return time;
 }
 

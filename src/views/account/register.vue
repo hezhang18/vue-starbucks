@@ -68,8 +68,7 @@
 	import NavMobile from '@/components/navMobile'
 	import AppRegister from '@/components/appRegister'
 	import CardRegister from '@/components/cardRegister'
-	import PageviewTools from '@/utils/pageviewTools'
-
+	
 	export default {
 		name: 'account',
 		metaInfo: {
@@ -136,13 +135,11 @@
 				let storage = window.sessionStorage || null;
 				if(storage) {
 					let VisitorID = storage.getItem('VisitorID'),
-						page = '我的账户-注册',
-						time = PageviewTools.GetTime();
+						page = '我的账户-注册';
 					if(!VisitorID) return;
 					axios.post('users/tracking',{
 						visitorID: VisitorID,
-						page: page,
-						time: time
+						page: page
 					})
 				}
 				

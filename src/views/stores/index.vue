@@ -71,8 +71,7 @@
 	import axios from 'axios'
 	import AMap from 'AMap'
 	import StoresTools from '@/utils/storesTools'
-	import PageviewTools from '@/utils/pageviewTools'
-
+	
 	export default {
 		name: 'stores',
 		metaInfo: {
@@ -143,8 +142,7 @@
 					if(sStorage) {
 						axios.post('/users/trackDataLoaded', {
 							visitorID: sStorage.getItem('VisitorID'),
-							dataOrigin:'本地存储',
-							time: PageviewTools.GetTime()
+							dataOrigin:'本地存储'
 						})
 					}
 				}else{
@@ -273,8 +271,7 @@
 					if(sStorage) {
 						axios.post('/users/trackDataLoaded', {
 							visitorID: sStorage.getItem('VisitorID'),
-							dataOrigin:'数据库加载',
-							time: PageviewTools.GetTime()
+							dataOrigin:'数据库加载'
 						})
 					}
 				});
@@ -502,16 +499,13 @@
 				let storage = window.sessionStorage || null;
 				if(storage) {
 					let VisitorID = storage.getItem('VisitorID'),
-						page = '门店',
-						time = PageviewTools.GetTime();
+						page = '门店';
 					if(!VisitorID) return;
 					axios.post('users/tracking',{
 						visitorID: VisitorID,
-						page: page,
-						time: time
+						page: page
 					})
 				}
-				
 			}
 		}
 	}

@@ -7,8 +7,8 @@
                     总访问量：<span class="pageviews">{{PageViews}}</span>
                     <span class="td-pageviews">今日新增：{{todayPV}}</span>
                 </h2>
-                <h2 v-show="ready" class="pv-listTitle">访客列表：</h2>
-                <section v-for="(item, index) in allVisitors" class="pv-list" @click="showInfo(index)">
+                <h2 v-show="ready" class="pv-listTitle">最近访客：</h2>
+                <section v-for="(item, index) in recentVisitors" class="pv-list" @click="showInfo(index)">
                     <p class="pv-visitorNum">
                         访客 - <span v-if="index < 9">0</span>{{index + 1}}
                         <span class="pv-time">{{item.VisitTime}}</span>
@@ -24,9 +24,6 @@
                             <li v-show="item.IP">
                                 <span class="pv-th">IP 地址：</span>{{item.IP}}
                             </li>
-                            <!-- <li v-show="item.VisitTime">
-                                <span class="pv-th">访问时间：</span>{{item.VisitTime}}
-                            </li> -->
                             <li v-show="item.Location">
                                 <span class="pv-th">访客地址：</span>{{item.Location}}
                             </li>
@@ -64,6 +61,9 @@
                         </section>
                     </div>
                 </section>
+                <div class="pv-ready" v-if="!ready">
+                    <img src="@/assets/loading-svg/loading-bubbles.svg">
+                </div>
             </article>
         </article>
     </div>
@@ -73,6 +73,12 @@
         content: '';
         display: table;
         clear: both;
+    }
+    .pv-ready {
+        width: 100%;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
     }
     .pv-wrapper {
         width: 100%;
@@ -182,7 +188,7 @@
                 ready: false,
                 PageViews:'',
                 todayPV: undefined,
-                allVisitors: null,
+                recentVisitors: null,
                 visitorNum: undefined
             }
         },
@@ -195,19 +201,10 @@
                     let data = res.data;
                     if(data.status === 0) {
                         let result = data.result;
-                        this.PageViews = result.length;
-
-                        let allVisitors = Array.prototype.reverse.call(result);
-                        this.allVisitors = allVisitors;
-
-                        let today = PageviewTools.GetTime().split(' ')[0];
-                        let todayPV = 0;
-                        for(let i = 0; i < allVisitors.length; i++) {
-                            if(allVisitors[i].VisitTime.split(' ')[0] == today) {
-                                todayPV++;
-                            }
-                        }
-                        this.todayPV = todayPV;
+                        
+                        this.PageViews = result.PageViews;
+                        this.todayPV = result.todayPV;
+                        this.recentVisitors = result.recentVisitors;
 
                         this.ready = true;
                     }

@@ -5,6 +5,7 @@ let router = express.Router();
 let Users = require('../models/users');
 let PageView = require('../models/pageview');
 let CheckTools = require('../utils/checkTools');
+let PageviewTools = require('../utils/pageviewTools');
 let AutoLogin_Global = false;
 
 router.post('/login', function(req, res, next) {
@@ -305,15 +306,16 @@ router.post("/pageview", (req, res, next)=>{
 	PageView.create({
 		UserType: 'Visitor',
 		VisitorID: params.visitorID,
-		IP: getClientIp(req, 'nginx'),
-		VisitTime: params.time,
+		IP: PageviewTools.getClientIP(req, 'nginx'),
+		// VisitTime: params.time,
+		VisitTime: PageviewTools.getTime(),
 		Location: params.location,
 		Screen: params.browser,
 		Device: params.device,
 		BrowseRecord: [
 			{
 				Page: params.page,
-				BrowseTime: params.time
+				BrowseTime: PageviewTools.getTime()
 			}
 		]		
 	}, (err, doc)=>{
@@ -334,7 +336,7 @@ router.post("/tracking", (req, res, next)=>{
 		$push: {
 			BrowseRecord: {
 				Page: params.page,
-				BrowseTime: params.time
+				BrowseTime: PageviewTools.getTime()
 			}
 		}
 	}, (err, doc)=>{
@@ -355,7 +357,7 @@ router.post("/trackDataLoaded", (req, res, next)=>{
 		$push: {
 			StoresDataLoaded: {
 				DataOrigin: params.dataOrigin,
-				LoadTime: params.time
+				LoadTime: PageviewTools.getTime()
 			}
 		}
 	},(err, doc)=>{
@@ -370,12 +372,13 @@ router.post("/trackDataLoaded", (req, res, next)=>{
 
 router.post("/trackLogin", (req, res, next)=>{
 	let params = req.body;
+	let loginTime = params.msg ? PageviewTools.getTime() + ' ' + params.msg : PageviewTools.getTime();
 	PageView.update({
 		VisitorID: params.visitorID
 	}, {
 		$push: {
 			Login: {
-				LoginTime: params.LoginTime
+				LoginTime: loginTime
 			}
 		}
 	},(err, doc)=>{
@@ -395,7 +398,7 @@ router.post("/trackLogout", (req, res, next)=>{
 	}, {
 		$push: {
 			Logout: {
-				LogoutTime: params.LogoutTime
+				LogoutTime: PageviewTools.getTime()
 			}
 		}
 	},(err, doc)=>{
@@ -411,10 +414,45 @@ router.post("/trackLogout", (req, res, next)=>{
 router.get("/pvrecord", (req, res, next)=>{
 	PageView.find({UserType: 'Visitor'}, (err, doc)=>{
 		if(doc) {
+			let allVisitors = Array.prototype.reverse.call(doc);
+
+			let pageviews = allVisitors.length;
+			let todayPV = 0;
+			let recentVisitors = [];
+
+			let today = PageviewTools.getTime().split(' ')[0];
+			let yesterday = PageviewTools.getBeforeDay(1000*60*60*24);
+			let twoDaysAgo = PageviewTools.getBeforeDay(1000*60*60*24*2);
+			let threeDaysAgo = PageviewTools.getBeforeDay(1000*60*60*24*3);
+
+			// 设置计数器，如果数据的日期连续 5 个都是三天前的日期，可以断定后续都是三天前的数据，不需要再继续处理
+			let count = 0;
+
+			for(let i = 0; i < allVisitors.length; i++) {
+				if(allVisitors[i].VisitTime) {
+					if(allVisitors[i].VisitTime.split(' ')[0] == today) {
+						todayPV++;
+						recentVisitors.push(allVisitors[i]);
+						count = 0;
+					}else if(allVisitors[i].VisitTime.split(' ')[0] == yesterday || allVisitors[i].VisitTime.split(' ')[0] == twoDaysAgo) {
+						recentVisitors.push(allVisitors[i]);
+						count = 0;
+					}else if(allVisitors[i].VisitTime.split(' ')[0] == threeDaysAgo) {
+						if(++count === 5) {
+							break;
+						}
+					}
+				}
+			}
+
             res.json({
             	status: 0,
 				msg:'',
-				result: doc
+				result: {
+					PageViews: pageviews,
+					todayPV: todayPV,
+					recentVisitors: recentVisitors
+				}
             })
 		}
 	})
@@ -448,27 +486,6 @@ router.get("/pvrecord", (req, res, next)=>{
 
 
 
-
-
-function getClientIp(req, proxyType) {
-	let ip = req.connection.remoteAddress || req.socket.remoteAddress || (req.connection.socket ? req.connection.socket.remoteAddress : null);
-	// 如果使用了nginx代理
-	if (proxyType === 'nginx') {
-		// headers上的信息容易被伪造,但是我不care,自有办法过滤,例如'x-nginx-proxy'和'x-real-ip'我在nginx配置里做了一层拦截把他们设置成了'true'和真实ip,所以不用担心被伪造
-		// 如果没用代理的话,我直接通过req.connection.remoteAddress获取到的也是真实ip,所以我不care
-		ip = req.headers['x-real-ip'] || req.headers['x-forwarded-for'] || ip;
-	}
-	const ipArr = ip.split(',');
-	// 如果使用了nginx代理,如果没配置'x-real-ip'只配置了'x-forwarded-for'为$proxy_add_x_forwarded_for,如果客户端也设置了'x-forwarded-for'进行伪造ip
-	// 则req.headers['x-forwarded-for']的格式为ip1,ip2只有最后一个才是真实的ip
-	if (proxyType === 'nginx') {
-		ip = ipArr[ipArr.length - 1];
-	}
-	if (ip.indexOf('::ffff:') !== -1) {
-		ip = ip.substring(7);
-	}
-	return ip;
-}
 
 function updateCookie(response, data, autoLogin){
 	if(autoLogin){

@@ -85,8 +85,7 @@
 	import NavOverlay from '@/components/NavOverlay'
 	import NavMobile from '@/components/navMobile'
 	import axios from 'axios'
-	import PageviewTools from '@/utils/pageviewTools'
-
+	
 	export default {
 		name: 'menuIndex',
 		metaInfo: {
@@ -285,13 +284,11 @@
 				let storage = window.sessionStorage || null;
 				if(storage) {
 					let VisitorID = storage.getItem('VisitorID'),
-						page = '菜单-季度精选',
-						time = PageviewTools.GetTime();
+						page = '菜单-季度精选';
 					if(!VisitorID) return;
 					axios.post('users/tracking',{
 						visitorID: VisitorID,
-						page: page,
-						time: time
+						page: page
 					})
 				}
 				

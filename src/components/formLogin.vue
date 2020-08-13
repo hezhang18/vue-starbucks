@@ -36,7 +36,6 @@
 	import CheckTools from '@/utils/checkTools'
 	import TokenTools from '@/utils/tokenTools'
 	import CookieTools from '@/utils/cookieTools'
-	import PageviewTools from '@/utils/pageviewTools'
 	
 	export default {
 		data(){
@@ -142,44 +141,42 @@
 				},100);
 			},
 			login(){
-				let _self = this,
-					UserNameCheckRes = CheckTools.UserNameRegExp.test(_self.username),
-					PasswordCheckRes = CheckTools.PasswordRegExp.test(_self.password);
+				let UserNameCheckRes = CheckTools.UserNameRegExp.test(this.username),
+					PasswordCheckRes = CheckTools.PasswordRegExp.test(this.password);
 				if(!UserNameCheckRes || !PasswordCheckRes){
-					_self.errorTip = true;
+					this.errorTip = true;
 					setTimeout(()=>{
-						_self.errorTip = false;
+						this.errorTip = false;
 					}, 2000);
 					return ;
 				}
 
-				_self.loading = true;
+				this.loading = true;
 				
 				axios.post("/users/login", {
-					UserName: _self.username,
-					Password: _self.password,
-					AutoLogin: _self.autoLogin,
+					UserName: this.username,
+					Password: this.password,
+					AutoLogin: this.autoLogin,
 				}).then((res)=>{
 					let data = res.data;
 					if(data.status == '0'){
 						let res = data.result;
-						_self.$store.commit('updateUserInfo', res.NickName);
-						_self.$store.commit('pageRedir', 2);
-						_self.errorTip = false;
-						_self.loading = false;
+						this.$store.commit('updateUserInfo', res.NickName);
+						this.$store.commit('pageRedir', 2);
+						this.errorTip = false;
+						this.loading = false;
 					}else{
-						_self.loading = false;
-						_self.errorTip = true;
+						this.loading = false;
+						this.errorTip = true;
 						setTimeout(()=>{
-							_self.errorTip = false;
+							this.errorTip = false;
 						}, 1200);
 					}
 
 					let storage = window.sessionStorage || null;
 					if(storage) {
 						axios.post('/users/trackLogin', {
-							visitorID: storage.getItem('VisitorID'),
-							LoginTime: PageviewTools.GetTime()
+							visitorID: storage.getItem('VisitorID')
 						})
 					}
 				})
