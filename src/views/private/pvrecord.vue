@@ -7,13 +7,16 @@
                     总访问量：<span class="pageviews">{{PageViews}}</span>
                     <span class="td-pageviews">今日新增：{{todayPV}}</span>
                 </h2>
-                <h2 v-show="ready" class="pv-listTitle">最近访客：</h2>
+                <h2 v-show="ready" class="pv-listTitle">最近访问：</h2>
                 <section v-for="(item, index) in recentVisitors" class="pv-list" @click="showInfo(index)">
-                    <p class="pv-visitorNum">
-                        访客 - <span v-if="index < 9">0</span>{{index + 1}}
+                    <p class="pv-visitorNum top-tag">
+                        序号：<span v-if="index < 9">0</span>{{index + 1}}
                         <span class="pv-time">{{item.VisitTime}}</span>
                     </p>
-                    <div v-if="visitorNum == index" class="visitor-info">
+                    <p class="pv-visitorNum bottom-tag">
+                        <span>地址：</span>{{item.Location}}
+                    </p>
+                    <div v-if="visitorNum == index" class="pv-visitorInfo">
                         <p class="pv-infoTitle">
                             访客信息：
                         </p>
@@ -23,9 +26,6 @@
                             </li>
                             <li v-show="item.IP">
                                 <span class="pv-th">IP 地址：</span>{{item.IP}}
-                            </li>
-                            <li v-show="item.Location">
-                                <span class="pv-th">访客地址：</span>{{item.Location}}
                             </li>
                             <li v-show="item.Screen">
                                 <span class="pv-th">屏幕尺寸：</span>{{item.Screen}}
@@ -110,7 +110,6 @@
     .pv-num .pageviews {
         font-size: 1.6em;
         font-weight: bold;
-        /* font-family: "Gothma-Medium"; */
     }
     .pv-num .td-pageviews {
         position: absolute;
@@ -132,26 +131,30 @@
         border-bottom: 1px solid #00A862;
         padding-bottom: 12px;
     }
-    .visitor-info {
+    .pv-visitorInfo {
         background-color: rgba(0, 0, 0, 0.02);
-        margin: -6px 0 -12px;
-        padding: 6px;
+        margin: 0 0 -12px;
+        padding: 12px;
     }
     .pv-wrapper .pv-visitorNum {
         position: relative;
-        height: 28px;
-        line-height: 28px;
-        margin-bottom: 6px;
-        padding-right: 6px;
+        height: 32px;
+        line-height: 32px;
+        padding: 0 12px;
         background-color: #00A862;
         color: #fff;
-        text-indent: 6px;
-        border-radius: 3px;
+    }
+    .pv-visitorNum.top-tag {
+        border-radius: 6px 6px 0 0;
+    }
+    .pv-visitorNum.bottom-tag {
+        border-radius: 0 0 6px 6px;
     }
     .pv-visitorNum .pv-time {
         position: absolute;
-        top: 0px;
-        right: 6px;
+        top: 0;
+        right: 0;
+        min-width: 186px;
     }
     .pv-wrapper .pv-infoTitle{
         margin-bottom: 6px;

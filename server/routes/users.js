@@ -412,10 +412,11 @@ router.post("/trackLogout", (req, res, next)=>{
 })
 
 router.get("/pvrecord", (req, res, next)=>{
-	PageView.find({UserType: 'Visitor'}, (err, doc)=>{
+	PageView.find({
+		UserType: 'Visitor'
+	}, (err, doc)=>{
 		if(doc) {
 			let allVisitors = Array.prototype.reverse.call(doc);
-
 			let pageviews = allVisitors.length;
 			let todayPV = 0;
 			let recentVisitors = [];
@@ -425,7 +426,7 @@ router.get("/pvrecord", (req, res, next)=>{
 			let twoDaysAgo = PageviewTools.getBeforeDay(1000*60*60*24*2);
 			let threeDaysAgo = PageviewTools.getBeforeDay(1000*60*60*24*3);
 
-			// 设置计数器，如果数据的日期连续 5 个都是三天前的日期，可以断定后续都是三天前的数据，不需要再继续处理
+			// 设置计数器，如果数据的日期连续 3 个都是三天前的日期，可以断定后续都是三天前的数据，不需要再继续处理
 			let count = 0;
 
 			for(let i = 0; i < allVisitors.length; i++) {
@@ -433,14 +434,12 @@ router.get("/pvrecord", (req, res, next)=>{
 					if(allVisitors[i].VisitTime.split(' ')[0] == today) {
 						todayPV++;
 						recentVisitors.push(allVisitors[i]);
-						count = 0;
+						if(count !== 0) { count = 0 }
 					}else if(allVisitors[i].VisitTime.split(' ')[0] == yesterday || allVisitors[i].VisitTime.split(' ')[0] == twoDaysAgo) {
 						recentVisitors.push(allVisitors[i]);
-						count = 0;
+						if(count !== 0) { count = 0 }
 					}else if(allVisitors[i].VisitTime.split(' ')[0] == threeDaysAgo) {
-						if(++count === 5) {
-							break;
-						}
+						if(++count === 3) { break }
 					}
 				}
 			}
@@ -453,7 +452,7 @@ router.get("/pvrecord", (req, res, next)=>{
 					todayPV: todayPV,
 					recentVisitors: recentVisitors
 				}
-            })
+			})
 		}
 	})
 })
