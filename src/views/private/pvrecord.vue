@@ -9,13 +9,15 @@
                 </h2>
                 <h2 v-show="ready" class="pv-listTitle">最近访问：</h2>
                 <section v-for="(item, index) in recentVisitors" class="pv-list" @click="showInfo(index)">
-                    <p class="pv-visitorNum top-tag">
-                        序号：<span v-if="index < 9">0</span>{{index + 1}}
-                        <span class="pv-time">{{item.VisitTime}}</span>
-                    </p>
-                    <p class="pv-visitorNum bottom-tag">
-                        <span>地址：</span>{{item.Location}}
-                    </p>
+                    <div class="pv-visitorNum">
+                        <div class="tagTop">
+                            序号：<span v-if="index < 9">0</span>{{index + 1}}
+                            <span class="pv-time">{{item.VisitTime}}</span>
+                        </div>
+                        <div class="tagBottom">
+                            地址：{{item.Location}}
+                        </div>
+                    </div>
                     <div v-if="visitorNum == index" class="pv-visitorInfo">
                         <p class="pv-infoTitle">
                             访客信息：
@@ -138,23 +140,23 @@
     }
     .pv-wrapper .pv-visitorNum {
         position: relative;
-        height: 32px;
-        line-height: 32px;
-        padding: 0 12px;
+        padding: 12px 12px;
         background-color: #00A862;
         color: #fff;
+        border-radius: 6px;
     }
-    .pv-visitorNum.top-tag {
-        border-radius: 6px 6px 0 0;
+    .pv-visitorNum .tagTop {
+        height: 32px;
+        line-height: 32px;
     }
-    .pv-visitorNum.bottom-tag {
-        border-radius: 0 0 6px 6px;
-    }
-    .pv-visitorNum .pv-time {
+    .tagTop .pv-time {
         position: absolute;
-        top: 0;
+        top: 12px;
         right: 0;
         min-width: 186px;
+    }
+    .pv-visitorNum .tagBottom {
+        padding: 6px 0;
     }
     .pv-wrapper .pv-infoTitle{
         margin-bottom: 6px;
