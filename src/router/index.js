@@ -172,6 +172,11 @@ router.beforeEach((to, from, next) => {
 	}
 })
 
+const originalPush = Router.prototype.push;
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+};
+
 // 使用HttpOnly后，JS无法获取cookie，所以下面的方案弃用
 // function getCookie(cookieName) {
 //   var strCookie = document.cookie;

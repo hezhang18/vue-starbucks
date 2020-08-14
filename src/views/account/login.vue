@@ -87,6 +87,7 @@
 	import NavMobile from '@/components/navMobile'
 	import FormLogin from '@/components/formLogin'
 	import CodeLogin from '@/components/codeLogin'
+	import axios from 'axios'
 	
 	export default {
 		name: 'account',

@@ -695,20 +695,20 @@
 				}
 
 				this.hello = this.welcome[index];
+			},
+			trackingVisitor() {
+				let storage = window.sessionStorage || null;
+				if(storage) {
+					let VisitorID = storage.getItem('VisitorID'),
+						page = '我的账户-星享俱乐部';
+					if(!VisitorID) return;
+					axios.post('users/tracking',{
+						visitorID: VisitorID,
+						page: page
+					})
+				}
+				
 			}
-		},
-		trackingVisitor() {
-			let storage = window.sessionStorage || null;
-			if(storage) {
-				let VisitorID = storage.getItem('VisitorID'),
-					page = '我的账户-星享俱乐部';
-				if(!VisitorID) return;
-				axios.post('users/tracking',{
-					visitorID: VisitorID,
-					page: page
-				})
-			}
-			
 		}
 	}
 
