@@ -39,14 +39,6 @@ const store = new Vuex.Store({
 		updateUserInfo(state, NickName){
 			state.NickName = NickName;
 		}
-		//通过VueX控制登录前后的页面跳转，麻烦
-		// updateAccountView(state, login){
-		// 	if(login){
-		// 		state.AccountView = 'IndexLogin';
-		// 		return;
-		// 	}
-		// 	state.AccountView = 'Index';
-		// }
 	},
 });
 
