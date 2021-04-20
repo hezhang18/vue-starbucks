@@ -124,7 +124,7 @@ mongoose.connect('mongodb://DB_UserName:DB_PassWord@IP_Address:27017/vSbux', {us
 # sudo mongod --auth
 ```
 
-或在 MongoDB 的配置文件 mongod.conf （Ubuntu系统）/ mongod.cfg（Windows系统）添加代码
+或在 MongoDB 的配置文件 mongod.conf （Ubuntu 系统）/ mongod.cfg（Windows 系统）添加代码
 
 ```bash
 #security:
@@ -134,8 +134,8 @@ mongoose.connect('mongodb://DB_UserName:DB_PassWord@IP_Address:27017/vSbux', {us
 然后使用服务重新启动 MongoDB
 
 ```bash
-# sudo service mongod start（Ubuntu系统）
-# net start mongodb（Windows系统）
+# sudo service mongod start（Ubuntu 系统）
+# net start mongodb（Windows 系统）
 ```
 
 进行到这里，通过 MongoDB 可视化工具（推荐一款 Studio 3T）连接到数据库，此时可以看到已经创建好的 vSbux 数据库，在这个数据库下继续创建 8 个我们需要用到的集合：selection、beverages、coffee、food、merchandise、city、stores、users。集合创建完毕，将 MongoData 文件夹中的 JSON 数据导入到对应的集合中。
