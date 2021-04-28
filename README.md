@@ -138,7 +138,7 @@ mongoose.connect('mongodb://DB_UserName:DB_PassWord@IP_Address:27017/vSbux', {us
 # net start mongodb（Windows 系统）
 ```
 
-进行到这里，通过 MongoDB 可视化工具（推荐一款 Studio 3T）连接到数据库，此时可以看到已经创建好的 vSbux 数据库，在这个数据库下继续创建 8 个我们需要用到的集合：selection、beverages、coffee、food、merchandise、city、stores、users。集合创建完毕，将 MongoData 文件夹中的 JSON 数据导入到对应的集合中。
+进行到这里，通过 MongoDB 可视化工具（推荐一款官方自有的 MongoDB Compass）连接到数据库，此时可以看到已经创建好的 vSbux 数据库，在这个数据库下继续创建 8 个我们需要用到的集合：selection、beverages、coffee、food、merchandise、city、stores、users。集合创建完毕，将 MongoData 文件夹中的 JSON 数据导入到对应的集合中。
 
 至此，整个项目前后端及数据库的本地搭建工作均已完成，如果一切进展顺利，那么整个项目已经可以在本地正常地运行了。
 
