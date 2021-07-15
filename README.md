@@ -1,5 +1,18 @@
 # vue-starbucks
 
+## 写在前面
+
+有许多小伙伴询问是否有服务端接口，最近本人整理了相关数据接口提供给大家，希望对各位小伙伴的学习能提供帮助。
+
+GET：
+http://47.114.181.210/selection/items
+http://47.114.181.210/beverages/items
+http://47.114.181.210/food/items
+http://47.114.181.210/coffee/items
+http://47.114.181.210/merchandise/items
+http://47.114.181.210/storelocation/items
+http://47.114.181.210/cityinfo/items
+
 ## 1 简介
 
 项目介绍：
